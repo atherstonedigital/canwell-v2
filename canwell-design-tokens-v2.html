@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Canwell Interiors — Design Tokens (Revised)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --gold: #B8924A; --gold-dark: #8E6E2E; --gold-light: #D4B27D; --gold-pale: #EFE0BD;
+    --black: #1A1614; --black-soft: #2A2520;
+    --cream: #F4EDDC; --cream-light: #FAF6EC; --cream-tinted: #E9DFC8;
+    --text-primary: #2A2520; --text-secondary: #6B5F4E; --text-muted: #9B8F7E; --text-on-dark: #F4EDDC;
+    --border-light: #E0D4BC; --border-medium: #C4B496; --border-strong: #2A2520;
+
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --fs-hero: clamp(3.5rem, 9vw, 7.5rem);
+    --fs-h1: clamp(2.5rem, 5vw, 4.5rem);
+    --fs-h2: clamp(2rem, 4vw, 3.25rem);
+    --fs-h3: clamp(1.5rem, 3vw, 2.125rem);
+    --fs-h4: 1.25rem; --fs-lead: 1.3125rem; --fs-body: 1.0625rem;
+    --fs-small: 0.9375rem; --fs-caption: 0.8125rem; --fs-mono: 0.8125rem;
+
+    --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px;
+    --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px; --s-10: 128px;
+
+    --container-max: 1280px;
+    --container-pad: clamp(20px, 5vw, 80px);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body); font-size: var(--fs-body); line-height: 1.6;
+    color: var(--text-primary); background: var(--cream);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--gold-pale); color: var(--black); }
+
+  .container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-pad); }
+  section { padding: var(--s-10) 0; border-bottom: 1px solid var(--border-light); position: relative; }
+  section:last-of-type { border-bottom: none; }
+
+  /* TYPE */
+  .display-hero, .display-h1, .display-h2, .display-h3 {
+    font-family: var(--font-display); font-weight: 500; line-height: 1.0;
+    letter-spacing: -0.015em; color: var(--black);
+  }
+  .display-hero { font-size: var(--fs-hero); font-weight: 400; line-height: 0.95; }
+  .display-h1 { font-size: var(--fs-h1); line-height: 1.02; }
+  .display-h2 { font-size: var(--fs-h2); line-height: 1.05; }
+  .display-h3 { font-size: var(--fs-h3); line-height: 1.15; }
+
+  em, .italic-emphasis { font-style: italic; font-weight: 500; color: var(--gold-dark); }
+  .display-hero em, .display-h1 em, .display-h2 em { font-weight: 400; color: var(--black); }
+
+  .heading-h4 {
+    font-family: var(--font-body); font-size: var(--fs-h4); font-weight: 600;
+    line-height: 1.3; color: var(--black); letter-spacing: -0.005em;
+  }
+  .eyebrow {
+    font-family: var(--font-body); font-size: var(--fs-caption); font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-dark);
+  }
+  .lead { font-size: var(--fs-lead); line-height: 1.55; color: var(--text-secondary); font-weight: 300; }
+  .small { font-size: var(--fs-small); color: var(--text-secondary); }
+  .caption { font-size: var(--fs-caption); color: var(--text-muted); letter-spacing: 0.04em; }
+
+  .has-dropcap::first-letter {
+    font-family: var(--font-display); font-weight: 500; font-size: 4.5em; line-height: 0.85;
+    float: left; margin: 0.04em 0.08em 0 -0.05em; color: var(--gold-dark);
+  }
+
+  /* SIGNATURE: CONCENTRIC RINGS */
+  .rings {
+    position: relative; border-radius: 50%; border: 1px solid var(--gold);
+    display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .rings::before, .rings::after {
+    content: ''; position: absolute; border-radius: 50%; border: 1px solid var(--gold); pointer-events: none;
+  }
+  .rings::before { inset: 4px; }
+  .rings::after { inset: 8px; }
+  .rings-sm { width: 40px; height: 40px; }
+  .rings-md { width: 56px; height: 56px; }
+  .rings-lg { width: 96px; height: 96px; }
+  .rings-xl { width: 140px; height: 140px; }
+
+  .section-marker { display: flex; align-items: center; gap: var(--s-4); margin-bottom: var(--s-6); }
+  .section-marker .num {
+    font-family: 'SF Mono', Menlo, monospace; font-size: 0.875rem;
+    color: var(--gold-dark); line-height: 1;
+  }
+  .section-marker .label {
+    font-family: var(--font-body); font-size: var(--fs-caption); font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-dark);
+  }
+
+  /* Trust stamp */
+  .stamp {
+    display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 120px; height: 120px; border-radius: 50%; border: 1px solid var(--gold);
+    color: var(--gold-dark); text-align: center; line-height: 1.2;
+    position: relative; transition: transform 0.5s ease; flex-shrink: 0;
+  }
+  .stamp::before, .stamp::after {
+    content: ''; position: absolute; border-radius: 50%; border: 1px solid var(--gold); pointer-events: none;
+  }
+  .stamp::before { inset: 4px; }
+  .stamp::after { inset: 8px; }
+  .stamp:hover { transform: rotate(8deg); }
+  .stamp .stamp-line-1 {
+    font-family: var(--font-display); font-size: 1.5rem; font-weight: 500; font-style: italic; line-height: 1;
+  }
+  .stamp .stamp-line-2 {
+    font-family: var(--font-body); font-size: 0.6875rem; font-weight: 500;
+    letter-spacing: 0.16em; text-transform: uppercase; margin-top: 4px;
+  }
+
+  /* Ringed rule */
+  .rule-ringed { display: flex; align-items: center; gap: var(--s-4); margin: var(--s-8) 0; }
+  .rule-ringed .line { flex: 1; height: 1px; background: var(--gold); }
+  .rule-ringed .ring { width: 16px; height: 16px; border-radius: 50%; border: 1px solid var(--gold); flex-shrink: 0; }
+
+  /* HEADER */
+  .page-header {
+    background: var(--black); color: var(--cream); padding: var(--s-10) 0;
+    position: relative; overflow: hidden;
+  }
+  .page-header::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at top right, rgba(184,146,74,0.08), transparent 60%);
+    pointer-events: none;
+  }
+  .page-header::after {
+    content: ""; position: absolute; right: -140px; top: 50%; transform: translateY(-50%);
+    width: 480px; height: 480px; border-radius: 50%;
+    border: 1px solid rgba(184, 146, 74, 0.2);
+    box-shadow:
+      inset 0 0 0 17px transparent, inset 0 0 0 18px rgba(184, 146, 74, 0.14),
+      inset 0 0 0 33px transparent, inset 0 0 0 34px rgba(184, 146, 74, 0.08);
+    pointer-events: none;
+  }
+  .page-header .container { position: relative; z-index: 1; }
+
+  .brandmark { display: inline-flex; align-items: center; gap: var(--s-4); margin-bottom: var(--s-8); }
+  .brandmark-icon {
+    font-family: var(--font-display); font-size: 3rem; font-weight: 400;
+    color: var(--gold); line-height: 1; letter-spacing: -0.04em;
+  }
+  .brandmark-icon::before { content: "C"; margin-right: -0.18em; }
+  .brandmark-icon::after { content: "I"; }
+  .brandmark-text {
+    font-family: var(--font-display); font-size: 1.5rem; font-weight: 500;
+    color: var(--cream); letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .page-header .display-h1 { color: var(--cream); margin-bottom: var(--s-5); }
+  .page-header .display-h1 em { color: var(--gold-light); font-weight: 400; }
+  .page-header .lead { color: rgba(244, 237, 220, 0.7); max-width: 60ch; margin-top: var(--s-5); }
+
+  .section-header { margin-bottom: var(--s-9); max-width: 760px; }
+  .section-header .display-h2 { margin-bottom: var(--s-5); }
+  .section-header .lead { font-size: 1.1875rem; }
+
+  /* INDEX */
+  .index { background: var(--cream-tinted); padding: var(--s-7) 0; border-bottom: 1px solid var(--border-light); }
+  .index ol { list-style: none; columns: 4; column-gap: var(--s-6); counter-reset: idx; }
+  .index li { padding: var(--s-2) 0; counter-increment: idx; position: relative; padding-left: var(--s-7); break-inside: avoid; }
+  .index li::before {
+    content: counter(idx, decimal-leading-zero);
+    position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+    font-family: 'SF Mono', Menlo, monospace; font-size: var(--fs-mono); color: var(--gold-dark);
+  }
+  .index a { color: var(--text-primary); text-decoration: none; font-size: var(--fs-body); border-bottom: 1px solid transparent; transition: all 0.2s ease; }
+  .index a:hover { color: var(--gold-dark); border-bottom-color: var(--gold); }
+
+  /* SIGNATURE GRID */
+  .signature-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--s-7); margin-top: var(--s-6);
+  }
+  .signature-item {
+    text-align: center; padding: var(--s-6); background: var(--cream-light); border: 1px solid var(--border-light);
+  }
+  .signature-demo { display: flex; align-items: center; justify-content: center; min-height: 180px; margin-bottom: var(--s-5); }
+  .signature-item h4 {
+    font-family: var(--font-display); font-size: 1.375rem; font-weight: 500;
+    color: var(--black); margin-bottom: var(--s-2);
+  }
+  .signature-item p { font-size: var(--fs-small); color: var(--text-secondary); line-height: 1.5; }
+  .stamp-row { display: flex; flex-wrap: wrap; gap: var(--s-6); margin-top: var(--s-8); justify-content: center; }
+
+  /* SWATCHES */
+  .swatch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--s-5); }
+  .swatch { background: var(--cream-light); border: 1px solid var(--border-light); overflow: hidden; transition: all 0.4s ease; }
+  .swatch:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(26,22,20,0.06); }
+  .swatch-color { aspect-ratio: 1.6 / 1; border-bottom: 1px solid var(--border-light); }
+  .swatch-info { padding: var(--s-4) var(--s-5); }
+  .swatch-name { font-weight: 500; color: var(--black); margin-bottom: var(--s-1); }
+  .swatch-hex { font-family: 'SF Mono', Menlo, monospace; font-size: var(--fs-mono); color: var(--text-muted); }
+  .swatch-usage { font-size: var(--fs-caption); color: var(--text-secondary); margin-top: var(--s-3); line-height: 1.4; }
+  .colour-group { margin-bottom: var(--s-8); }
+  .colour-group-title { margin-bottom: var(--s-5); padding-bottom: var(--s-3); border-bottom: 1px solid var(--border-light); }
+
+  /* TYPE ROWS */
+  .type-row {
+    display: grid; grid-template-columns: 1fr 220px; gap: var(--s-7);
+    align-items: baseline; padding: var(--s-6) 0; border-bottom: 1px solid var(--border-light);
+  }
+  .type-row:last-child { border-bottom: none; }
+  .type-sample-label {
+    font-family: 'SF Mono', Menlo, monospace; font-size: var(--fs-mono);
+    color: var(--text-muted); line-height: 1.5;
+  }
+  .type-sample-label strong { color: var(--text-primary); font-weight: 500; display: block; margin-bottom: 4px; }
+  .dropcap-demo { max-width: 56ch; margin: var(--s-4) 0; font-size: 1.125rem; line-height: 1.65; color: var(--text-primary); }
+
+  /* SPACING */
+  .space-row { display: grid; grid-template-columns: 80px 1fr; gap: var(--s-5); align-items: center; padding: var(--s-3) 0; border-bottom: 1px solid var(--border-light); }
+  .space-row:last-child { border-bottom: none; }
+  .space-token { font-family: 'SF Mono', Menlo, monospace; font-size: var(--fs-mono); color: var(--text-primary); }
+  .space-bar { height: 16px; background: var(--gold); border-radius: 1px; }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex; align-items: center; gap: var(--s-2);
+    padding: 14px 28px; font-family: var(--font-body); font-size: var(--fs-body);
+    font-weight: 500; line-height: 1; text-decoration: none;
+    border: 1px solid transparent; border-radius: 4px; cursor: pointer;
+    transition: all 0.2s ease; letter-spacing: 0.01em;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary { background: var(--black); color: var(--cream); border-color: var(--black); }
+  .btn-primary:hover { background: var(--gold-dark); border-color: var(--gold-dark); }
+  .btn-gold { background: var(--gold); color: var(--black); border-color: var(--gold); }
+  .btn-gold:hover { background: var(--gold-dark); color: var(--cream); border-color: var(--gold-dark); }
+  .btn-secondary { background: transparent; color: var(--black); border-color: var(--border-strong); }
+  .btn-secondary:hover { background: var(--black); color: var(--cream); }
+  .btn-tertiary { background: transparent; color: var(--black); padding: 0; }
+  .btn-tertiary::after { content: " →"; color: var(--gold-dark); transition: transform 0.2s ease; display: inline-block; }
+  .btn-tertiary:hover::after { transform: translateX(4px); }
+  .btn-row { display: flex; flex-wrap: wrap; gap: var(--s-4); align-items: center; padding: var(--s-6) 0; }
+
+  /* FORMS */
+  .form-demo { max-width: 480px; }
+  .field { margin-bottom: var(--s-5); }
+  .field label { display: block; font-size: var(--fs-small); font-weight: 500; color: var(--text-primary); margin-bottom: var(--s-2); }
+  .field input, .field textarea {
+    width: 100%; padding: 12px 16px; font-family: var(--font-body); font-size: var(--fs-body);
+    color: var(--text-primary); background: var(--cream-light);
+    border: 1px solid var(--border-medium); border-radius: 4px; transition: all 0.2s ease;
+  }
+  .field input:focus, .field textarea:focus {
+    outline: none; border-color: var(--gold-dark);
+    box-shadow: 0 0 0 3px rgba(184, 146, 74, 0.15);
+  }
+  .field textarea { min-height: 120px; resize: vertical; line-height: 1.5; font-family: var(--font-body); }
+  .field-help { font-size: var(--fs-caption); color: var(--text-muted); margin-top: var(--s-2); }
+
+  /* CARDS */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--s-6); }
+
+  .card-service {
+    background: var(--cream-light); border: 1px solid var(--border-light); overflow: hidden;
+    transition: all 0.4s ease; cursor: pointer; position: relative; text-decoration: none;
+    display: block;
+  }
+  .card-service::before, .card-service::after {
+    content: ''; position: absolute; top: var(--s-5); right: var(--s-5);
+    width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--gold);
+    opacity: 0; pointer-events: none; z-index: 2;
+  }
+  .card-service::before { transform: scale(0.6); transition: opacity 0.4s ease, transform 0.4s ease; }
+  .card-service::after { transform: scale(1); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .card-service:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(26,22,20,0.08); border-color: var(--border-medium); }
+  .card-service:hover::before { opacity: 0.7; transform: scale(1); }
+  .card-service:hover::after { opacity: 0.25; transform: scale(1.8); }
+
+  .card-image-placeholder {
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(135deg, var(--cream-tinted), var(--border-light));
+    position: relative;
+  }
+  .card-image-placeholder::after {
+    content: "Photography"; position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted); font-size: var(--fs-caption); letter-spacing: 0.16em; text-transform: uppercase;
+  }
+  .card-body { padding: var(--s-5) var(--s-5) var(--s-6); }
+  .card-title {
+    font-family: var(--font-display); font-size: 1.75rem; font-weight: 500;
+    color: var(--black); line-height: 1.1; margin-bottom: var(--s-3); letter-spacing: -0.01em;
+  }
+  .card-description { color: var(--text-secondary); margin-bottom: var(--s-4); line-height: 1.55; }
+  .card-link { color: var(--black); font-weight: 500; text-decoration: none; font-size: var(--fs-small); }
+  .card-link::after { content: " →"; color: var(--gold-dark); transition: transform 0.2s ease; display: inline-block; }
+  .card-service:hover .card-link::after { transform: translateX(4px); }
+
+  .card-review { padding: var(--s-7) var(--s-6) var(--s-6); background: var(--cream-light); position: relative; }
+  .card-review::before {
+    content: ''; position: absolute; top: var(--s-6); left: var(--s-6);
+    width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--gold);
+  }
+  .card-review::after {
+    content: ''; position: absolute; top: calc(var(--s-6) + 6px); left: calc(var(--s-6) + 6px);
+    width: 20px; height: 20px; border-radius: 50%; border: 1px solid var(--gold);
+  }
+  .card-review-quote {
+    font-family: var(--font-display); font-style: italic; font-size: 1.5rem;
+    line-height: 1.35; color: var(--black); margin: var(--s-7) 0 var(--s-5); font-weight: 400;
+  }
+  .card-review-name { font-weight: 500; color: var(--text-primary); font-size: var(--fs-small); }
+  .card-review-location { color: var(--text-muted); font-size: var(--fs-caption); letter-spacing: 0.1em; margin-top: 2px; }
+
+  /* COMPOSITION */
+  .demo-hero {
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: var(--s-8);
+    background: var(--cream-light); border: 1px solid var(--border-light);
+    margin-top: var(--s-6); overflow: hidden; min-height: 580px;
+  }
+  .demo-hero-text {
+    padding: var(--s-10) var(--s-8); display: flex; flex-direction: column; justify-content: center;
+  }
+  .demo-hero-text .section-marker { margin-bottom: var(--s-7); }
+  .demo-hero h1 {
+    font-family: var(--font-display); font-size: clamp(2.75rem, 6vw, 5rem);
+    font-weight: 400; line-height: 0.98; color: var(--black);
+    margin-bottom: var(--s-6); max-width: 14ch; letter-spacing: -0.015em;
+  }
+  .demo-hero h1 em { color: var(--gold-dark); font-weight: 400; }
+  .demo-hero .lead { margin-bottom: var(--s-7); max-width: 42ch; }
+  .demo-hero .btn-row { padding: 0; }
+  .demo-hero-image {
+    background: linear-gradient(135deg, var(--cream-tinted) 0%, var(--gold-pale) 100%);
+    position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden;
+  }
+  .demo-hero-image::before {
+    content: ''; position: absolute; inset: var(--s-7);
+    border: 1px solid var(--gold); pointer-events: none;
+  }
+  .demo-hero-image-label {
+    color: var(--gold-dark); font-size: var(--fs-caption);
+    letter-spacing: 0.18em; text-transform: uppercase; text-align: center;
+  }
+  .demo-hero-image-label .rings { margin-bottom: var(--s-4); }
+
+  /* FOOTER */
+  .page-footer { background: var(--black); color: var(--text-on-dark); padding: var(--s-9) 0; }
+  .page-footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--s-5); }
+  .page-footer p { color: rgba(244, 237, 220, 0.6); font-size: var(--fs-small); }
+  .page-footer .brandmark-text { font-size: 1.125rem; }
+
+  @media (max-width: 900px) {
+    .demo-hero { grid-template-columns: 1fr; }
+    .demo-hero-image { min-height: 320px; }
+    .index ol { columns: 2; }
+  }
+  @media (max-width: 640px) {
+    .type-row { grid-template-columns: 1fr; gap: var(--s-3); }
+    .space-row { grid-template-columns: 64px 1fr; }
+    .index ol { columns: 1; }
+    .page-footer .container { flex-direction: column; align-items: flex-start; }
+    .page-header::after { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="container">
+    <div class="brandmark">
+      <div class="brandmark-icon" aria-hidden="true"></div>
+      <div class="brandmark-text">Canwell Interiors</div>
+    </div>
+    <p class="eyebrow" style="color: var(--gold-light); margin-bottom: var(--s-5);">Phase 4.1 · Design tokens · Revised</p>
+    <h1 class="display-h1">A visual <em>language</em>, not a template.</h1>
+    <p class="lead">The system that holds every page on the new Canwell Interiors site. Built around the concentric circle motif in the logo, extended into a signature that runs the length of the brand.</p>
+  </div>
+</header>
+
+<nav class="index">
+  <div class="container">
+    <ol>
+      <li><a href="#signature">Signature</a></li>
+      <li><a href="#colour">Colour</a></li>
+      <li><a href="#typography">Typography</a></li>
+      <li><a href="#spacing">Spacing</a></li>
+      <li><a href="#buttons">Buttons</a></li>
+      <li><a href="#forms">Forms</a></li>
+      <li><a href="#cards">Cards</a></li>
+      <li><a href="#composition">Composition</a></li>
+    </ol>
+  </div>
+</nav>
+
+<section id="signature">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-marker">
+        <div class="rings rings-md"><span class="num">01</span></div>
+        <span class="label">The signature</span>
+      </div>
+      <h2 class="display-h2">The concentric circle is <em>the brand</em>, used everywhere.</h2>
+      <p class="lead">The thin gold rings in the icon are the most distinctive thing Canwell owns. The system extends them across the site as section markers, trust stamps, divider rules, and frames around hero imagery. Nobody else in the catchment has this.</p>
+    </div>
+
+    <div class="signature-grid">
+      <div class="signature-item">
+        <div class="signature-demo"><div class="rings rings-lg"><span class="num" style="font-size: 1rem;">01</span></div></div>
+        <h4>Section marker</h4>
+        <p>Concentric rings around the section number. Sits in the margin or beside section headings.</p>
+      </div>
+      <div class="signature-item">
+        <div class="signature-demo">
+          <div class="stamp"><span class="stamp-line-1">Free</span><span class="stamp-line-2">Home Measure</span></div>
+        </div>
+        <h4>Trust stamp</h4>
+        <p>Italic display inside the rings. Used for trust marks: free measure, open seven days, family-run.</p>
+      </div>
+      <div class="signature-item">
+        <div class="signature-demo">
+          <div style="width: 100%; padding: 0 var(--s-3);">
+            <div class="rule-ringed" style="margin: 0;">
+              <div class="line"></div><div class="ring"></div><div class="line"></div>
+            </div>
+          </div>
+        </div>
+        <h4>Divider rule</h4>
+        <p>Gold horizontal line with a small ring at its midpoint. Between major sections, instead of plain rules.</p>
+      </div>
+      <div class="signature-item">
+        <div class="signature-demo">
+          <div class="rings rings-xl">
+            <span style="font-family: var(--font-display); font-style: italic; font-size: 1.5rem; color: var(--gold-dark);">since 1985</span>
+          </div>
+        </div>
+        <h4>Heritage badge</h4>
+        <p>Larger ring with italic display inside. For establishing dates, milestones, anniversaries.</p>
+      </div>
+    </div>
+
+    <div class="stamp-row">
+      <div class="stamp"><span class="stamp-line-1">Open</span><span class="stamp-line-2">7 Days</span></div>
+      <div class="stamp"><span class="stamp-line-1">Family</span><span class="stamp-line-2">Run</span></div>
+      <div class="stamp"><span class="stamp-line-1">Free</span><span class="stamp-line-2">Design Help</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="colour">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-marker">
+        <div class="rings rings-md"><span class="num">02</span></div>
+        <span class="label">Colour</span>
+      </div>
+      <h2 class="display-h2">A warm palette, used <em>sparingly</em>.</h2>
+      <p class="lead">Cream dominates the page. Gold is an accent for the logo, primary actions, the ring motif, and fine detail. Black anchors typography and the occasional dark section.</p>
+    </div>
+
+    <div class="colour-group">
+      <h3 class="heading-h4 colour-group-title">Brand</h3>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch-color" style="background: #B8924A;"></div><div class="swatch-info"><div class="swatch-name">Antique gold</div><div class="swatch-hex">#B8924A</div><div class="swatch-usage">Logo, primary CTAs, ring motif, eyebrow labels.</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background: #8E6E2E;"></div><div class="swatch-info"><div class="swatch-name">Gold dark</div><div class="swatch-hex">#8E6E2E</div><div class="swatch-usage">Hover, italic emphasis in body, link colour.</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background: #D4B27D;"></div><div class="swatch-info"><div class="swatch-name">Gold light</div><div class="swatch-hex">#D4B27D</div><div class="swatch-usage">Highlights on dark, eyebrows on black sections.</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background: #EFE0BD;"></div><div class="swatch-info"><div class="swatch-name">Gold pale</div><div class="swatch-hex">#EFE0BD</div><div class="swatch-usage">Subtle background tint, selection highlight.</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background: #1A1614;"></div><div class="swatch-info"><div class="swatch-name">Warm black</div><div class="swatch-hex">#1A1614</div><div class="swatch-usage">Headlines, primary buttons, dark sections.</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background: #2A2520;"></div><div class="swatch-info"><div class="swatch-name">Warm black soft</div><div class="swatch-hex">#2A2520</div><div class="swatch-usage">Body copy, dark text on cream.</div></div></div>
+      </div>
+    </div>
+
+    <div class="colour-group">
+      <h3 class="heading-h4 colour-group-title">Backgrounds &amp; surfaces</h3>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch-color" style="background: #F4EDDC;"></div><div class="swatch-info"><div class="swatch-name">Cream</div><div class="swatch-hex">#F4EDDC</div><div class="swatch-usage">Page background. The default everywhere.</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background: #FAF6EC; border: 1px solid var(--border-light);"></div><div class="swatch-info"><div class="swatch-name">Cream light</div><div class="swatch-hex">#FAF6EC</div><div class="swatch-usage">Cards, form fields, raised surfaces.</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background: #E9DFC8;"></div><div class="swatch-info"><div class="swatch-name">Cream tinted</div><div class="swatch-hex">#E9DFC8</div><div class="swatch-usage">Section dividers, banded backgrounds.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="typography">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-marker">
+        <div class="rings rings-md"><span class="num">03</span></div>
+        <span class="label">Typography</span>
+      </div>
+      <h2 class="display-h2">Cormorant Garamond for headlines. <em>Especially the italics.</em></h2>
+      <p class="lead">The classical serif anchors the brand and sits naturally next to the wordmark. The italic is the editorial signature, used for emphasis in headlines and as the body of trust stamps.</p>
+    </div>
+
+    <div class="type-row">
+      <h1 class="display-hero">Walk in, <em>choose</em>, take home.</h1>
+      <div class="type-sample-label"><strong>Hero display</strong>Cormorant 400<br>Italic for emphasis<br>56&ndash;120px / 0.95</div>
+    </div>
+    <div class="type-row">
+      <h2 class="display-h1">The <em>Cotswolds</em> furnishings showroom</h2>
+      <div class="type-sample-label"><strong>Display H1</strong>Cormorant 500<br>40&ndash;72px / 1.02</div>
+    </div>
+    <div class="type-row">
+      <h3 class="display-h2">Carpets and flooring in the Cotswolds</h3>
+      <div class="type-sample-label"><strong>Display H2</strong>Cormorant 500<br>32&ndash;52px / 1.05</div>
+    </div>
+    <div class="type-row">
+      <h4 class="display-h3">How fitted carpets work</h4>
+      <div class="type-sample-label"><strong>Display H3</strong>Cormorant 500<br>24&ndash;34px / 1.15</div>
+    </div>
+    <div class="type-row">
+      <p class="heading-h4">Made-to-measure curtains</p>
+      <div class="type-sample-label"><strong>Heading H4</strong>DM Sans 600<br>20px / 1.3</div>
+    </div>
+    <div class="type-row">
+      <p class="eyebrow">Open seven days · Free parking</p>
+      <div class="type-sample-label"><strong>Eyebrow</strong>DM Sans 500 upper<br>13px / 0.18em</div>
+    </div>
+    <div class="type-row">
+      <p class="lead">Most people who walk in for help don't want a six-month design project. They want someone who knows what they're doing to look at their room, listen, and tell them what would actually work.</p>
+      <div class="type-sample-label"><strong>Lead</strong>DM Sans 300<br>21px / 1.55</div>
+    </div>
+    <div class="type-row">
+      <p class="has-dropcap dropcap-demo">Canwell is a furnishings showroom on Broadway High Street, run by Gary and Gemma. We stock furniture, carpets, curtains, blinds, lighting, and the kind of finishing touches that pull a room together. If you want help putting it all together, that's free too.</p>
+      <div class="type-sample-label"><strong>Body + drop cap</strong>DM Sans 400<br>17px / 1.65<br>Cormorant initial, 3 lines</div>
+    </div>
+    <div class="type-row">
+      <p class="small">Free parking out the front. Dog-friendly. Open seven days a week.</p>
+      <div class="type-sample-label"><strong>Small</strong>DM Sans 400<br>15px / 1.5</div>
+    </div>
+    <div class="type-row">
+      <p class="caption">COTSWOLD DESIGN CENTRE · KENNEL LANE · BROADWAY WR12 7DJ</p>
+      <div class="type-sample-label"><strong>Caption</strong>DM Sans 400<br>13px / 0.04em</div>
+    </div>
+  </div>
+</section>
+
+<section id="spacing">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-marker">
+        <div class="rings rings-md"><span class="num">04</span></div>
+        <span class="label">Spacing</span>
+      </div>
+      <h2 class="display-h2">An 8px scale, used <em>generously</em>.</h2>
+      <p class="lead">Refinement comes from space. Every margin, padding, and gap lands on this scale.</p>
+    </div>
+    <div>
+      <div class="space-row"><div class="space-token">--s-1</div><div class="space-bar" style="width: 4px;"></div></div>
+      <div class="space-row"><div class="space-token">--s-2</div><div class="space-bar" style="width: 8px;"></div></div>
+      <div class="space-row"><div class="space-token">--s-3</div><div class="space-bar" style="width: 12px;"></div></div>
+      <div class="space-row"><div class="space-token">--s-4</div><div class="space-bar" style="width: 16px;"></div></div>
+      <div class="space-row"><div class="space-token">--s-5</div><div class="space-bar" style="width: 24px;"></div></div>
+      <div class="space-row"><div class="space-token">--s-6</div><div class="space-bar" style="width: 32px;"></div></div>
+      <div class="space-row"><div class="space-token">--s-7</div><div class="space-bar" style="width: 48px;"></div></div>
+      <div class="space-row"><div class="space-token">--s-8</div><div class="space-bar" style="width: 64px;"></div></div>
+      <div class="space-row"><div class="space-token">--s-9</div><div class="space-bar" style="width: 96px;"></div></div>
+      <div class="space-row"><div class="space-token">--s-10</div><div class="space-bar" style="width: 128px;"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="buttons">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-marker">
+        <div class="rings rings-md"><span class="num">05</span></div>
+        <span class="label">Buttons</span>
+      </div>
+      <h2 class="display-h2">Four styles, four <em>jobs</em>.</h2>
+    </div>
+    <p class="caption" style="margin-bottom: var(--s-2);">PRIMARY</p>
+    <div class="btn-row">
+      <a href="#" class="btn btn-primary">Plan your visit</a>
+      <a href="#" class="btn btn-primary">Book a free consultation</a>
+    </div>
+    <p class="caption" style="margin: var(--s-7) 0 var(--s-2);">GOLD</p>
+    <div class="btn-row">
+      <a href="#" class="btn btn-gold">Get the weekly update</a>
+      <a href="#" class="btn btn-gold">See the carpets</a>
+    </div>
+    <p class="caption" style="margin: var(--s-7) 0 var(--s-2);">SECONDARY</p>
+    <div class="btn-row">
+      <a href="#" class="btn btn-secondary">Call the showroom</a>
+      <a href="#" class="btn btn-secondary">Request a home visit</a>
+    </div>
+    <p class="caption" style="margin: var(--s-7) 0 var(--s-2);">TERTIARY</p>
+    <div class="btn-row">
+      <a href="#" class="btn btn-tertiary">See the curtains</a>
+      <a href="#" class="btn btn-tertiary">Read more</a>
+    </div>
+  </div>
+</section>
+
+<section id="forms">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-marker">
+        <div class="rings rings-md"><span class="num">06</span></div>
+        <span class="label">Forms</span>
+      </div>
+      <h2 class="display-h2">Clean fields, generous <em>space</em>.</h2>
+    </div>
+    <div class="form-demo">
+      <div class="field"><label for="demo-name">Your name</label><input id="demo-name" type="text" value="Sarah Williams"></div>
+      <div class="field"><label for="demo-email">Email</label><input id="demo-email" type="email" value="sarah@example.com"></div>
+      <div class="field"><label for="demo-message">What can we help with?</label><textarea id="demo-message">Looking for a fabric to match the curtains in our sitting room. Cotswold cottage, lots of natural light.</textarea><p class="field-help">We reply within one working day. Usually faster.</p></div>
+      <button class="btn btn-primary">Send</button>
+    </div>
+  </div>
+</section>
+
+<section id="cards">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-marker">
+        <div class="rings rings-md"><span class="num">07</span></div>
+        <span class="label">Cards</span>
+      </div>
+      <h2 class="display-h2">Service cards and <em>review</em> cards.</h2>
+      <p class="lead">Service cards get a subtle ring accent on hover, the signature working in micro. Review cards open with a small concentric mark instead of a quotation glyph.</p>
+    </div>
+
+    <h3 class="heading-h4" style="margin-bottom: var(--s-5);">Service cards (hover to see the ring)</h3>
+    <div class="card-grid">
+      <a href="#" class="card-service">
+        <div class="card-image-placeholder"></div>
+        <div class="card-body">
+          <h4 class="card-title">Carpets and flooring</h4>
+          <p class="card-description">Sample books to take home, free home measure, fitting across the Cotswolds.</p>
+          <span class="card-link">See the carpets</span>
+        </div>
+      </a>
+      <a href="#" class="card-service">
+        <div class="card-image-placeholder"></div>
+        <div class="card-body">
+          <h4 class="card-title">Curtains</h4>
+          <p class="card-description">Made-to-measure and ready-made, with fabric to feel in person.</p>
+          <span class="card-link">See the curtains</span>
+        </div>
+      </a>
+      <a href="#" class="card-service">
+        <div class="card-image-placeholder"></div>
+        <div class="card-body">
+          <h4 class="card-title">Design help</h4>
+          <p class="card-description">Free in-store consultation, or we'll come to you. No commission, no project fees.</p>
+          <span class="card-link">See how it works</span>
+        </div>
+      </a>
+    </div>
+
+    <h3 class="heading-h4" style="margin: var(--s-9) 0 var(--s-5);">Review cards</h3>
+    <div class="card-grid">
+      <div class="card-review">
+        <p class="card-review-quote">Gary and Gemma helped us refit a 17th-century cottage without making us feel like we were taking on a project. Honest, patient, and the carpet was fitted in three weeks.</p>
+        <p class="card-review-name">Sarah W.</p>
+        <p class="card-review-location">CHIPPING CAMPDEN</p>
+      </div>
+      <div class="card-review">
+        <p class="card-review-quote">Walked in for a cushion, walked out with a plan for the whole sitting room. Nobody pressured us. We came back the following week.</p>
+        <p class="card-review-name">James &amp; Anna H.</p>
+        <p class="card-review-location">WILLERSEY</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="composition">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-marker">
+        <div class="rings rings-md"><span class="num">08</span></div>
+        <span class="label">Composition</span>
+      </div>
+      <h2 class="display-h2">All of it, working <em>together</em>.</h2>
+      <p class="lead">A miniature of the homepage hero, built only with the tokens above. Asymmetric layout, section marker, italic emphasis in the headline, ring frame around the lead photography.</p>
+    </div>
+
+    <div class="demo-hero">
+      <div class="demo-hero-text">
+        <div class="section-marker">
+          <div class="rings rings-sm"><span class="num" style="font-size: 0.6875rem;">01</span></div>
+          <span class="label" style="font-size: 0.75rem;">Cotswold Design Centre</span>
+        </div>
+        <h1>Walk in, <em>choose</em>, take home.</h1>
+        <p class="lead">The Cotswolds furnishings showroom on Broadway High Street. Carpets, curtains, blinds, furniture, and the kind of design help you actually want.</p>
+        <div class="btn-row">
+          <a href="#" class="btn btn-primary">Plan your visit</a>
+          <a href="#" class="btn btn-tertiary">Get the weekly update</a>
+        </div>
+      </div>
+      <div class="demo-hero-image">
+        <div class="demo-hero-image-label">
+          <div class="rings rings-md"><span style="font-size: 0.6875rem; color: var(--gold-dark);">Hero</span></div>
+          Photography
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="brandmark">
+      <div class="brandmark-icon" aria-hidden="true"></div>
+      <div class="brandmark-text">Canwell Interiors</div>
+    </div>
+    <p>Phase 4.1 · Design tokens, revised · For sign-off by Gary</p>
+  </div>
+</footer>
+
+</body>
+</html>
