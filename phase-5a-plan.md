@@ -1,6 +1,23 @@
 # Phase 5A Implementation Plan: Canwell Interiors
 
-> Produced via `/ultraplan` on 2026-05-11. Read alongside `canwell-phase-5-build-brief.md`. Resolve the open questions in §2 before the build session begins.
+> Produced via `/ultraplan` on 2026-05-11. Read alongside `canwell-phase-5-build-brief.md`. Blocker decisions are recorded below; the original questions remain in §2 for traceability.
+
+## 0. Decisions log (2026-05-11, Dan)
+
+| # | Question | Decision |
+|---|---|---|
+| 1 | Repo identity | Stay in `canwell-v2`. Ignore the brief's "canwell-interiors-site" line. Scaffold inside this repo on whatever branch is agreed for the build session. |
+| 2 | Netlify provisioning | Already set up. `canwell-v2.netlify.app` exists; Identity + Git Gateway enabled. Build agent can deploy directly. |
+| 3 | Strategy brief | Added to the repo by Dan (verify on next push — was not yet present on this branch at plan-write time). Build agent should read it once available, but proceed without if needed. |
+| 4 | Photography placeholders | Keep the mockup's CSS-gradient "Photography" blocks. Zero asset weight, easiest to swap via Decap when real images arrive. |
+| 5 | `{{CURLY_BRACE}}` rendering | Render as a **styled pill component**, not literal `{{...}}` text. Use gold-pale background, gold-dark text, small caps, label like "Needs Gary". Build a `<Placeholder>` component the section components can reuse. |
+| 6 | Reviews fallback | Keep the three placeholder reviews seeded — the section always renders three cards. Mark each with `is_placeholder: true` in the Decap reviews collection so they show the styled pill in the corner. |
+| 7 | Phone | `01905 964994` confirmed correct. Use this in both site singleton seed and the hard-coded utility bar. |
+| 8 | Email signup stub | Confirmed: visible button "Sign me up", on submit show non-functional inline confirmation ("Thanks. We'll send the first one soon."), no network call. Wire to Klaviyo in Phase 5D. |
+
+**Net effect on schema** — add `is_placeholder: boolean` to the reviews collection so the placeholder pill can be toggled per-record.
+
+---
 
 ## 1. Scope confirmation & gaps
 
@@ -338,6 +355,7 @@ collections:
       - {name: name, widget: string}
       - {name: location, widget: string}
       - {name: featured, widget: boolean, default: false}
+      - {name: is_placeholder, widget: boolean, default: false, hint: "Tick if this is seed copy awaiting a real review"}
       - {name: date, widget: datetime}
 
   - name: new-in
