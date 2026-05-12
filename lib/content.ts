@@ -12,7 +12,9 @@ import type {
   InspirationHubContent,
   LocationPageContent,
   LocationsHubContent,
+  NavigationContent,
   NewInItem,
+  NotFoundContent,
   Review,
   ServiceHubContent,
   SiteSettings,
@@ -54,6 +56,14 @@ function readCollection(
 
 export function getSite(): SiteSettings {
   return readMarkdown("singletons/site.md") as unknown as SiteSettings;
+}
+
+export function getNavigation(): NavigationContent {
+  return readMarkdown("singletons/navigation.md") as unknown as NavigationContent;
+}
+
+export function getNotFound(): NotFoundContent {
+  return readMarkdown("singletons/not-found.md") as unknown as NotFoundContent;
 }
 
 export function getHomepage(): HomepageContent {

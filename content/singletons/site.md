@@ -1,6 +1,11 @@
 ---
 site_name: Canwell Interiors
 tagline: The Cotswolds furnishings showroom
+logo_image: ""
+logo_alt: "Canwell Interiors"
+footer_logo_image: ""
+favicon: ""
+apple_touch_icon: ""
 address_line_1: Cotswold Design Centre
 address_line_2: Kennel Lane, Broadway
 postcode: WR12 7DJ

@@ -37,6 +37,8 @@ export default function Home() {
         hero_title={homepage.hero_title}
         hero_lead={homepage.hero_lead}
         hero_microcopy={homepage.hero_microcopy}
+        hero_image={homepage.hero_image}
+        hero_ctas={homepage.hero_ctas}
       />
 
       <Intro

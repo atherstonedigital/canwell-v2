@@ -2,9 +2,15 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { PRIMARY_NAV } from "./nav-links";
+import type { NavLink } from "@/lib/types";
 
-export function MobileMenu() {
+interface MobileMenuProps {
+  links: NavLink[];
+  cta_label: string;
+  cta_url: string;
+}
+
+export function MobileMenu({ links, cta_label, cta_url }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
   const openerRef = useRef<HTMLButtonElement | null>(null);
@@ -68,16 +74,16 @@ export function MobileMenu() {
           </div>
 
           <nav className="mobile-menu-nav" aria-label="Main">
-            {PRIMARY_NAV.map((link) => (
-              <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>
+            {links.map((link) => (
+              <Link key={link.url} href={link.url} onClick={() => setOpen(false)}>
                 {link.label}
               </Link>
             ))}
           </nav>
 
           <div className="mobile-menu-cta">
-            <Link href="/visit" className="btn btn-primary" onClick={() => setOpen(false)}>
-              Plan your visit
+            <Link href={cta_url} className="btn btn-primary" onClick={() => setOpen(false)}>
+              {cta_label}
             </Link>
           </div>
         </div>

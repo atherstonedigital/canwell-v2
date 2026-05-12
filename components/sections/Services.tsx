@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { SectionMarker } from "@/components/signature/SectionMarker";
 import { Inline } from "@/components/signature/RichText";
 import type { ServiceCard } from "@/lib/types";
@@ -34,7 +35,17 @@ export function Services({
         <div className="services-grid">
           {service_cards.map((card) => (
             <Link key={card.link_url} href={card.link_url} className="service-card">
-              <div className="service-image" aria-hidden="true" />
+              <div className="service-image" aria-hidden="true">
+                {card.image && (
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                    style={{ objectFit: "cover" }}
+                  />
+                )}
+              </div>
               <div className="service-body">
                 <h3 className="service-title">{card.title}</h3>
                 <p className="service-description">{card.body}</p>

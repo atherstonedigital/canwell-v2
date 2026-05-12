@@ -1,9 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import { SectionMarker } from "@/components/signature/SectionMarker";
 import { Rings } from "@/components/signature/Rings";
-import { Inline } from "@/components/signature/RichText";
-import { PlainWithPlaceholders } from "@/components/signature/RichText";
-import type { HomepageContent } from "@/lib/types";
+import { Inline, PlainWithPlaceholders } from "@/components/signature/RichText";
+import type { CTA, HomepageContent } from "@/lib/types";
 
 interface HeroProps {
   hero_eyebrow: HomepageContent["hero_eyebrow"];
@@ -11,6 +11,24 @@ interface HeroProps {
   hero_title: HomepageContent["hero_title"];
   hero_lead: HomepageContent["hero_lead"];
   hero_microcopy: HomepageContent["hero_microcopy"];
+  hero_image?: HomepageContent["hero_image"];
+  hero_ctas?: CTA[];
+}
+
+const DEFAULT_HERO_CTAS: CTA[] = [
+  { label: "Plan your visit", url: "/visit", variant: "primary" },
+  { label: "Get the weekly update", url: "#subscribe", variant: "tertiary" },
+];
+
+function ctaClass(variant: CTA["variant"]) {
+  switch (variant) {
+    case "tertiary":
+      return "btn btn-tertiary";
+    case "secondary":
+      return "btn btn-secondary";
+    default:
+      return "btn btn-primary";
+  }
 }
 
 export function Hero({
@@ -19,7 +37,11 @@ export function Hero({
   hero_title,
   hero_lead,
   hero_microcopy,
+  hero_image,
+  hero_ctas,
 }: HeroProps) {
+  const ctas = hero_ctas && hero_ctas.length > 0 ? hero_ctas : DEFAULT_HERO_CTAS;
+
   return (
     <section className="hero">
       <div className="container">
@@ -32,17 +54,29 @@ export function Hero({
             </h1>
             <p className="hero-lead">{hero_lead}</p>
             <div className="hero-ctas">
-              <Link href="/visit" className="btn btn-primary">
-                Plan your visit
-              </Link>
-              <a href="#subscribe" className="btn btn-tertiary">
-                Get the weekly update
-              </a>
+              {ctas.map((cta, i) => {
+                const isHash = cta.url.startsWith("#");
+                if (isHash) {
+                  return (
+                    <a key={i} href={cta.url} className={ctaClass(cta.variant)}>
+                      {cta.label}
+                    </a>
+                  );
+                }
+                return (
+                  <Link key={i} href={cta.url} className={ctaClass(cta.variant)}>
+                    {cta.label}
+                  </Link>
+                );
+              })}
             </div>
             {hero_microcopy && hero_microcopy.length > 0 && (
               <div className="hero-microcopy">
                 {hero_microcopy.map((item, idx) => (
-                  <span key={idx} style={{ display: "inline-flex", alignItems: "center", gap: "var(--s-4)" }}>
+                  <span
+                    key={idx}
+                    style={{ display: "inline-flex", alignItems: "center", gap: "var(--s-4)" }}
+                  >
                     {idx > 0 && <span className="sep" aria-hidden="true">·</span>}
                     <span>
                       <PlainWithPlaceholders text={item} />
@@ -54,12 +88,23 @@ export function Hero({
           </div>
 
           <div className="hero-image">
-            <div className="hero-image-label">
-              <Rings size="md">
-                <span style={{ fontSize: "0.625rem" }}>HERO</span>
-              </Rings>
-              Showroom photography
-            </div>
+            {hero_image ? (
+              <Image
+                src={hero_image}
+                alt="Canwell Interiors showroom"
+                fill
+                priority
+                sizes="(max-width: 900px) 100vw, 50vw"
+                style={{ objectFit: "cover" }}
+              />
+            ) : (
+              <div className="hero-image-label">
+                <Rings size="md">
+                  <span style={{ fontSize: "0.625rem" }}>HERO</span>
+                </Rings>
+                Showroom photography
+              </div>
+            )}
           </div>
         </div>
       </div>
