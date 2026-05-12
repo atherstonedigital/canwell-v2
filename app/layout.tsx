@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import Script from "next/script";
 import { getSite } from "@/lib/content";
+import { localBusinessSchema } from "@/lib/schema";
 import { UtilityBar } from "@/components/layout/UtilityBar";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -46,6 +47,12 @@ export default function RootLayout({
   return (
     <html lang="en-GB" className={`${cormorant.variable} ${dmSans.variable}`}>
       <body>
+        <Script
+          id="ld-localbusiness"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema(site)) }}
+        />
         <Script
           src="https://identity.netlify.com/v1/netlify-identity-widget.js"
           strategy="afterInteractive"

@@ -2,17 +2,41 @@
 
 The new Canwell Interiors website. Next.js 16 (App Router) + TypeScript + Tailwind v4, content managed through Decap CMS at `/admin`, deployed to Netlify.
 
-## Phase 5A scope
+## Build status (Phase 5A → Phase 5C, plus 5D infrastructure)
 
-This repo is the Phase 5A scaffold per `docs/canwell-phase-5-build-brief.md` and `docs/phase-5a-plan.md`. It includes:
+Per `docs/canwell-phase-5-build-brief.md` and `docs/phase-5a-plan.md`, this build covers:
 
+**Phase 5A — design system + homepage + Decap**
 - Full design system ported from `docs/canwell-design-tokens-v2.html`
-- Homepage built against `docs/canwell-homepage-mockup.html`, pulling content from Decap
-- Decap CMS at `/admin` with content models for site settings, homepage, reviews, and "new in this week"
-- Mobile menu, sticky header, responsive layout at 1280 / 900 / 640
-- 404 page in the brand voice
+- Homepage built against `docs/canwell-homepage-mockup.html`, all 9 sections pulling from Decap
+- Decap CMS at `/admin` with content models for every page
+- Mobile menu (focus-trapped, Esc-to-close), sticky header, responsive at 1280/900/640
+- Voice-compliant 404 page
 
-Phases 5B (remaining Wave 1 pages), 5C (Wave 2), 5D (SEO + schema + analytics), and 5E (QA + launch) come next.
+**Phase 5B — Wave 1 pages (all 10)**
+- `/visit`, `/about`, `/contact` (with form stub)
+- `/design-help` hub
+- 5 service hubs: `/carpets`, `/curtains`, `/blinds`, `/furniture`, `/soft-furnishings`
+
+**Phase 5C — Wave 2 priority pages**
+- 11 service sub-pages (under `/carpets`, `/curtains`, `/blinds`, `/furniture`, `/design-help`)
+- `/brands` hub + `/brands/richmond-interiors` + `/brands/hills-furniture` (other brands flagged "Coming soon" on the hub)
+- `/locations` hub + `/locations/cheltenham` + `/locations/stratford-upon-avon` (other locations flagged "Coming soon")
+- `/inspiration` hub + 3 article shells (each marked `is_placeholder: true` — opening + outline ready for Gary to expand)
+
+**Phase 5D infrastructure (partial)**
+- JSON-LD: `LocalBusiness` schema injected globally in `<head>`. Per-page schema utilities ready in `lib/schema.ts` (Service, Brand, Place, Article, FAQPage, BreadcrumbList, Reviews aggregate)
+- `/sitemap.xml` auto-generated from all routes (App Router `sitemap.ts`)
+- `/robots.txt` (App Router `robots.ts`) — disallows `/admin/`, points to sitemap
+- `/llms.txt` for LLM-aware indexing
+- Open Graph + Twitter card metadata defaults; per-page meta_title and meta_description from Decap
+
+**Deferred to a later sub-phase**
+- Wiring `serviceSchema`/`articleSchema`/`faqSchema` into each page (utilities are built; not yet injected per page)
+- 301 redirects from the old GoDaddy site (need the URL list)
+- GA4 + Meta pixel installation (need real measurement IDs)
+- Klaviyo signup wiring (form is currently a stub)
+- Cross-browser QA, Lighthouse audit, DNS cutover (5E launch tasks)
 
 ## Run locally
 

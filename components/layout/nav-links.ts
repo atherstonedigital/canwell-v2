@@ -11,6 +11,7 @@ export const ABOUT_NAV = [
   { href: "/about", label: "Our story" },
   { href: "/brands", label: "Brands we stock" },
   { href: "/locations", label: "Areas we serve" },
+  { href: "/inspiration", label: "Inspiration" },
   { href: "/visit", label: "Visit us" },
   { href: "/contact", label: "Contact" },
 ];

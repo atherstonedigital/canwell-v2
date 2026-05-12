@@ -190,3 +190,405 @@ collections:
         default: "in_stock"
       - { name: date_added, label: Date added, widget: datetime }
       - { name: url, label: Detail page URL, widget: string, required: false }
+
+  # ----- Visit page -----
+  - name: visit
+    label: "Page · Visit"
+    files:
+      - file: content/singletons/visit.md
+        name: visit
+        label: Visit
+        fields:
+          - { name: meta_title, widget: string }
+          - { name: meta_description, widget: text }
+          - { name: eyebrow, widget: string }
+          - { name: h1, widget: string, hint: "Use *asterisks* for italic emphasis." }
+          - { name: lead, widget: text }
+          - { name: how_to_find_h2, widget: string }
+          - { name: how_to_find_body, widget: text }
+          - { name: opening_hours_h2, widget: string }
+          - { name: opening_hours_microcopy, widget: text }
+          - { name: getting_here_h2, widget: string }
+          - { name: getting_here_intro, widget: text }
+          - name: getting_here_blocks
+            widget: list
+            fields:
+              - { name: title, widget: string }
+              - { name: body, widget: text }
+          - { name: what_to_expect_h2, widget: string }
+          - { name: what_to_expect_body, widget: text }
+          - { name: accessibility_h2, widget: string }
+          - { name: accessibility_body, widget: text }
+          - { name: sister_h2, widget: string }
+          - { name: sister_body, widget: text }
+          - { name: cta_eyebrow, widget: string }
+          - { name: cta_h2, widget: string }
+          - { name: cta_body, widget: text, required: false }
+          - name: ctas
+            widget: list
+            fields:
+              - { name: label, widget: string }
+              - { name: url, widget: string }
+              - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
+
+  # ----- About page -----
+  - name: about
+    label: "Page · About"
+    files:
+      - file: content/singletons/about.md
+        name: about
+        label: About
+        fields:
+          - { name: meta_title, widget: string }
+          - { name: meta_description, widget: text }
+          - { name: eyebrow, widget: string }
+          - { name: h1, widget: string }
+          - { name: lead, widget: text }
+          - { name: story_h2, widget: string }
+          - { name: story_body, widget: text }
+          - { name: founders_h2, widget: string }
+          - { name: founders_body, widget: text }
+          - { name: team_h2, widget: string }
+          - { name: team_body, widget: text }
+          - { name: difference_h2, widget: string }
+          - { name: difference_body, widget: text }
+          - { name: family_h2, widget: string }
+          - { name: family_body, widget: text }
+          - { name: community_h2, widget: string }
+          - { name: community_body, widget: text }
+          - { name: cta_eyebrow, widget: string }
+          - { name: cta_h2, widget: string }
+          - { name: cta_body, widget: text, required: false }
+          - name: ctas
+            widget: list
+            fields:
+              - { name: label, widget: string }
+              - { name: url, widget: string }
+              - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
+
+  # ----- Contact page -----
+  - name: contact
+    label: "Page · Contact"
+    files:
+      - file: content/singletons/contact.md
+        name: contact
+        label: Contact
+        fields:
+          - { name: meta_title, widget: string }
+          - { name: meta_description, widget: text }
+          - { name: eyebrow, widget: string }
+          - { name: h1, widget: string }
+          - { name: lead, widget: text }
+          - { name: quick_h2, widget: string }
+          - { name: call_label, widget: string }
+          - { name: call_note, widget: text }
+          - { name: email_label, widget: string }
+          - { name: email_note, widget: text }
+          - { name: visit_label, widget: string }
+          - { name: visit_note, widget: text }
+          - { name: form_h2, widget: string }
+          - { name: form_microcopy, widget: text }
+          - { name: form_confirm, widget: text }
+          - { name: small_print, widget: text }
+
+  # ----- Design help hub -----
+  - name: design-help
+    label: "Page · Design help hub"
+    files:
+      - file: content/singletons/design-help.md
+        name: design_help
+        label: Design help
+        fields:
+          - { name: meta_title, widget: string }
+          - { name: meta_description, widget: text }
+          - { name: eyebrow, widget: string }
+          - { name: h1, widget: string }
+          - { name: lead, widget: text }
+          - { name: intro_h2, widget: string }
+          - { name: intro_body, widget: text }
+          - { name: routes_h2, widget: string }
+          - name: routes
+            widget: list
+            min: 2
+            max: 2
+            fields:
+              - { name: title, widget: string }
+              - { name: body, widget: text }
+              - { name: link_label, widget: string }
+              - { name: link_url, widget: string }
+          - { name: small_print_h2, widget: string }
+          - name: what_you_get
+            widget: list
+            field: { name: item, widget: string }
+          - name: what_we_dont
+            widget: list
+            field: { name: item, widget: string }
+          - { name: saverys_h2, widget: string }
+          - { name: saverys_body, widget: text }
+          - { name: faq_h2, widget: string }
+          - name: faqs
+            widget: list
+            fields:
+              - { name: question, widget: string }
+              - { name: answer, widget: text }
+          - { name: cta_eyebrow, widget: string }
+          - { name: cta_h2, widget: string }
+          - { name: cta_body, widget: text, required: false }
+          - name: ctas
+            widget: list
+            fields:
+              - { name: label, widget: string }
+              - { name: url, widget: string }
+              - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
+
+  # ----- Brands hub singleton -----
+  - name: brands-hub
+    label: "Page · Brands hub"
+    files:
+      - file: content/singletons/brands-hub.md
+        name: brands_hub
+        label: Brands hub
+        fields:
+          - { name: meta_title, widget: string }
+          - { name: meta_description, widget: text }
+          - { name: eyebrow, widget: string }
+          - { name: h1, widget: string }
+          - { name: lead, widget: text }
+          - { name: intro_body, widget: text }
+          - { name: cta_eyebrow, widget: string }
+          - { name: cta_h2, widget: string }
+          - name: ctas
+            widget: list
+            fields:
+              - { name: label, widget: string }
+              - { name: url, widget: string }
+              - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
+
+  # ----- Locations hub singleton -----
+  - name: locations-hub
+    label: "Page · Locations hub"
+    files:
+      - file: content/singletons/locations-hub.md
+        name: locations_hub
+        label: Locations hub
+        fields:
+          - { name: meta_title, widget: string }
+          - { name: meta_description, widget: text }
+          - { name: eyebrow, widget: string }
+          - { name: h1, widget: string }
+          - { name: lead, widget: text }
+          - { name: intro_body, widget: text }
+          - { name: cta_eyebrow, widget: string }
+          - { name: cta_h2, widget: string }
+          - name: ctas
+            widget: list
+            fields:
+              - { name: label, widget: string }
+              - { name: url, widget: string }
+              - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
+
+  # ----- Inspiration hub singleton -----
+  - name: inspiration-hub
+    label: "Page · Inspiration hub"
+    files:
+      - file: content/singletons/inspiration-hub.md
+        name: inspiration_hub
+        label: Inspiration hub
+        fields:
+          - { name: meta_title, widget: string }
+          - { name: meta_description, widget: text }
+          - { name: eyebrow, widget: string }
+          - { name: h1, widget: string }
+          - { name: lead, widget: text }
+          - { name: intro_body, widget: text }
+
+  # ----- Service hubs collection (5 records: carpets, curtains, blinds, furniture, soft-furnishings) -----
+  - name: service-hubs
+    label: "Service hubs"
+    folder: content/service-hubs
+    create: false
+    slug: "{{slug}}"
+    identifier_field: h1
+    summary: "{{eyebrow}} — {{h1}}"
+    fields:
+      - { name: meta_title, widget: string }
+      - { name: meta_description, widget: text }
+      - { name: eyebrow, widget: string }
+      - { name: h1, widget: string }
+      - { name: lead, widget: text }
+      - { name: intro_h2, widget: string }
+      - { name: intro_body, widget: text }
+      - { name: cards_h2, widget: string, required: false }
+      - { name: cards_intro, widget: text, required: false }
+      - name: cards
+        widget: list
+        required: false
+        fields:
+          - { name: title, widget: string }
+          - { name: body, widget: text }
+          - { name: link_label, widget: string, required: false }
+          - { name: link_url, widget: string, required: false }
+      - { name: steps_h2, widget: string, required: false }
+      - name: steps
+        widget: list
+        required: false
+        fields:
+          - { name: title, widget: string }
+          - { name: body, widget: text }
+      - { name: why_h2, widget: string, required: false }
+      - { name: why_body, widget: text, required: false }
+      - { name: brands_h2, widget: string, required: false }
+      - { name: brands_body, widget: text, required: false }
+      - { name: faq_h2, widget: string, required: false }
+      - name: faqs
+        widget: list
+        required: false
+        fields:
+          - { name: question, widget: string }
+          - { name: answer, widget: text }
+      - { name: cta_eyebrow, widget: string }
+      - { name: cta_h2, widget: string }
+      - { name: cta_body, widget: text, required: false }
+      - name: ctas
+        widget: list
+        fields:
+          - { name: label, widget: string }
+          - { name: url, widget: string }
+          - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
+
+  # ----- Service sub-pages collection -----
+  - name: service-subpages
+    label: "Service sub-pages"
+    folder: content/service-subpages
+    create: true
+    slug: "{{slug}}"
+    identifier_field: h1
+    summary: "{{parent}}/{{subslug}} — {{h1}}"
+    fields:
+      - { name: parent, label: Parent hub, widget: select, options: ["carpets", "curtains", "blinds", "furniture", "design-help"] }
+      - { name: subslug, label: URL slug under parent, widget: string }
+      - { name: meta_title, widget: string }
+      - { name: meta_description, widget: text }
+      - { name: eyebrow, widget: string }
+      - { name: h1, widget: string }
+      - { name: lead, widget: text }
+      - { name: intro_h2, widget: string }
+      - { name: intro_body, widget: text }
+      - { name: cards_h2, widget: string, required: false }
+      - name: cards
+        widget: list
+        required: false
+        fields:
+          - { name: title, widget: string }
+          - { name: body, widget: text }
+          - { name: link_label, widget: string, required: false }
+          - { name: link_url, widget: string, required: false }
+      - { name: steps_h2, widget: string, required: false }
+      - name: steps
+        widget: list
+        required: false
+        fields:
+          - { name: title, widget: string }
+          - { name: body, widget: text }
+      - { name: why_h2, widget: string, required: false }
+      - { name: why_body, widget: text, required: false }
+      - { name: brands_h2, widget: string, required: false }
+      - { name: brands_body, widget: text, required: false }
+      - { name: faq_h2, widget: string, required: false }
+      - name: faqs
+        widget: list
+        required: false
+        fields:
+          - { name: question, widget: string }
+          - { name: answer, widget: text }
+      - { name: cta_eyebrow, widget: string }
+      - { name: cta_h2, widget: string }
+      - name: ctas
+        widget: list
+        fields:
+          - { name: label, widget: string }
+          - { name: url, widget: string }
+          - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
+
+  # ----- Brand stockist pages -----
+  - name: brands
+    label: "Brand stockist pages"
+    folder: content/brands
+    create: true
+    slug: "{{slug}}"
+    identifier_field: brand_name
+    summary: "{{brand_name}}"
+    fields:
+      - { name: brand_name, widget: string }
+      - { name: tagline, widget: string }
+      - { name: meta_title, widget: string }
+      - { name: meta_description, widget: text }
+      - { name: intro_body, widget: text }
+      - { name: what_we_stock_h2, widget: string }
+      - { name: what_we_stock_body, widget: text }
+      - { name: why_h2, widget: string, required: false }
+      - { name: why_body, widget: text, required: false }
+      - { name: cta_eyebrow, widget: string }
+      - { name: cta_h2, widget: string }
+      - name: ctas
+        widget: list
+        fields:
+          - { name: label, widget: string }
+          - { name: url, widget: string }
+          - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
+
+  # ----- Location pages -----
+  - name: locations
+    label: "Location pages"
+    folder: content/locations
+    create: true
+    slug: "{{slug}}"
+    identifier_field: location_name
+    summary: "{{location_name}}"
+    fields:
+      - { name: location_name, widget: string }
+      - { name: meta_title, widget: string }
+      - { name: meta_description, widget: text }
+      - { name: eyebrow, widget: string }
+      - { name: h1, widget: string }
+      - { name: lead, widget: text }
+      - { name: intro_h2, widget: string }
+      - { name: intro_body, widget: text }
+      - { name: what_we_offer_h2, widget: string }
+      - { name: what_we_offer_body, widget: text }
+      - { name: delivery_h2, widget: string }
+      - { name: delivery_body, widget: text }
+      - { name: faq_h2, widget: string, required: false }
+      - name: faqs
+        widget: list
+        required: false
+        fields:
+          - { name: question, widget: string }
+          - { name: answer, widget: text }
+      - { name: cta_eyebrow, widget: string }
+      - { name: cta_h2, widget: string }
+      - name: ctas
+        widget: list
+        fields:
+          - { name: label, widget: string }
+          - { name: url, widget: string }
+          - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
+
+  # ----- Articles -----
+  - name: articles
+    label: "Inspiration articles"
+    folder: content/articles
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}} — {{date_published}}"
+    fields:
+      - { name: title, widget: string }
+      - { name: meta_title, widget: string }
+      - { name: meta_description, widget: text }
+      - { name: excerpt, widget: text, hint: "Shown on the inspiration hub list page." }
+      - { name: category, widget: string, hint: "e.g. Curtains, Carpets, Furniture" }
+      - { name: date_published, widget: datetime }
+      - { name: read_time, widget: string, hint: "e.g. '5 min read'" }
+      - { name: is_placeholder, widget: boolean, default: false, hint: "Tick if this is a draft outline. Shows a 'Draft' pill on the article and the hub." }
+      - { name: body, widget: markdown }
