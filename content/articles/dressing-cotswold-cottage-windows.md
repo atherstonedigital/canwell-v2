@@ -1,6 +1,6 @@
 ---
 title: "How to dress a Cotswold cottage window"
-meta_title: "How to Dress a Cotswold Cottage Window | Canwell Interiors"
+meta_title: "How to Dress a Cotswold Cottage Window"
 meta_description: "Stone reveals, leaded panes, deep sills, and windows that aren't square. How to dress a Cotswold cottage window properly, from Canwell in Broadway."
 excerpt: "Stone reveals, leaded casements, sash, and shaped windows. The decisions worth making before you commit to a curtain."
 category: "Curtains"
@@ -15,7 +15,7 @@ Standard ready-made curtains rarely work. Either they're too short, too wide, th
 
 ## The four window types in Cotswold houses
 
-{{ARTICLE_BODY_PLACEHOLDER}}: Stone reveal, leaded casement, sash, shaped or arched. What each one wants from a curtain. Mention Broadway, Chipping Campden, and Willersey by name as places where these windows are common.
+Most of the windows we measure across Broadway, Chipping Campden, and Willersey fall into four families. Stone-reveal casements, where the wall thickness gives you a deep recess and the choice between curtains that hang inside the reveal or break beyond it. Leaded casements, where the glass detail wants a curtain that doesn't sit right against it. Sash windows, often tall and narrow, which take a heavier curtain well. And shaped or arched windows, usually over a stair or a landing, where a fixed-head solution with a flexi-track is often the answer. Each one wants a slightly different curtain; the first job of any home measure is to work out which family you're dealing with.
 
 ## Track or pole?
 

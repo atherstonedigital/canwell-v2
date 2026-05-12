@@ -2,12 +2,18 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { Prose } from "@/components/sections/Prose";
 import { CTABanner } from "@/components/sections/CTABanner";
+import { Schema } from "@/components/Schema";
+import { breadcrumbSchema } from "@/lib/schema";
 import { Inline, Paragraphs } from "@/components/signature/RichText";
 import { getSite, getVisit } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
   const v = getVisit();
-  return { title: v.meta_title, description: v.meta_description };
+  return {
+    title: v.meta_title,
+    description: v.meta_description,
+    alternates: { canonical: "/visit" },
+  };
 }
 
 export default function VisitPage() {
@@ -21,6 +27,13 @@ export default function VisitPage() {
 
   return (
     <>
+      <Schema
+        id="ld-breadcrumb-visit"
+        payload={breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Visit", url: "/visit" },
+        ])}
+      />
       <PageHeader eyebrow={v.eyebrow} h1={v.h1} lead={v.lead} image={v.image} />
 
       <section className="prose-section">

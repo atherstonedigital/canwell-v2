@@ -13,15 +13,31 @@ export function siteUrl(path = "/") {
   return new URL(path, SITE_URL).toString();
 }
 
+// QA Audit 2026-05-12 — Task 10: richer LocalBusiness payload with geo and areaServed.
+const AREA_SERVED = [
+  "Broadway",
+  "Chipping Campden",
+  "Willersey",
+  "Snowshill",
+  "Evesham",
+  "Stratford-upon-Avon",
+  "Cheltenham",
+];
+
 export function organizationSchema(site: SiteSettings) {
   return {
     "@context": "https://schema.org",
     "@type": "FurnitureStore",
     "@id": siteUrl("/#organization"),
     name: site.site_name,
+    alternateName: `${site.site_name} Broadway`,
+    description:
+      "Family-run furnishings showroom at the Cotswold Design Centre in Broadway. Carpets, curtains, blinds, furniture, soft furnishings, and free design help.",
     url: siteUrl("/"),
     telephone: site.phone,
     email: site.email,
+    image: siteUrl("/og/canwell-default.jpg"),
+    logo: site.logo_image ? siteUrl(site.logo_image) : undefined,
     address: {
       "@type": "PostalAddress",
       streetAddress: `${site.address_line_1}, ${site.address_line_2}`,
@@ -29,6 +45,12 @@ export function organizationSchema(site: SiteSettings) {
       addressRegion: "Worcestershire",
       postalCode: site.postcode,
       addressCountry: "GB",
+    },
+    // Approximate Broadway, Worcestershire coordinates — verify with Google Maps.
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 52.0382,
+      longitude: -1.858,
     },
     openingHoursSpecification: [
       {
@@ -50,6 +72,7 @@ export function organizationSchema(site: SiteSettings) {
         closes: "16:00",
       },
     ],
+    areaServed: AREA_SERVED.map((name) => ({ "@type": "City", name })),
     sameAs: [
       site.social_facebook,
       site.social_instagram,
@@ -64,6 +87,17 @@ export function localBusinessSchema(site: SiteSettings) {
     "@type": "LocalBusiness",
     "@id": siteUrl("/#localbusiness"),
     priceRange: "££-£££",
+  };
+}
+
+export function websiteSchema(site: SiteSettings) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": siteUrl("/#website"),
+    name: site.site_name,
+    url: siteUrl("/"),
+    inLanguage: "en-GB",
   };
 }
 

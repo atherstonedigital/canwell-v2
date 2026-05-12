@@ -9,7 +9,11 @@ import { getArticles, getInspirationHub } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
   const h = getInspirationHub();
-  return { title: h.meta_title, description: h.meta_description };
+  return {
+    title: h.meta_title,
+    description: h.meta_description,
+    alternates: { canonical: "/inspiration" },
+  };
 }
 
 function formatDate(iso: string) {

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Fragment } from "react";
 import { Inline } from "@/components/signature/RichText";
+import { getBrands } from "@/lib/content";
 import type { BrandLink } from "@/lib/types";
 
 interface BrandsProps {
@@ -20,6 +21,10 @@ export function Brands({
   brands_cta_label,
   brands_cta_url,
 }: BrandsProps) {
+  // QA Audit 2026-05-12 — Task 12: only the brands with real pages get rendered
+  // as links; the rest read as plain text to avoid 404s.
+  const stocked = new Set(getBrands().map((b) => `/brands/${b.slug}`));
+
   return (
     <section className="brands">
       <div className="container">
@@ -34,14 +39,21 @@ export function Brands({
         )}
 
         <div className="brands-strip">
-          {brand_list.map((brand, i) => (
-            <Fragment key={brand.url}>
-              {i > 0 && <span className="brand-sep" aria-hidden="true">·</span>}
-              <Link href={brand.url} className="brand-name">
-                {brand.name}
-              </Link>
-            </Fragment>
-          ))}
+          {brand_list.map((brand, i) => {
+            const hasPage = stocked.has(brand.url);
+            return (
+              <Fragment key={brand.url}>
+                {i > 0 && <span className="brand-sep" aria-hidden="true">·</span>}
+                {hasPage ? (
+                  <Link href={brand.url} className="brand-name">
+                    {brand.name}
+                  </Link>
+                ) : (
+                  <span className="brand-name brand-name-pending">{brand.name}</span>
+                )}
+              </Fragment>
+            );
+          })}
         </div>
 
         <div className="brands-cta">

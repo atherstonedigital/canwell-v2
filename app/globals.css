@@ -548,11 +548,17 @@ em,
 .site-header {
   background: rgba(244, 237, 220, 0.95);
   border-bottom: 1px solid var(--color-border-light);
-  padding: var(--s-5) 0;
+  padding: var(--s-3) 0;
   position: sticky;
   top: 0;
   z-index: 100;
   backdrop-filter: blur(8px);
+}
+
+@media (max-width: 980px) {
+  .site-header {
+    padding: var(--s-2) 0;
+  }
 }
 
 .site-header .container {
@@ -2625,5 +2631,117 @@ a.card:hover .card-link::after {
 @media (max-width: 900px) {
   .article-list {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   QA Audit 2026-05-12 — Tasks 4, 5, 7, 17, 19, 25
+   ============================================================ */
+
+/* Task 17 — skip-to-content link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  position: fixed;
+  left: var(--s-4);
+  top: var(--s-4);
+  width: auto;
+  height: auto;
+  z-index: 1000;
+  background: var(--color-black);
+  color: var(--color-text-on-dark);
+  padding: var(--s-3) var(--s-5);
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: var(--fs-small);
+  letter-spacing: 0.04em;
+}
+
+/* Task 7 — neutral image-slot placeholders (no visible HERO/IMG/MAP text) */
+.hero-image-placeholder,
+.page-header-image-placeholder,
+.visit-map-placeholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    var(--color-cream-tinted) 0%,
+    var(--color-gold-pale) 60%,
+    var(--color-border-medium) 100%
+  );
+}
+
+.visit-map-placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.visit-map-caption {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  color: var(--color-gold-dark);
+  font-size: var(--fs-caption);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Task 4 — new-in section footer note */
+.new-in-footer {
+  margin-top: var(--s-7);
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: var(--fs-small);
+}
+
+/* Task 19 — reviews CTA note when no Google URL is wired */
+.reviews-cta-note {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  font-style: italic;
+}
+
+/* Task 5 — Saverys footer entries awaiting URLs */
+.footer-link-pending {
+  color: var(--color-text-muted);
+  cursor: default;
+}
+
+/* Task 12 — non-linked brand entries on the homepage and brands hub */
+.brand-name-pending {
+  color: var(--color-text-secondary);
+  cursor: default;
+}
+
+.brand-row-pending {
+  background: transparent;
+}
+
+/* Task 25 — honour prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html {
+    scroll-behavior: auto;
   }
 }

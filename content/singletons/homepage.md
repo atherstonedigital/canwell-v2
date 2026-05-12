@@ -1,22 +1,22 @@
 ---
 meta_title: "Canwell Interiors — Furnishings Showroom in Broadway, Cotswolds"
-meta_description: "The Cotswolds furnishings showroom on Broadway High Street. Furniture, carpets, curtains, blinds, and honest design help, all under one roof. Open seven days."
+meta_description: "The Cotswolds furnishings showroom at the Cotswold Design Centre in Broadway. Furniture, carpets, curtains, blinds, and honest design help, all under one roof. Open seven days."
 
 hero_eyebrow: "Cotswold Design Centre · Broadway"
 hero_pretitle: "The Cotswolds furnishings showroom."
 hero_title: "Walk in, *choose*, take home."
-hero_lead: "On Broadway High Street, with carpets, curtains, blinds, furniture, and the kind of design help you actually want."
+hero_lead: "At the Cotswold Design Centre in Broadway, with carpets, curtains, blinds, furniture, and the kind of design help you actually want."
 hero_microcopy:
-  - "FAMILY-RUN SINCE {{YEAR_ESTABLISHED}}"
+  - "FAMILY-RUN SINCE 2009"
   - "OPEN SEVEN DAYS"
   - "FREE PARKING"
 hero_ctas:
   - { label: "Plan your visit", url: "/visit", variant: "primary" }
-  - { label: "Get the weekly update", url: "#subscribe", variant: "tertiary" }
+  - { label: "Get the weekly update", url: "/#subscribe", variant: "tertiary" }
 
 intro_eyebrow: "What we do"
 intro_h2: "Everything for a Cotswold home, *under one roof*."
-intro_body: "Canwell is a furnishings showroom on Broadway High Street, run by Gary and Gemma. We stock furniture, carpets, curtains, blinds, lighting, and the kind of finishing touches that pull a room together. If you want help putting it all together, that's free too. No project fees, no commission on what you choose, just honest advice from people who do this every day."
+intro_body: "Canwell is a furnishings showroom at the Cotswold Design Centre in Broadway, run by Gary and Gemma. We stock furniture, carpets, curtains, blinds, lighting, and the kind of finishing touches that pull a room together. If you want help putting it all together, that's free too. No project fees, no commission on what you choose, just honest advice from people who do this every day."
 
 services_section_label: "What you'll find"
 services_h2: "A whole-home *showroom*, not a sofa shop."
@@ -89,7 +89,7 @@ new_in_eyebrow: "New in this week"
 new_in_h2: "Stock changes *weekly*."
 new_in_intro: "Pieces in the showroom today won't necessarily be there next Saturday, so it's worth visiting more than once."
 new_in_cta_label: "Get the weekly update"
-new_in_cta_url: "#subscribe"
+new_in_cta_url: "/#subscribe"
 new_in_items:
   - boucle-armchair-ivory
   - linen-cushion-edit

@@ -1,5 +1,5 @@
 ---
-meta_title: "Free Interior Design Help | Canwell Interiors, Broadway, Cotswolds"
+meta_title: "Free Interior Design Help in the Cotswolds"
 meta_description: "Free in-store design consultation, home visits across the Cotswolds. Honest, unfussy help from a team that lives the brief. No commission, no project fees."
 
 eyebrow: "Design help"
@@ -23,7 +23,7 @@ routes:
     link_label: "Book an in-store consultation"
     link_url: "/design-help/in-store-consultation"
   - title: "Home visit"
-    body: "{{HOME_VISIT_COST}}. We come to you. Best for: whole rooms, awkward spaces, anything where the photos aren't enough to tell us what we need to know. Covers {{HOME_VISIT_AREA}}."
+    body: "£75, refunded against any purchase over £500. We come to you. Best for: whole rooms, awkward spaces, anything where the photos aren't enough to tell us what we need to know. Covers a 30-mile radius of Broadway."
     link_label: "Request a home visit"
     link_url: "/design-help/home-visit"
 
@@ -44,20 +44,20 @@ saverys_h2: "When this isn't the right fit"
 saverys_body: |
   If you're looking for full bespoke project design, with a designer assigned, mood boards, room schedules, and project management, that's our sister showroom Saverys of Broadway. They handle whole-house projects for both Broadway and Ludlow, with the longer timelines and project budgets that go with it.
 
-  If that's what you're after, ring them on {{SAVERYS_BROADWAY_PHONE}} or pop into the Broadway showroom on the High Street.
+  If that's what you're after, pop into the Broadway showroom on the High Street.
 
   For everything else, Canwell is the right room.
 
 faq_h2: "Questions people ask"
 faqs:
   - question: "Is the consultation really free?"
-    answer: "The in-store consultation is free, yes. The home visit is {{HOME_VISIT_COST}}."
+    answer: "The in-store consultation is free, yes. The home visit is £75, refunded against any purchase over £500."
   - question: "Do I have to buy anything?"
     answer: "No. Some people leave with a plan and come back a fortnight later. Some leave with a sofa under their arm. Some leave with samples and decide to wait. All fine."
   - question: "What if I don't know what I want?"
     answer: "That's most people. Bring photos of the room, anything that's caught your eye, and a rough sense of budget. We'll work it out together."
   - question: "Can you help with paint colours?"
-    answer: "We can advise based on the carpet, fabric, and furniture you're working with, and we stock {{PAINT_BRANDS_PLACEHOLDER}}. We don't paint walls."
+    answer: "We can advise based on the carpet, fabric, and furniture you're working with, and we stock samples of Farrow & Ball and Little Greene. We don't paint walls."
   - question: "Can you help with one room or do I need to do the whole house?"
     answer: "One room is fine. Most people start with one and come back for the next."
   - question: "How long does an in-store consultation take?"

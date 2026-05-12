@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SectionMarker } from "@/components/signature/SectionMarker";
 import { Inline, PlainWithPlaceholders } from "@/components/signature/RichText";
 import type { NewInItem } from "@/lib/types";
@@ -19,6 +20,9 @@ export function NewIn({
   new_in_cta_url,
   items,
 }: NewInProps) {
+  // QA Audit 2026-05-12 — Task 4: route hash CTAs through Link via the homepage anchor.
+  const ctaIsHash = new_in_cta_url.startsWith("#") || new_in_cta_url.startsWith("/#");
+
   return (
     <section className="new-in">
       <div className="container">
@@ -32,14 +36,22 @@ export function NewIn({
               <Inline text={new_in_intro} />
             </p>
           </div>
-          <a href={new_in_cta_url} className="btn btn-secondary">
-            {new_in_cta_label}
-          </a>
+          {ctaIsHash ? (
+            <a href={new_in_cta_url} className="btn btn-secondary">
+              {new_in_cta_label}
+            </a>
+          ) : (
+            <Link href={new_in_cta_url} className="btn btn-secondary">
+              {new_in_cta_label}
+            </Link>
+          )}
         </div>
 
+        {/* QA Audit 2026-05-12 — Task 4: cards render as non-link tiles until the
+            xshowhome.com Storefront integration lands. No dead href="#" placeholders. */}
         <div className="new-in-grid">
           {items.map((item) => (
-            <a key={item.slug} href={item.url ?? "#"} className="new-in-card">
+            <div key={item.slug} className="new-in-card">
               <div className="new-in-image">
                 <div className="new-in-badge" aria-hidden="true">
                   New
@@ -49,9 +61,13 @@ export function NewIn({
               <p className="new-in-meta">
                 {item.brand.toUpperCase()} · <PlainWithPlaceholders text={item.meta_label} />
               </p>
-            </a>
+            </div>
           ))}
         </div>
+
+        <p className="new-in-footer">
+          See this week&apos;s new arrivals in the showroom.
+        </p>
       </div>
     </section>
   );

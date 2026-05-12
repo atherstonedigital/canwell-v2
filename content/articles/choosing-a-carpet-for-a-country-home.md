@@ -1,6 +1,6 @@
 ---
 title: "Choosing a carpet for a country home"
-meta_title: "Choosing a Carpet for a Country Home | Canwell Interiors"
+meta_title: "Choosing a Carpet for a Country Home"
 meta_description: "Wool versus synthetic, pile heights, sloping floors, and dogs. An honest guide to choosing a carpet for a country home, from Canwell in Broadway."
 excerpt: "Wool, wool blend, or synthetic. Pile height. Underlay. Stairs. Sloping floors. Dogs. The questions worth asking before you order."
 category: "Carpets"
@@ -15,7 +15,7 @@ The good news is most of these problems have settled answers if you ask the righ
 
 ## Wool, wool blend, or synthetic
 
-{{ARTICLE_BODY_PLACEHOLDER}}: Pros and cons honestly stated. Why pure wool isn't always the answer.
+Pure wool feels best and ages best, but it isn't always the right answer. It's softer underfoot, holds colour for decades, and resists soiling better than people expect. The trade-off is price and, with high-traffic hallways or homes with dogs, the cost-per-year of a wool-rich blend can come out lower. Synthetics have come a long way, especially solution-dyed polypropylenes; for landings, kitchens, and holiday lets they're often the more practical call. The honest answer is room-by-room.
 
 ## Pile height
 

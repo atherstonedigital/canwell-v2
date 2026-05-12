@@ -1,14 +1,14 @@
 ---
-meta_title: "About Us | Canwell Interiors, Family-Run Cotswold Showroom"
+meta_title: "The Family Behind the Showroom"
 meta_description: "Canwell Interiors is a family-run furnishings showroom in Broadway, Cotswolds. Meet Gary, Gemma, and the team."
 
 eyebrow: "Our story"
 h1: "The family behind *Canwell Interiors*"
-lead: "A family-run furnishings showroom on Broadway High Street, run by people who care more about getting the room right than closing the sale."
+lead: "A family-run furnishings showroom at the Cotswold Design Centre in Broadway, run by people who care more about getting the room right than closing the sale."
 
 story_h2: "How we got here"
 story_body: |
-  Canwell Interiors has been on Broadway High Street since {{YEAR_ESTABLISHED}}. Gary and Gemma run the place, with {{TEAM_SIZE}} on the team day-to-day.
+  Canwell Interiors has been at the Cotswold Design Centre in Broadway since 2009. Gary and Gemma run the place.
 
   The showroom grew out of a simple idea: that buying furniture, carpets, and curtains shouldn't require either a six-month design project or a trip to a soulless out-of-town retail park. Most people want somewhere they can walk in, see things in person, get honest advice, and walk out with a plan.
 
@@ -16,13 +16,7 @@ story_body: |
 
 founders_h2: "Gary and Gemma"
 founders_body: |
-  {{GARY_BIO_PLACEHOLDER}}: One short paragraph on Gary's background, what he's known for in the shop, and what he likes about the work.
-
-  {{GEMMA_BIO_PLACEHOLDER}}: Same for Gemma.
-
-team_h2: "The team"
-team_body: |
-  {{TEAM_BIOS_PLACEHOLDER}}: One short paragraph each on the other team members: who they are, what they specialise in, where to find them in the showroom.
+  Gary and Gemma run Canwell day-to-day. Between them they cover the furniture floor, the carpet and curtain library, and the consultation table where the design help happens.
 
 difference_h2: "What we do differently"
 difference_body: |
@@ -38,16 +32,12 @@ family_body: |
 
   If you want help working out which one fits what you're looking for, ask anyone in the showroom.
 
-community_h2: "In Broadway"
-community_body: |
-  Broadway is a small place and we like it that way. {{COMMUNITY_PARAGRAPH_PLACEHOLDER}}: One paragraph on any local sponsorship, community involvement, events the showroom hosts or supports.
-
 cta_eyebrow: "Now you know us"
 cta_h2: "Come and *visit* the showroom."
 ctas:
   - { label: "Visit the showroom", url: "/visit", variant: "primary" }
   - { label: "Book a design consultation", url: "/design-help/in-store-consultation", variant: "secondary" }
-  - { label: "Get the weekly update", url: "#subscribe", variant: "tertiary" }
+  - { label: "Get the weekly update", url: "/#subscribe", variant: "tertiary" }
 ---
 
 About page content.

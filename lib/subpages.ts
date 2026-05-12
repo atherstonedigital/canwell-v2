@@ -21,7 +21,12 @@ export function listSubPagesForParent(parent: string): SubPageWithMeta[] {
 export function buildSubPageMetadata(parent: string, subslug: string): Metadata {
   const page = findSubPage(parent, subslug);
   if (!page) return {};
-  return { title: page.meta_title, description: page.meta_description };
+  // QA Audit 2026-05-12 — Task 15: canonical mirrors the routing path.
+  return {
+    title: page.meta_title,
+    description: page.meta_description,
+    alternates: { canonical: `/${parent}/${subslug}` },
+  };
 }
 
 export function getSubPageOr404(parent: string, subslug: string): SubPageWithMeta {

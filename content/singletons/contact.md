@@ -1,5 +1,5 @@
 ---
-meta_title: "Contact Canwell Interiors | Broadway, Cotswolds"
+meta_title: "Contact the Showroom"
 meta_description: "Call, email, or visit Canwell Interiors at the Cotswold Design Centre, Broadway. Book a free consultation or ask about a specific piece."
 
 eyebrow: "Get in touch"

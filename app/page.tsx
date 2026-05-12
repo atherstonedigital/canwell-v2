@@ -18,8 +18,11 @@ import {
 export async function generateMetadata(): Promise<Metadata> {
   const homepage = getHomepage();
   return {
-    title: homepage.meta_title || undefined,
+    // QA Audit 2026-05-12 — Task 1: home uses the absolute default title from the
+    // layout (no template suffix appended); page just provides description and canonical.
+    title: homepage.meta_title ? { absolute: homepage.meta_title } : undefined,
     description: homepage.meta_description || undefined,
+    alternates: { canonical: "/" },
   };
 }
 

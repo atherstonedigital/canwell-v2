@@ -2,7 +2,7 @@
 parent: blinds
 subslug: made-to-measure
 
-meta_title: "Made-to-Measure Blinds in the Cotswolds | Free Measure | Canwell"
+meta_title: "Made-to-Measure Blinds · Free Measure"
 meta_description: "Roman, roller, wooden, perfect-fit. Made-to-measure blinds for every kind of window, measured and fitted across the Cotswolds. Free home measure."
 
 eyebrow: "Blinds · Made-to-measure"
@@ -35,10 +35,10 @@ steps:
   - title: "Visit to see the samples"
     body: "Every blind type on the showroom floor. Pick the one you want, get the feel of the fabric or finish."
   - title: "We come and measure"
-    body: "Free, anywhere within {{HOME_VISIT_AREA}}. We check the window type, the frame, the recess depth, and whether you want recess-fit (inside the frame) or face-fit (covering the frame)."
+    body: "Free, anywhere within a 30-mile radius of Broadway. We check the window type, the frame, the recess depth, and whether you want recess-fit (inside the frame) or face-fit (covering the frame)."
   - title: "We quote, per blind"
     body: "Including the measure and the fitting. No hidden extras."
-  - title: "We fit, within {{BLIND_LEAD_TIME}}"
+  - title: "We fit, within three to four weeks"
     body: "Clean job. We test the operation before we leave."
 
 cta_eyebrow: "Ready"

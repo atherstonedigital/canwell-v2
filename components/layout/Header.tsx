@@ -12,9 +12,10 @@ export function Header() {
         <Link href="/" className="site-logo" aria-label={`${site.site_name} home`}>
           {site.logo_image ? (
             <span className="site-logo-image">
+              {/* QA Audit 2026-05-12 — Task 22: descriptive alt that names the destination. */}
               <Image
                 src={site.logo_image}
-                alt={site.logo_alt || site.site_name}
+                alt={`${site.site_name}, home`}
                 width={120}
                 height={48}
                 priority

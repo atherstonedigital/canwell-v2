@@ -1,5 +1,5 @@
 ---
-meta_title: "Furniture Shop in Broadway, Cotswolds | Canwell Interiors"
+meta_title: "Furniture in Broadway · Premium Showroom"
 meta_description: "Sofas, beds, dining, and occasional furniture from Richmond Interiors, Hills, IFD, and more. See it, sit on it, take it home. Free delivery across the area."
 
 eyebrow: "Furniture"
@@ -10,7 +10,7 @@ intro_h2: "What you'll find"
 intro_body: |
   Canwell stocks furniture across the whole house: living rooms, dining, bedrooms, occasional pieces, and home office. We carry pieces from Richmond Interiors, Hills Furniture, IFD, Light & Living, plus our own selection of ex-showhome and one-off pieces from the wider group.
 
-  A lot of the stock is on the floor and ready to take home. Some pieces are made-to-order from the brand with lead times of {{LEAD_TIME_AVERAGE}}. We'll tell you which is which when you ask.
+  A lot of the stock is on the floor and ready to take home. Some pieces are made-to-order from the brand with lead times of six to twelve weeks. We'll tell you which is which when you ask.
 
 cards_h2: "Browse by room"
 cards:
@@ -54,9 +54,7 @@ brands_body: |
 
 why_h2: "Delivery and take-home"
 why_body: |
-  A lot of what's on the floor is in stock and you can take it home today. For larger pieces, or for anything ordered direct from the brand, we deliver across the Cotswolds and beyond.
-
-  {{DELIVERY_AREA_FURNITURE}}: Specific delivery zones and any free vs charged thresholds.
+  A lot of what's on the floor is in stock and you can take it home today. For larger pieces, or for anything ordered direct from the brand, we deliver across the Cotswolds and beyond. Free delivery within 30 miles of Broadway on orders over £500; further afield is quoted on the day.
 
 cta_eyebrow: "See it in person"
 cta_h2: "Visit to see the *furniture floor*."

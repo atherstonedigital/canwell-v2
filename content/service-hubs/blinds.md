@@ -1,5 +1,5 @@
 ---
-meta_title: "Blinds in the Cotswolds | Made-to-Measure | Canwell Interiors"
+meta_title: "Blinds in Broadway · Roman, Roller, Wooden"
 meta_description: "Made-to-measure blinds for any room, any window. Roman, roller, wooden, perfect-fit. See the range in Broadway, free home measure across the Cotswolds."
 
 eyebrow: "Blinds"
@@ -32,10 +32,10 @@ steps:
   - title: "Visit to see the samples"
     body: "Every blind type on the showroom floor. Pick the one you want, get the feel of the fabric."
   - title: "We come and measure"
-    body: "Free, anywhere within {{HOME_VISIT_AREA}}. We check the window type, the frame, the depth, and whether you want recess-fit or face-fit."
+    body: "Free, anywhere within a 30-mile radius of Broadway. We check the window type, the frame, the depth, and whether you want recess-fit or face-fit."
   - title: "We quote"
     body: "Per blind, including measurement and fitting. No hidden extras."
-  - title: "We fit, within {{BLIND_LEAD_TIME}}"
+  - title: "We fit, within three to four weeks"
     body: "Clean, tidy, and we test the operation before we leave."
 
 cta_eyebrow: "Ready"

@@ -19,7 +19,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const a = getArticle(slug);
   if (!a) return {};
-  return { title: a.meta_title, description: a.meta_description };
+  return {
+    title: a.meta_title,
+    description: a.meta_description,
+    alternates: { canonical: `/inspiration/${slug}` },
+  };
 }
 
 function formatDate(iso: string) {

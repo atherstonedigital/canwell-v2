@@ -1,5 +1,5 @@
 ---
-meta_title: "Soft Furnishings, Cushions, Lighting & Accessories | Canwell Interiors, Broadway"
+meta_title: "Soft Furnishings, Lighting & Accents"
 meta_description: "Cushions, throws, lamps, art, mirrors, and the finishing touches that pull a room together. New stock weekly at Canwell Interiors, Broadway."
 
 eyebrow: "Soft furnishings"
@@ -49,7 +49,7 @@ cta_eyebrow: "New in this week"
 cta_h2: "Visit and *browse*."
 ctas:
   - { label: "Visit and browse", url: "/visit", variant: "primary" }
-  - { label: "Get the weekly update", url: "#subscribe", variant: "secondary" }
+  - { label: "Get the weekly update", url: "/#subscribe", variant: "secondary" }
   - { label: "Book a design consultation", url: "/design-help/in-store-consultation", variant: "tertiary" }
 ---
 

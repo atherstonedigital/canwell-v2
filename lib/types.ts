@@ -220,14 +220,15 @@ export interface AboutContent {
   story_body: string;
   founders_h2: string;
   founders_body: string;
-  team_h2: string;
-  team_body: string;
+  // QA Audit 2026-05-12 — Task 2: team/community sections optional until copy lands.
+  team_h2?: string;
+  team_body?: string;
   difference_h2: string;
   difference_body: string;
   family_h2: string;
   family_body: string;
-  community_h2: string;
-  community_body: string;
+  community_h2?: string;
+  community_body?: string;
   cta_eyebrow: string;
   cta_h2: string;
   cta_body?: string;

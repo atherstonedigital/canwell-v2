@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Inline } from "@/components/signature/RichText";
 import { SectionMarker } from "@/components/signature/SectionMarker";
 import { RuleRinged } from "@/components/signature/RuleRinged";
-import { Rings } from "@/components/signature/Rings";
 
 interface PageHeaderProps {
   eyebrow?: string;
@@ -48,6 +47,8 @@ export function PageHeader({
             </div>
           </div>
 
+          {/* QA Audit 2026-05-12 — Task 7: empty image slot, no visible "IMG" label. */}
+          {/* TODO(photo): page header image for this route. */}
           <div className="page-header-image">
             {image ? (
               <Image
@@ -59,12 +60,7 @@ export function PageHeader({
                 style={{ objectFit: "cover" }}
               />
             ) : (
-              <div className="page-header-image-label">
-                <Rings size="md">
-                  <span style={{ fontSize: "0.625rem" }}>IMG</span>
-                </Rings>
-                <span>{labelText}</span>
-              </div>
+              <div className="page-header-image-placeholder" aria-hidden="true" />
             )}
           </div>
         </div>

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { SectionMarker } from "@/components/signature/SectionMarker";
-import { Rings } from "@/components/signature/Rings";
 import { Inline, PlainWithPlaceholders } from "@/components/signature/RichText";
 import type { CTA, HomepageContent } from "@/lib/types";
 
@@ -17,7 +16,8 @@ interface HeroProps {
 
 const DEFAULT_HERO_CTAS: CTA[] = [
   { label: "Plan your visit", url: "/visit", variant: "primary" },
-  { label: "Get the weekly update", url: "#subscribe", variant: "tertiary" },
+  // QA Audit 2026-05-12 — Task 6: cross-page anchor back to homepage subscribe form.
+  { label: "Get the weekly update", url: "/#subscribe", variant: "tertiary" },
 ];
 
 function ctaClass(variant: CTA["variant"]) {
@@ -98,12 +98,9 @@ export function Hero({
                 style={{ objectFit: "cover" }}
               />
             ) : (
-              <div className="hero-image-label">
-                <Rings size="md">
-                  <span style={{ fontSize: "0.625rem" }}>HERO</span>
-                </Rings>
-                Showroom photography
-              </div>
+              // QA Audit 2026-05-12 — Task 7: empty image slot, no visible "HERO" label.
+              // TODO(photo): hero image — Broadway showroom interior, landscape.
+              <div className="hero-image-placeholder" aria-hidden="true" />
             )}
           </div>
         </div>

@@ -1,5 +1,5 @@
 ---
-meta_title: "Carpets in Broadway, Cotswolds | Measured & Fitted | Canwell Interiors"
+meta_title: "Carpets in Broadway · Measured & Fitted"
 meta_description: "Carpets and flooring at Canwell Interiors, Broadway. Sample books to take home, free measure, fitting across the Cotswolds. Visit the showroom."
 
 eyebrow: "Carpets and flooring"
@@ -8,7 +8,7 @@ lead: "Choosing a carpet is one of the bigger calls you'll make in a room. Best 
 
 intro_h2: "What we do"
 intro_body: |
-  Canwell stocks carpet from {{CARPET_BRANDS}}, in wool, wool-blend, polypropylene, and pure synthetic. Plus the runners, underlay, grippers, and beading to finish the job properly.
+  Canwell stocks carpet from Cormar, Brockway, Cavalier, Westex, and Penthouse, in wool, wool-blend, polypropylene, and pure synthetic. Plus the runners, underlay, grippers, and beading to finish the job properly.
 
   Come in and we'll show you the range, pull out sample books you can take home, talk through what works in older Cotswold houses with mixed floor levels and lots of light, and give you a quote that includes the carpet, the fitting, and any door bars or thresholds you need.
 
@@ -19,11 +19,11 @@ steps:
   - title: "Visit, or call us first"
     body: "Have a look at the samples, get a feel for what you like. We're happy to send you home with two or three sample books to live with for a week."
   - title: "We come and measure"
-    body: "Free, anywhere within {{HOME_VISIT_AREA}}. We bring the chosen samples to the room itself so you can see them in your own light."
+    body: "Free, anywhere within a 30-mile radius of Broadway. We bring the chosen samples to the room itself so you can see them in your own light."
   - title: "We quote, properly"
     body: "One quote, no hidden extras. Carpet, underlay, grippers, fitting, removal of the old carpet, moving furniture in and out. All in."
-  - title: "We fit, within {{CARPET_FIT_LEAD_TIME}}"
-    body: "{{NAMED_FITTERS_PLACEHOLDER}}: Same fitters we've worked with for years. Clean, fast, careful with the rest of the house."
+  - title: "We fit, within two to three weeks"
+    body: "Same fitters we've worked with for years. Clean, fast, careful with the rest of the house."
 
 why_h2: "Why see it in person"
 why_body: |
@@ -34,7 +34,7 @@ why_body: |
 faq_h2: "Questions people ask"
 faqs:
   - question: "How long does it take from measure to fitted?"
-    answer: "Usually {{CARPET_FIT_LEAD_TIME}}, depending on stock and which fitter is next available. Quicker if you're flexible on dates."
+    answer: "Usually two to three weeks, depending on stock and which fitter is next available. Quicker if you're flexible on dates."
   - question: "Do you move the furniture?"
     answer: "Yes. We take a small charge for very heavy items (pianos, fitted wardrobes, that kind of thing), but everything else is included."
   - question: "Do you take away the old carpet?"
@@ -44,7 +44,7 @@ faqs:
   - question: "Do you do stairs and landings?"
     answer: "Yes. Stairs are the trickiest carpet job there is, so it's worth coming in to talk through pile direction, the bend, and any spindles before deciding."
   - question: "Do you do Cotswold cottages with sloping floors?"
-    answer: "Often. {{COTSWOLD_FLOOR_NOTE_PLACEHOLDER}}: Add a line about expertise with older properties."
+    answer: "Yes, often. Older Cotswold properties throw up uneven sub-floors, settled doorways, and odd thresholds, and we work with fitters who know how to handle all of it."
 
 cta_eyebrow: "Ready to choose"
 cta_h2: "Visit to see the *carpet range*."

@@ -1,5 +1,5 @@
 ---
-meta_title: "Visit Us | Canwell Interiors, Broadway, Cotswolds"
+meta_title: "Visit the Showroom in Broadway"
 meta_description: "Find Canwell Interiors at the Cotswold Design Centre, Kennel Lane, Broadway WR12 7DJ. Open seven days, free parking, dog-friendly. Plan your visit."
 
 eyebrow: "Plan your visit"
@@ -47,7 +47,7 @@ cta_body: ""
 ctas:
   - { label: "Get directions", url: "", variant: "primary" }
   - { label: "Book a design consultation", url: "/design-help/in-store-consultation", variant: "secondary" }
-  - { label: "Get the weekly update", url: "#subscribe", variant: "tertiary" }
+  - { label: "Get the weekly update", url: "/#subscribe", variant: "tertiary" }
 ---
 
 Visit page content. The "Get directions" URL falls back to the site singleton's directions_url if left blank.
