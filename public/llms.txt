@@ -1,0 +1,49 @@
+# Canwell Interiors
+
+> Family-run furnishings showroom on Broadway High Street in the Cotswolds. Carpets, curtains, blinds, furniture, soft furnishings, and free interior design help. Open seven days, free parking, dog-friendly.
+
+## About
+
+- Address: Cotswold Design Centre, Kennel Lane, Broadway WR12 7DJ
+- Phone: 01905 964994
+- Email: canwellcotswolds@gmail.com
+- Hours: Monday to Saturday 9am to 5pm. Sunday 10am to 4pm.
+- Position: Whole-home furnishings under one roof. Honest, unfussy, no commission selling, no project fees on design help.
+
+## Sister businesses
+
+- Saverys of Broadway: bespoke whole-home interior design
+- Saverys of Ludlow: bespoke whole-home interior design
+- xshowhome.com: online furniture range with UK delivery
+
+## Pages
+
+### Launch-essential
+- [Homepage](/): Overview of what's in the showroom
+- [Visit us](/visit): How to find Canwell, opening hours, what to expect
+- [About](/about): The family behind the showroom
+- [Contact](/contact): Phone, email, contact form
+
+### What we do
+- [Carpets and flooring](/carpets) and [measured and fitted carpets](/carpets/measured-and-fitted)
+- [Curtains](/curtains): [made-to-measure](/curtains/made-to-measure) and [ready-made](/curtains/ready-made)
+- [Blinds](/blinds): [made-to-measure](/blinds/made-to-measure)
+- [Furniture](/furniture): [sofas](/furniture/sofas), [bedroom](/furniture/bedroom), [dining](/furniture/dining), [living room](/furniture/living-room), [home office](/furniture/home-office)
+- [Soft furnishings, lighting, accessories](/soft-furnishings)
+- [Design help](/design-help): [free in-store consultation](/design-help/in-store-consultation), [home visit](/design-help/home-visit)
+
+### Brands we stock
+- [Brands hub](/brands): every brand on the showroom floor
+- [Richmond Interiors](/brands/richmond-interiors): upholstery and accessories
+- [Hills Furniture](/brands/hills-furniture): solid hardwood dining and bedroom
+
+### Areas we serve
+- [Locations hub](/locations)
+- [Cheltenham](/locations/cheltenham): twenty minutes via the A46
+- [Stratford-upon-Avon](/locations/stratford-upon-avon): twenty-five minutes through the Cotswolds
+
+### Inspiration
+- [Articles hub](/inspiration)
+- [How to dress a Cotswold cottage window](/inspiration/dressing-cotswold-cottage-windows)
+- [Choosing a carpet for a country home](/inspiration/choosing-a-carpet-for-a-country-home)
+- [An honest guide to buying a sofa](/inspiration/sofa-buying-guide-fabric-and-frame)

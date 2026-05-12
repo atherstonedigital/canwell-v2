@@ -1,0 +1,613 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: editorial_workflow
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: site
+    label: Site settings
+    description: "Single record. Contact details, hours, social links."
+    files:
+      - file: content/singletons/site.md
+        name: site
+        label: Site
+        fields:
+          - { name: site_name, label: Site name, widget: string }
+          - { name: tagline, label: Tagline, widget: string }
+          - { name: address_line_1, label: Address line 1, widget: string }
+          - { name: address_line_2, label: Address line 2, widget: string }
+          - { name: postcode, label: Postcode, widget: string }
+          - { name: phone, label: Phone, widget: string }
+          - { name: email, label: Email, widget: string }
+          - { name: opening_hours_summary, label: Opening hours (short summary), widget: string, hint: "Used in the top utility bar, e.g. 'Open seven days'" }
+          - { name: opening_hours_weekday, label: Opening hours — weekdays, widget: string }
+          - { name: opening_hours_saturday, label: Opening hours — Saturday, widget: string }
+          - { name: opening_hours_sunday, label: Opening hours — Sunday, widget: string }
+          - { name: year_established, label: Year established, widget: string, hint: "Used in 'Family-run since {{YEAR_ESTABLISHED}}'" }
+          - { name: sister_site_saverys_broadway_url, label: Saverys of Broadway URL, widget: string, required: false }
+          - { name: sister_site_saverys_ludlow_url, label: Saverys of Ludlow URL, widget: string, required: false }
+          - { name: sister_site_xshowhome_url, label: xshowhome.com URL, widget: string, required: false }
+          - { name: social_facebook, label: Facebook URL, widget: string, required: false }
+          - { name: social_instagram, label: Instagram URL, widget: string, required: false }
+          - { name: social_google_business, label: Google Business reviews URL, widget: string, required: false, hint: "Used by the homepage 'Read more on Google' button" }
+          - { name: directions_url, label: Google Maps directions URL, widget: string, required: false }
+
+  - name: homepage
+    label: Homepage
+    description: "Single record. Every section of the homepage."
+    files:
+      - file: content/singletons/homepage.md
+        name: homepage
+        label: Homepage
+        fields:
+          - { name: meta_title, label: Meta title, widget: string }
+          - { name: meta_description, label: Meta description, widget: text }
+
+          - { name: hero_eyebrow, label: "Hero · section marker label", widget: string }
+          - { name: hero_pretitle, label: "Hero · pretitle", widget: string }
+          - { name: hero_title, label: "Hero · title", widget: string, hint: "Wrap text in *asterisks* for italic emphasis. E.g. 'Walk in, *choose*, take home.'" }
+          - { name: hero_lead, label: "Hero · lead paragraph", widget: text }
+          - { name: hero_image, label: "Hero · image", widget: image, required: false }
+          - name: hero_microcopy
+            label: "Hero · microcopy strip"
+            widget: list
+            field: { name: text, label: Item, widget: string }
+
+          - { name: intro_eyebrow, label: "Intro · eyebrow", widget: string }
+          - { name: intro_h2, label: "Intro · H2", widget: string, hint: "Use *asterisks* for italic emphasis." }
+          - { name: intro_body, label: "Intro · body", widget: text }
+
+          - { name: services_section_label, label: "Services · section label", widget: string }
+          - { name: services_h2, label: "Services · H2", widget: string }
+          - { name: services_intro, label: "Services · intro paragraph", widget: text, required: false }
+          - name: service_cards
+            label: "Services · cards"
+            widget: list
+            min: 6
+            max: 6
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: body, label: Body, widget: string }
+              - { name: link_label, label: Link label, widget: string }
+              - { name: link_url, label: Link URL, widget: string }
+
+          - { name: design_help_eyebrow, label: "Design help · eyebrow", widget: string }
+          - { name: design_help_h2, label: "Design help · H2", widget: string }
+          - { name: design_help_body, label: "Design help · body", widget: markdown }
+          - { name: design_help_image, label: "Design help · image", widget: image, required: false }
+          - { name: design_help_saverys_note, label: "Design help · Saverys note", widget: text }
+          - { name: design_help_primary_cta_label, label: "Design help · primary CTA label", widget: string }
+          - { name: design_help_primary_cta_url, label: "Design help · primary CTA URL", widget: string }
+          - { name: design_help_secondary_cta_label, label: "Design help · secondary CTA label", widget: string }
+          - { name: design_help_secondary_cta_url, label: "Design help · secondary CTA URL", widget: string }
+          - name: design_help_stamps
+            label: "Design help · trust stamps"
+            widget: list
+            max: 3
+            fields:
+              - { name: title, label: Top line, widget: string }
+              - { name: subtitle, label: Bottom line, widget: string }
+
+          - { name: brands_eyebrow, label: "Brands · eyebrow", widget: string }
+          - { name: brands_h2, label: "Brands · H2", widget: string }
+          - { name: brands_intro, label: "Brands · intro paragraph", widget: text, required: false }
+          - name: brand_list
+            label: "Brands · featured strip"
+            widget: list
+            max: 6
+            fields:
+              - { name: name, label: Brand name, widget: string }
+              - { name: url, label: Brand page URL, widget: string }
+          - { name: brands_cta_label, label: "Brands · CTA label", widget: string }
+          - { name: brands_cta_url, label: "Brands · CTA URL", widget: string }
+
+          - { name: new_in_eyebrow, label: "New in · eyebrow", widget: string }
+          - { name: new_in_h2, label: "New in · H2", widget: string }
+          - { name: new_in_intro, label: "New in · intro", widget: text }
+          - { name: new_in_cta_label, label: "New in · CTA label", widget: string }
+          - { name: new_in_cta_url, label: "New in · CTA URL", widget: string }
+          - name: new_in_items
+            label: "New in · featured items"
+            widget: relation
+            collection: new-in
+            value_field: "{{slug}}"
+            search_fields: [name, brand]
+            display_fields: [name, brand]
+            multiple: true
+            max: 3
+
+          - { name: reviews_eyebrow, label: "Reviews · eyebrow", widget: string }
+          - { name: reviews_h2, label: "Reviews · H2", widget: string }
+          - { name: reviews_cta_label, label: "Reviews · CTA label", widget: string }
+          - name: featured_reviews
+            label: "Reviews · featured"
+            widget: relation
+            collection: reviews
+            value_field: "{{slug}}"
+            search_fields: [name, location, quote]
+            display_fields: [name, location]
+            multiple: true
+            max: 3
+
+          - { name: email_eyebrow, label: "Email signup · eyebrow", widget: string }
+          - { name: email_h2, label: "Email signup · H2", widget: string }
+          - { name: email_body, label: "Email signup · body", widget: text }
+          - { name: email_form_label, label: "Email signup · form label", widget: string }
+          - { name: email_form_placeholder, label: "Email signup · form placeholder", widget: string }
+          - { name: email_form_button, label: "Email signup · button", widget: string }
+          - { name: email_microcopy, label: "Email signup · microcopy", widget: string }
+          - { name: email_confirm_message, label: "Email signup · confirmation message", widget: string }
+
+          - { name: visit_eyebrow, label: "Visit · eyebrow", widget: string }
+          - { name: visit_h2, label: "Visit · H2", widget: string }
+          - { name: visit_body, label: "Visit · body", widget: text }
+          - { name: visit_image, label: "Visit · image", widget: image, required: false }
+          - name: visit_stamps
+            label: "Visit · stamps"
+            widget: list
+            max: 3
+            fields:
+              - { name: title, label: Top line, widget: string }
+              - { name: subtitle, label: Bottom line, widget: string }
+
+  - name: reviews
+    label: Reviews
+    description: "Customer reviews. Reference these from the homepage."
+    folder: content/reviews
+    create: true
+    slug: "{{slug}}"
+    identifier_field: name
+    summary: "{{name}} — {{location}}"
+    fields:
+      - { name: quote, label: Quote, widget: text }
+      - { name: name, label: Customer name, widget: string }
+      - { name: location, label: Location (uppercase), widget: string, hint: "e.g. CHIPPING CAMPDEN" }
+      - { name: featured, label: Featured on homepage, widget: boolean, default: false }
+      - { name: is_placeholder, label: Draft / placeholder, widget: boolean, default: false, hint: "Tick if this is seed copy awaiting a real review. Shows a 'Draft review' pill on the live site." }
+      - { name: date, label: Date collected, widget: datetime }
+
+  - name: new-in
+    label: "New in this week"
+    description: "Items currently in the showroom. Three feature on the homepage."
+    folder: content/new-in
+    create: true
+    slug: "{{slug}}"
+    identifier_field: name
+    summary: "{{name}} — {{brand}}"
+    fields:
+      - { name: name, label: Product name, widget: string }
+      - { name: brand, label: Brand, widget: string }
+      - { name: meta_label, label: Meta label, widget: string, hint: "e.g. IN STOCK, LAST TWO, TEN COLOURS IN STORE" }
+      - { name: image, label: Image, widget: image, required: false }
+      - name: status
+        label: Status
+        widget: select
+        options: ["in_stock", "sold"]
+        default: "in_stock"
+      - { name: date_added, label: Date added, widget: datetime }
+      - { name: url, label: Detail page URL, widget: string, required: false }
+
+  # ----- Visit page -----
+  - name: visit
+    label: "Page · Visit"
+    files:
+      - file: content/singletons/visit.md
+        name: visit
+        label: Visit
+        fields:
+          - { name: meta_title, widget: string }
+          - { name: meta_description, widget: text }
+          - { name: eyebrow, widget: string }
+          - { name: h1, widget: string, hint: "Use *asterisks* for italic emphasis." }
+          - { name: lead, widget: text }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+          - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+          - { name: how_to_find_h2, widget: string }
+          - { name: how_to_find_body, widget: text }
+          - { name: opening_hours_h2, widget: string }
+          - { name: opening_hours_microcopy, widget: text }
+          - { name: getting_here_h2, widget: string }
+          - { name: getting_here_intro, widget: text }
+          - name: getting_here_blocks
+            widget: list
+            fields:
+              - { name: title, widget: string }
+              - { name: body, widget: text }
+          - { name: what_to_expect_h2, widget: string }
+          - { name: what_to_expect_body, widget: text }
+          - { name: accessibility_h2, widget: string }
+          - { name: accessibility_body, widget: text }
+          - { name: sister_h2, widget: string }
+          - { name: sister_body, widget: text }
+          - { name: cta_eyebrow, widget: string }
+          - { name: cta_h2, widget: string }
+          - { name: cta_body, widget: text, required: false }
+          - name: ctas
+            widget: list
+            fields:
+              - { name: label, widget: string }
+              - { name: url, widget: string }
+              - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
+
+  # ----- About page -----
+  - name: about
+    label: "Page · About"
+    files:
+      - file: content/singletons/about.md
+        name: about
+        label: About
+        fields:
+          - { name: meta_title, widget: string }
+          - { name: meta_description, widget: text }
+          - { name: eyebrow, widget: string }
+          - { name: h1, widget: string }
+          - { name: lead, widget: text }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+          - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+          - { name: story_h2, widget: string }
+          - { name: story_body, widget: text }
+          - { name: founders_h2, widget: string }
+          - { name: founders_body, widget: text }
+          - { name: team_h2, widget: string }
+          - { name: team_body, widget: text }
+          - { name: difference_h2, widget: string }
+          - { name: difference_body, widget: text }
+          - { name: family_h2, widget: string }
+          - { name: family_body, widget: text }
+          - { name: community_h2, widget: string }
+          - { name: community_body, widget: text }
+          - { name: cta_eyebrow, widget: string }
+          - { name: cta_h2, widget: string }
+          - { name: cta_body, widget: text, required: false }
+          - name: ctas
+            widget: list
+            fields:
+              - { name: label, widget: string }
+              - { name: url, widget: string }
+              - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
+
+  # ----- Contact page -----
+  - name: contact
+    label: "Page · Contact"
+    files:
+      - file: content/singletons/contact.md
+        name: contact
+        label: Contact
+        fields:
+          - { name: meta_title, widget: string }
+          - { name: meta_description, widget: text }
+          - { name: eyebrow, widget: string }
+          - { name: h1, widget: string }
+          - { name: lead, widget: text }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+          - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+          - { name: quick_h2, widget: string }
+          - { name: call_label, widget: string }
+          - { name: call_note, widget: text }
+          - { name: email_label, widget: string }
+          - { name: email_note, widget: text }
+          - { name: visit_label, widget: string }
+          - { name: visit_note, widget: text }
+          - { name: form_h2, widget: string }
+          - { name: form_microcopy, widget: text }
+          - { name: form_confirm, widget: text }
+          - { name: small_print, widget: text }
+
+  # ----- Design help hub -----
+  - name: design-help
+    label: "Page · Design help hub"
+    files:
+      - file: content/singletons/design-help.md
+        name: design_help
+        label: Design help
+        fields:
+          - { name: meta_title, widget: string }
+          - { name: meta_description, widget: text }
+          - { name: eyebrow, widget: string }
+          - { name: h1, widget: string }
+          - { name: lead, widget: text }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+          - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+          - { name: intro_h2, widget: string }
+          - { name: intro_body, widget: text }
+          - { name: routes_h2, widget: string }
+          - name: routes
+            widget: list
+            min: 2
+            max: 2
+            fields:
+              - { name: title, widget: string }
+              - { name: body, widget: text }
+              - { name: link_label, widget: string }
+              - { name: link_url, widget: string }
+          - { name: small_print_h2, widget: string }
+          - name: what_you_get
+            widget: list
+            field: { name: item, widget: string }
+          - name: what_we_dont
+            widget: list
+            field: { name: item, widget: string }
+          - { name: saverys_h2, widget: string }
+          - { name: saverys_body, widget: text }
+          - { name: faq_h2, widget: string }
+          - name: faqs
+            widget: list
+            fields:
+              - { name: question, widget: string }
+              - { name: answer, widget: text }
+          - { name: cta_eyebrow, widget: string }
+          - { name: cta_h2, widget: string }
+          - { name: cta_body, widget: text, required: false }
+          - name: ctas
+            widget: list
+            fields:
+              - { name: label, widget: string }
+              - { name: url, widget: string }
+              - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
+
+  # ----- Brands hub singleton -----
+  - name: brands-hub
+    label: "Page · Brands hub"
+    files:
+      - file: content/singletons/brands-hub.md
+        name: brands_hub
+        label: Brands hub
+        fields:
+          - { name: meta_title, widget: string }
+          - { name: meta_description, widget: text }
+          - { name: eyebrow, widget: string }
+          - { name: h1, widget: string }
+          - { name: lead, widget: text }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+          - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+          - { name: intro_body, widget: text }
+          - { name: cta_eyebrow, widget: string }
+          - { name: cta_h2, widget: string }
+          - name: ctas
+            widget: list
+            fields:
+              - { name: label, widget: string }
+              - { name: url, widget: string }
+              - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
+
+  # ----- Locations hub singleton -----
+  - name: locations-hub
+    label: "Page · Locations hub"
+    files:
+      - file: content/singletons/locations-hub.md
+        name: locations_hub
+        label: Locations hub
+        fields:
+          - { name: meta_title, widget: string }
+          - { name: meta_description, widget: text }
+          - { name: eyebrow, widget: string }
+          - { name: h1, widget: string }
+          - { name: lead, widget: text }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+          - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+          - { name: intro_body, widget: text }
+          - { name: cta_eyebrow, widget: string }
+          - { name: cta_h2, widget: string }
+          - name: ctas
+            widget: list
+            fields:
+              - { name: label, widget: string }
+              - { name: url, widget: string }
+              - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
+
+  # ----- Inspiration hub singleton -----
+  - name: inspiration-hub
+    label: "Page · Inspiration hub"
+    files:
+      - file: content/singletons/inspiration-hub.md
+        name: inspiration_hub
+        label: Inspiration hub
+        fields:
+          - { name: meta_title, widget: string }
+          - { name: meta_description, widget: text }
+          - { name: eyebrow, widget: string }
+          - { name: h1, widget: string }
+          - { name: lead, widget: text }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+          - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+          - { name: intro_body, widget: text }
+
+  # ----- Service hubs collection (5 records: carpets, curtains, blinds, furniture, soft-furnishings) -----
+  - name: service-hubs
+    label: "Service hubs"
+    folder: content/service-hubs
+    create: false
+    slug: "{{slug}}"
+    identifier_field: h1
+    summary: "{{eyebrow}} — {{h1}}"
+    fields:
+      - { name: meta_title, widget: string }
+      - { name: meta_description, widget: text }
+      - { name: eyebrow, widget: string }
+      - { name: h1, widget: string }
+      - { name: lead, widget: text }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+      - { name: intro_h2, widget: string }
+      - { name: intro_body, widget: text }
+      - { name: cards_h2, widget: string, required: false }
+      - { name: cards_intro, widget: text, required: false }
+      - name: cards
+        widget: list
+        required: false
+        fields:
+          - { name: title, widget: string }
+          - { name: body, widget: text }
+          - { name: link_label, widget: string, required: false }
+          - { name: link_url, widget: string, required: false }
+      - { name: steps_h2, widget: string, required: false }
+      - name: steps
+        widget: list
+        required: false
+        fields:
+          - { name: title, widget: string }
+          - { name: body, widget: text }
+      - { name: why_h2, widget: string, required: false }
+      - { name: why_body, widget: text, required: false }
+      - { name: brands_h2, widget: string, required: false }
+      - { name: brands_body, widget: text, required: false }
+      - { name: faq_h2, widget: string, required: false }
+      - name: faqs
+        widget: list
+        required: false
+        fields:
+          - { name: question, widget: string }
+          - { name: answer, widget: text }
+      - { name: cta_eyebrow, widget: string }
+      - { name: cta_h2, widget: string }
+      - { name: cta_body, widget: text, required: false }
+      - name: ctas
+        widget: list
+        fields:
+          - { name: label, widget: string }
+          - { name: url, widget: string }
+          - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
+
+  # ----- Service sub-pages collection -----
+  - name: service-subpages
+    label: "Service sub-pages"
+    folder: content/service-subpages
+    create: true
+    slug: "{{slug}}"
+    identifier_field: h1
+    summary: "{{parent}}/{{subslug}} — {{h1}}"
+    fields:
+      - { name: parent, label: Parent hub, widget: select, options: ["carpets", "curtains", "blinds", "furniture", "design-help"] }
+      - { name: subslug, label: URL slug under parent, widget: string }
+      - { name: meta_title, widget: string }
+      - { name: meta_description, widget: text }
+      - { name: eyebrow, widget: string }
+      - { name: h1, widget: string }
+      - { name: lead, widget: text }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+      - { name: intro_h2, widget: string }
+      - { name: intro_body, widget: text }
+      - { name: cards_h2, widget: string, required: false }
+      - name: cards
+        widget: list
+        required: false
+        fields:
+          - { name: title, widget: string }
+          - { name: body, widget: text }
+          - { name: link_label, widget: string, required: false }
+          - { name: link_url, widget: string, required: false }
+      - { name: steps_h2, widget: string, required: false }
+      - name: steps
+        widget: list
+        required: false
+        fields:
+          - { name: title, widget: string }
+          - { name: body, widget: text }
+      - { name: why_h2, widget: string, required: false }
+      - { name: why_body, widget: text, required: false }
+      - { name: brands_h2, widget: string, required: false }
+      - { name: brands_body, widget: text, required: false }
+      - { name: faq_h2, widget: string, required: false }
+      - name: faqs
+        widget: list
+        required: false
+        fields:
+          - { name: question, widget: string }
+          - { name: answer, widget: text }
+      - { name: cta_eyebrow, widget: string }
+      - { name: cta_h2, widget: string }
+      - name: ctas
+        widget: list
+        fields:
+          - { name: label, widget: string }
+          - { name: url, widget: string }
+          - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
+
+  # ----- Brand stockist pages -----
+  - name: brands
+    label: "Brand stockist pages"
+    folder: content/brands
+    create: true
+    slug: "{{slug}}"
+    identifier_field: brand_name
+    summary: "{{brand_name}}"
+    fields:
+      - { name: brand_name, widget: string }
+      - { name: tagline, widget: string }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+      - { name: meta_title, widget: string }
+      - { name: meta_description, widget: text }
+      - { name: intro_body, widget: text }
+      - { name: what_we_stock_h2, widget: string }
+      - { name: what_we_stock_body, widget: text }
+      - { name: why_h2, widget: string, required: false }
+      - { name: why_body, widget: text, required: false }
+      - { name: cta_eyebrow, widget: string }
+      - { name: cta_h2, widget: string }
+      - name: ctas
+        widget: list
+        fields:
+          - { name: label, widget: string }
+          - { name: url, widget: string }
+          - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
+
+  # ----- Location pages -----
+  - name: locations
+    label: "Location pages"
+    folder: content/locations
+    create: true
+    slug: "{{slug}}"
+    identifier_field: location_name
+    summary: "{{location_name}}"
+    fields:
+      - { name: location_name, widget: string }
+      - { name: meta_title, widget: string }
+      - { name: meta_description, widget: text }
+      - { name: eyebrow, widget: string }
+      - { name: h1, widget: string }
+      - { name: lead, widget: text }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+      - { name: intro_h2, widget: string }
+      - { name: intro_body, widget: text }
+      - { name: what_we_offer_h2, widget: string }
+      - { name: what_we_offer_body, widget: text }
+      - { name: delivery_h2, widget: string }
+      - { name: delivery_body, widget: text }
+      - { name: faq_h2, widget: string, required: false }
+      - name: faqs
+        widget: list
+        required: false
+        fields:
+          - { name: question, widget: string }
+          - { name: answer, widget: text }
+      - { name: cta_eyebrow, widget: string }
+      - { name: cta_h2, widget: string }
+      - name: ctas
+        widget: list
+        fields:
+          - { name: label, widget: string }
+          - { name: url, widget: string }
+          - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
+
+  # ----- Articles -----
+  - name: articles
+    label: "Inspiration articles"
+    folder: content/articles
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}} — {{date_published}}"
+    fields:
+      - { name: title, widget: string }
+      - { name: meta_title, widget: string }
+      - { name: meta_description, widget: text }
+      - { name: excerpt, widget: text, hint: "Shown on the inspiration hub list page." }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the article title." }
+      - { name: category, widget: string, hint: "e.g. Curtains, Carpets, Furniture" }
+      - { name: date_published, widget: datetime }
+      - { name: read_time, widget: string, hint: "e.g. '5 min read'" }
+      - { name: is_placeholder, widget: boolean, default: false, hint: "Tick if this is a draft outline. Shows a 'Draft' pill on the article and the hub." }
+      - { name: body, widget: markdown }
