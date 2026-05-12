@@ -18,7 +18,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const l = getLocation(slug);
   if (!l) return {};
-  return { title: l.meta_title, description: l.meta_description };
+  return {
+    title: l.meta_title,
+    description: l.meta_description,
+    alternates: { canonical: `/locations/${slug}` },
+  };
 }
 
 export default async function LocationPage({

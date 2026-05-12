@@ -2,7 +2,7 @@
 parent: design-help
 subslug: in-store-consultation
 
-meta_title: "Free In-Store Design Consultation | Canwell, Broadway"
+meta_title: "Free In-Store Design Consultation"
 meta_description: "A free 30 to 60 minute consultation at the Canwell showroom in Broadway. Bring photos, dimensions, and what you're trying to do. We'll help you choose."
 
 eyebrow: "Design help · In-store"
@@ -29,16 +29,16 @@ why_body: |
 
   **An idea of budget.** Not exact. Just a rough sense, so we can point you to the right pieces.
 
-brands_h2: "Booking"
+brands_h2: "How to book"
 brands_body: |
-  Walk in any time we're open. If we're with another customer, we'll either ask you to wait or book you back in for a specific slot. Saturdays are the busiest, so booking ahead is sensible.
+  Walk in any time we're open, or send a request and we'll come back to you with a slot. Saturdays book up fastest.
 
   Call 01905 964994 or use the contact form to suggest a day and time.
 
 cta_eyebrow: "Ready"
 cta_h2: "Book a *slot*."
 ctas:
-  - { label: "Book a slot", url: "/contact", variant: "primary" }
-  - { label: "Or just walk in", url: "/visit", variant: "secondary" }
+  - { label: "Call 01905 964994", url: "tel:01905964994", variant: "primary" }
+  - { label: "Send a booking request", url: "/contact?subject=in-store-consultation", variant: "secondary" }
   - { label: "See the home visit option", url: "/design-help/home-visit", variant: "tertiary" }
 ---

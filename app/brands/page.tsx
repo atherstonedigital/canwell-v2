@@ -3,11 +3,17 @@ import Link from "next/link";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { Prose } from "@/components/sections/Prose";
 import { CTABanner } from "@/components/sections/CTABanner";
+import { Schema } from "@/components/Schema";
+import { breadcrumbSchema } from "@/lib/schema";
 import { getBrands, getBrandsHub, getHomepage } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
   const h = getBrandsHub();
-  return { title: h.meta_title, description: h.meta_description };
+  return {
+    title: h.meta_title,
+    description: h.meta_description,
+    alternates: { canonical: "/brands" },
+  };
 }
 
 const FALLBACK_BRANDS = [
@@ -28,6 +34,13 @@ export default function BrandsHubPage() {
 
   return (
     <>
+      <Schema
+        id="ld-breadcrumb-brands"
+        payload={breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Brands", url: "/brands" },
+        ])}
+      />
       <PageHeader eyebrow={hub.eyebrow} h1={hub.h1} lead={hub.lead} image={hub.image} />
       <Prose h2="Why these, and not others" body={hub.intro_body} />
 
@@ -41,6 +54,8 @@ export default function BrandsHubPage() {
               <span className="brand-row-cta">See {brand.brand_name} at Canwell</span>
             </Link>
           ))}
+          {/* QA Audit 2026-05-12 — Task 12: brands without dedicated pages render
+              as muted entries with an "in the showroom" note, not "Coming soon". */}
           {homepageBrandSlugs
             .filter((slug) => !stockedSlugs.has(slug))
             .map((slug) => {
@@ -51,13 +66,13 @@ export default function BrandsHubPage() {
                 (f) => f.name === homepageEntry?.name
               );
               return (
-                <div key={slug} className="brand-row" style={{ cursor: "default" }}>
+                <div key={slug} className="brand-row brand-row-pending" style={{ cursor: "default" }}>
                   <span className="brand-row-name">{homepageEntry?.name ?? slug}</span>
                   <span className="brand-row-tag">
-                    {fallback?.tagline ?? "Stockist page coming soon."}
+                    {fallback?.tagline ?? "Available on the showroom floor."}
                   </span>
                   <span className="brand-row-cta" style={{ color: "var(--color-text-muted)" }}>
-                    Coming soon
+                    Available in the showroom now. Brand page coming soon.
                   </span>
                 </div>
               );

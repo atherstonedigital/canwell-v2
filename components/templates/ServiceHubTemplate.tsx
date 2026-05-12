@@ -4,15 +4,47 @@ import { Steps } from "@/components/sections/Steps";
 import { Cards } from "@/components/sections/Cards";
 import { FAQ } from "@/components/sections/FAQ";
 import { CTABanner } from "@/components/sections/CTABanner";
+import { Schema } from "@/components/Schema";
+import {
+  breadcrumbSchema,
+  faqSchema,
+  serviceSchema,
+} from "@/lib/schema";
 import type { ServiceHubContent } from "@/lib/types";
+
+interface SubPageMeta {
+  parent?: string;
+  subslug?: string;
+}
 
 interface Props {
   hub: ServiceHubContent;
 }
 
 export function ServiceHubTemplate({ hub }: Props) {
+  // QA Audit 2026-05-12 — Task 10: build breadcrumb + service schemas per page.
+  const meta = hub as ServiceHubContent & SubPageMeta;
+  const isSub = Boolean(meta.parent && meta.subslug);
+  const path = isSub ? `/${meta.parent}/${meta.subslug}` : `/${(hub as unknown as { slug?: string }).slug ?? ""}`;
+  const parentName = isSub ? (meta.parent ?? "").replace(/-/g, " ") : "";
+  const breadcrumbs = isSub
+    ? [
+        { name: "Home", url: "/" },
+        { name: parentName.charAt(0).toUpperCase() + parentName.slice(1), url: `/${meta.parent}` },
+        { name: hub.h1.replace(/\*/g, ""), url: path },
+      ]
+    : [
+        { name: "Home", url: "/" },
+        { name: hub.h1.replace(/\*/g, ""), url: path },
+      ];
+
   return (
     <>
+      <Schema id={`ld-breadcrumb-${path}`} payload={breadcrumbSchema(breadcrumbs)} />
+      <Schema id={`ld-service-${path}`} payload={serviceSchema(hub, path)} />
+      {hub.faqs && hub.faqs.length > 0 && (
+        <Schema id={`ld-faq-${path}`} payload={faqSchema(hub.faqs)} />
+      )}
       <PageHeader
         eyebrow={hub.eyebrow}
         h1={hub.h1}

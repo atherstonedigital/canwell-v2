@@ -4,18 +4,34 @@ import { Prose } from "@/components/sections/Prose";
 import { Cards } from "@/components/sections/Cards";
 import { FAQ } from "@/components/sections/FAQ";
 import { CTABanner } from "@/components/sections/CTABanner";
+import { Schema } from "@/components/Schema";
+import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { Inline } from "@/components/signature/RichText";
 import { getDesignHelpHub } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
   const d = getDesignHelpHub();
-  return { title: d.meta_title, description: d.meta_description };
+  return {
+    title: d.meta_title,
+    description: d.meta_description,
+    alternates: { canonical: "/design-help" },
+  };
 }
 
 export default function DesignHelpPage() {
   const d = getDesignHelpHub();
   return (
     <>
+      <Schema
+        id="ld-breadcrumb-design-help"
+        payload={breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Design help", url: "/design-help" },
+        ])}
+      />
+      {d.faqs && d.faqs.length > 0 && (
+        <Schema id="ld-faq-design-help" payload={faqSchema(d.faqs)} />
+      )}
       <PageHeader eyebrow={d.eyebrow} h1={d.h1} lead={d.lead} image={d.image} />
       <Prose h2={d.intro_h2} body={d.intro_body} />
 

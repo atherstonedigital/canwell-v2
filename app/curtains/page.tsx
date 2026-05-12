@@ -6,7 +6,11 @@ import { getServiceHub } from "@/lib/content";
 export async function generateMetadata(): Promise<Metadata> {
   const hub = getServiceHub("curtains");
   if (!hub) return {};
-  return { title: hub.meta_title, description: hub.meta_description };
+  return {
+    title: hub.meta_title,
+    description: hub.meta_description,
+    alternates: { canonical: "/curtains" },
+  };
 }
 
 export default function CurtainsPage() {

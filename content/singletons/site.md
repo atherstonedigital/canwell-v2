@@ -12,10 +12,10 @@ postcode: WR12 7DJ
 phone: 01905 964994
 email: canwellcotswolds@gmail.com
 opening_hours_summary: Open seven days
-opening_hours_weekday: Mon–Fri 9am to 5pm
-opening_hours_saturday: Sat 9am to 5pm
-opening_hours_sunday: Sun 10am to 4pm
-year_established: "{{YEAR_ESTABLISHED}}"
+opening_hours_weekday: 9am to 5pm
+opening_hours_saturday: 9am to 5pm
+opening_hours_sunday: 10am to 4pm
+year_established: "2009"
 sister_site_saverys_broadway_url: ""
 sister_site_saverys_ludlow_url: ""
 sister_site_xshowhome_url: https://xshowhome.com

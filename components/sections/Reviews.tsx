@@ -1,5 +1,4 @@
 import { Inline, PlainWithPlaceholders } from "@/components/signature/RichText";
-import { Placeholder } from "@/components/signature/Placeholder";
 import type { Review } from "@/lib/types";
 
 interface ReviewsProps {
@@ -27,14 +26,10 @@ export function Reviews({
           </h2>
         </div>
 
+        {/* QA Audit 2026-05-12 — Task 3: no Draft review label on published testimonials. */}
         <div className="reviews-grid">
           {reviews.map((review) => (
             <div key={review.slug} className="review">
-              {review.is_placeholder && (
-                <span className="review-placeholder-tag">
-                  <Placeholder label="Draft review" />
-                </span>
-              )}
               <p className="review-quote">
                 “<PlainWithPlaceholders text={review.quote} />”
               </p>
@@ -48,6 +43,8 @@ export function Reviews({
           ))}
         </div>
 
+        {/* QA Audit 2026-05-12 — Task 19: until the Google Business Profile is
+            rebuilt, show a plain note rather than a dead "Read more on Google" link. */}
         <div className="reviews-cta">
           {reviews_cta_url ? (
             <a
@@ -59,9 +56,9 @@ export function Reviews({
               {reviews_cta_label}
             </a>
           ) : (
-            <span className="btn btn-tertiary" aria-disabled="true">
-              {reviews_cta_label}
-            </span>
+            <p className="reviews-cta-note">
+              More reviews coming as we rebuild our Google Business Profile.
+            </p>
           )}
         </div>
       </div>

@@ -17,7 +17,11 @@ const ALL_LOCATIONS = [
 
 export async function generateMetadata(): Promise<Metadata> {
   const h = getLocationsHub();
-  return { title: h.meta_title, description: h.meta_description };
+  return {
+    title: h.meta_title,
+    description: h.meta_description,
+    alternates: { canonical: "/locations" },
+  };
 }
 
 export default function LocationsHubPage() {

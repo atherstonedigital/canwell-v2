@@ -2,12 +2,12 @@
 parent: design-help
 subslug: home-visit
 
-meta_title: "Home Design Consultation in the Cotswolds | Canwell"
-meta_description: "We come to you. {{HOME_VISIT_COST}} across the Cotswolds. Photos aren't always enough; sometimes the room needs to be seen."
+meta_title: "Cotswold Home Design Visit"
+meta_description: "We come to you. £75 across the Cotswolds, refunded against any purchase over £500. Photos aren't always enough; sometimes the room needs to be seen."
 
 eyebrow: "Design help · Home visit"
 h1: "Design help *at home*, across the Cotswolds"
-lead: "For when photos aren't enough, the room is awkward, or you're planning more than one room at a time. {{HOME_VISIT_COST}}, covers {{HOME_VISIT_AREA}}."
+lead: "For when photos aren't enough, the room is awkward, or you're planning more than one room at a time. £75, refunded against any purchase over £500. Covers a 30-mile radius of Broadway."
 
 intro_h2: "When to ask us to come to you"
 intro_body: |
@@ -34,9 +34,9 @@ steps:
 
 why_h2: "What it costs"
 why_body: |
-  {{HOME_VISIT_COST_PARAGRAPH_PLACEHOLDER}}: Either "free", or "£X, refundable against any order over £Y", or "£X, non-refundable". Be specific.
+  £75, refunded against any purchase over £500. So if you decide to go ahead with curtains, a carpet, or a furniture order, the visit effectively costs you nothing.
 
-  Coverage: {{HOME_VISIT_AREA}}. Outside the area, ask. Some projects are worth a longer drive.
+  Coverage: a 30-mile radius of Broadway. Outside the area, ask. Some projects are worth a longer drive.
 
 cta_eyebrow: "Ready"
 cta_h2: "Request a *home visit*."

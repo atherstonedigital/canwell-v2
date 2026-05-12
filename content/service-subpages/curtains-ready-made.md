@@ -2,7 +2,7 @@
 parent: curtains
 subslug: ready-made
 
-meta_title: "Ready-Made Curtains | Take Home Today | Canwell, Broadway"
+meta_title: "Ready-Made Curtains · Take Home Today"
 meta_description: "Ready-made curtains in standard sizes, in stock at the showroom in Broadway. Take home today. Useful for guest rooms, holiday lets, and quick refreshes."
 
 eyebrow: "Curtains · Ready-made"
@@ -23,7 +23,7 @@ why_h2: "What we stock"
 why_body: |
   We hold ready-made curtains in the most common sizes: 46-inch, 66-inch, 90-inch, 108-inch widths, in 54-inch, 72-inch, 90-inch drops, in plain, patterned, and a small range of blackouts.
 
-  Brands include {{READY_MADE_BRAND_LIST_PLACEHOLDER}}. Stock changes weekly, so it's worth checking before you make a special trip if you're after something specific.
+  Brands include Riva, Malini, and a rotating selection of smaller fabric houses. Stock changes weekly, so it's worth checking before you make a special trip if you're after something specific.
 
 brands_h2: "Measuring up before you visit"
 brands_body: |

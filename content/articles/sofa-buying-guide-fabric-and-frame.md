@@ -1,6 +1,6 @@
 ---
 title: "An honest guide to buying a sofa"
-meta_title: "An Honest Guide to Buying a Sofa | Canwell Interiors"
+meta_title: "An Honest Guide to Buying a Sofa"
 meta_description: "What to look for, what to ignore, and the questions to ask before you commit. Forty years of selling sofas in the Cotswolds, distilled."
 excerpt: "Fabric first, then frame. Cushion construction. Depth and back-height. The two-hour test. Five questions worth asking before you commit."
 category: "Furniture"
@@ -15,7 +15,7 @@ Most people buy a sofa in under an hour, often after looking at it for ten minut
 
 ## Fabric first
 
-{{ARTICLE_BODY_PLACEHOLDER}}: Why the fabric is the longest decision, not the frame. Velvet, linen, boucle, leather, performance fabric, woven. How each ages. Which suits which kind of household.
+The fabric is the decision you'll live with longest, so it's the one to start with rather than save for the end. Velvet looks rich on day one but flattens in the seating area faster than people expect; linen creases beautifully if you accept that's part of the look, badly if you don't; boucle is forgiving with light wear but harder to clean; leather softens for years and is the easiest with kids and dogs but reads cooler in winter; performance fabrics have caught up enough to be a genuine option, especially for households with toddlers. Pick the fabric for the room and the household first, then choose a frame that comes in it.
 
 ## Frame quality
 

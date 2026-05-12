@@ -2,14 +2,14 @@
 brand_name: "Richmond Interiors"
 tagline: "Classic and contemporary upholstery and accessories"
 
-meta_title: "Richmond Interiors Stockist in the Cotswolds | Canwell, Broadway"
+meta_title: "Richmond Interiors Stockist in the Cotswolds"
 meta_description: "Richmond Interiors sofas, dining furniture, and accessories on the showroom floor at Canwell, Broadway. The Cotswolds Richmond stockist."
 
-intro_body: "{{RICHMOND_BRAND_PARAGRAPH}}: One short paragraph on what Richmond Interiors is known for, the design ethos, and what makes their pieces distinctive. Honest framing, not marketing language."
+intro_body: "Richmond Interiors is a Dutch-design house with a long-standing range of upholstery, dining, and accent pieces. The look pulls together classic shapes and contemporary fabrics; the construction earns its place on the showroom floor by holding up to long-term use. We carry it because the pieces age well and the after-sales service is honest when something does go wrong."
 
 what_we_stock_h2: "Richmond at Canwell"
 what_we_stock_body: |
-  We carry {{RICHMOND_COLLECTIONS}}: a rotating selection from Richmond's core upholstery, dining, and accessory ranges. The pieces on the floor change as new collections come in, so it's worth checking with us before a special trip.
+  We carry a rotating selection from Richmond's core upholstery, dining, and accessory ranges. The pieces on the floor change as new collections come in, so it's worth checking with us before a special trip.
 
   **On the floor regularly:** Sofas, armchairs, dining chairs, accent furniture, occasional pieces, accessories.
 

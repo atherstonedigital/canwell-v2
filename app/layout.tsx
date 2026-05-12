@@ -23,6 +23,11 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://canwell-v2.netlify.app";
+// QA Audit 2026-05-12 — Task 21: dev site noindex; flip to true at launch.
+const INDEXABLE = process.env.NEXT_PUBLIC_INDEXABLE === "true";
+
 export async function generateMetadata(): Promise<Metadata> {
   const site = getSite();
   const icons: Metadata["icons"] = site.favicon
@@ -35,18 +40,48 @@ export async function generateMetadata(): Promise<Metadata> {
       }
     : undefined;
 
+  const defaultTitle =
+    "Canwell Interiors — Furnishings Showroom in Broadway, Cotswolds";
+  const description =
+    "The Cotswolds furnishings showroom at the Cotswold Design Centre in Broadway. Furniture, carpets, curtains, blinds, and honest design help, all under one roof. Open seven days.";
+
   return {
-    metadataBase: new URL("https://canwell-v2.netlify.app"),
+    metadataBase: new URL(SITE_URL),
+    // QA Audit 2026-05-12 — Task 1: template strips the duplicate brand suffix.
     title: {
-      default: "Canwell Interiors — Furnishings Showroom in Broadway, Cotswolds",
+      default: defaultTitle,
       template: `%s · ${site.site_name}`,
     },
-    description:
-      "The Cotswolds furnishings showroom on Broadway High Street. Furniture, carpets, curtains, blinds, and honest design help, all under one roof. Open seven days.",
+    description,
+    // QA Audit 2026-05-12 — Task 15: canonical defaults to homepage; pages override.
+    alternates: {
+      canonical: "/",
+    },
+    // QA Audit 2026-05-12 — Task 21: gate indexing behind env flag.
+    robots: INDEXABLE
+      ? { index: true, follow: true }
+      : { index: false, follow: false },
+    // QA Audit 2026-05-12 — Task 9: site-wide OG/Twitter defaults with image.
     openGraph: {
       type: "website",
       locale: "en_GB",
       siteName: site.site_name,
+      title: defaultTitle,
+      description,
+      images: [
+        {
+          url: "/og/canwell-default.jpg",
+          width: 1200,
+          height: 630,
+          alt: "The Canwell Interiors showroom in Broadway, Cotswolds",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: defaultTitle,
+      description,
+      images: ["/og/canwell-default.jpg"],
     },
     icons,
   };
@@ -62,19 +97,32 @@ export default function RootLayout({
   return (
     <html lang="en-GB" className={`${cormorant.variable} ${dmSans.variable}`}>
       <body>
+        {/* QA Audit 2026-05-12 — Task 17: skip link for keyboard users. */}
+        <a href="#main" className="skip-link">
+          Skip to main content
+        </a>
         <Script
           id="ld-localbusiness"
           type="application/ld+json"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema(site)) }}
         />
+        {/* QA Audit 2026-05-12 — Task 20: Plausible analytics (gated until production domain set). */}
+        {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN ? (
+          <Script
+            defer
+            data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN}
+            src="https://plausible.io/js/script.js"
+            strategy="afterInteractive"
+          />
+        ) : null}
         <Script
           src="https://identity.netlify.com/v1/netlify-identity-widget.js"
           strategy="afterInteractive"
         />
         <UtilityBar site={site} />
         <Header />
-        <main>{children}</main>
+        <main id="main">{children}</main>
         <Footer site={site} nav={nav} />
         <Script id="netlify-identity-redirect" strategy="afterInteractive">{`
           if (window.netlifyIdentity) {

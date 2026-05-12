@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { SectionMarker } from "@/components/signature/SectionMarker";
 import { Stamp } from "@/components/signature/Stamp";
-import { Rings } from "@/components/signature/Rings";
 import { Inline, PlainWithPlaceholders } from "@/components/signature/RichText";
 import type { HomepageContent, SiteSettings } from "@/lib/types";
 
@@ -28,8 +27,10 @@ export function Visit({
     .filter(Boolean)
     .join(", ");
 
+  // QA Audit 2026-05-12 — Task 8: site.md now stores hours without day prefix;
+  // re-add the day label here for the concatenated homepage summary.
   const hoursLine = site.opening_hours_weekday && site.opening_hours_saturday && site.opening_hours_sunday
-    ? `${site.opening_hours_weekday} · ${site.opening_hours_saturday} · ${site.opening_hours_sunday}`
+    ? `Mon–Fri ${site.opening_hours_weekday} · Sat ${site.opening_hours_saturday} · Sun ${site.opening_hours_sunday}`
     : site.opening_hours_summary;
 
   return (
@@ -98,16 +99,16 @@ export function Visit({
             )}
           </div>
 
+          {/* QA Audit 2026-05-12 — Task 7: empty map slot — no "MAP" literal. */}
+          {/* TODO(photo): embed an interactive map or replace with a static showroom map image. */}
           <div className="visit-map">
-            <div className="visit-map-label">
-              <Rings size="md">
-                <span style={{ fontSize: "0.625rem" }}>MAP</span>
-              </Rings>
+            <div className="visit-map-placeholder" aria-hidden="true" />
+            <p className="visit-map-caption">
               {site.address_line_1}
               <span className="visit-map-coords">
                 {site.address_line_2}, {site.postcode}
               </span>
-            </div>
+            </p>
           </div>
         </div>
       </div>

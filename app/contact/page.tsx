@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { ContactForm } from "@/components/sections/ContactForm";
+import { Schema } from "@/components/Schema";
+import { breadcrumbSchema } from "@/lib/schema";
 import { getContact, getSite } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
   const c = getContact();
-  return { title: c.meta_title, description: c.meta_description };
+  // QA Audit 2026-05-12 — Task 15: per-page canonical.
+  return {
+    title: c.meta_title,
+    description: c.meta_description,
+    alternates: { canonical: "/contact" },
+  };
 }
 
 export default function ContactPage() {
@@ -15,6 +23,13 @@ export default function ContactPage() {
 
   return (
     <>
+      <Schema
+        id="ld-breadcrumb-contact"
+        payload={breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Contact", url: "/contact" },
+        ])}
+      />
       <PageHeader eyebrow={c.eyebrow} h1={c.h1} lead={c.lead} image={c.image} />
 
       <section className="quick-contact">
@@ -51,7 +66,10 @@ export default function ContactPage() {
           <h2 className="display-h2" style={{ marginBottom: "var(--s-6)" }}>
             {c.form_h2}
           </h2>
-          <ContactForm microcopy={c.form_microcopy} confirmMessage={c.form_confirm} />
+          {/* QA Audit 2026-05-12 — Task 13: Suspense boundary for useSearchParams. */}
+          <Suspense fallback={null}>
+            <ContactForm microcopy={c.form_microcopy} confirmMessage={c.form_confirm} />
+          </Suspense>
         </div>
       </section>
 

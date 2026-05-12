@@ -1,5 +1,5 @@
 ---
-meta_title: "Curtains in the Cotswolds | Made-to-Measure & Ready-Made | Canwell Interiors"
+meta_title: "Curtains in Broadway · Made-to-Measure"
 meta_description: "Made-to-measure and ready-made curtains in Broadway. Fabric to feel in person, advice on dressing every window, free home consultation."
 
 eyebrow: "Curtains"
@@ -12,7 +12,7 @@ intro_body: "Most rooms get the right answer from one of two routes. Made-to-mea
 cards_h2: "The two routes"
 cards:
   - title: "Made-to-measure curtains"
-    body: "For windows that don't fit standard sizes, fabric you want to choose properly, and rooms where you want the curtain to do the job properly. We measure, you choose the fabric, lining, and heading, and they're made up and hung within {{MTM_CURTAIN_LEAD_TIME}}."
+    body: "For windows that don't fit standard sizes, fabric you want to choose properly, and rooms where you want the curtain to do the job properly. We measure, you choose the fabric, lining, and heading, and they're made up and hung within four to six weeks."
     link_label: "How made-to-measure works"
     link_url: "/curtains/made-to-measure"
   - title: "Ready-made curtains"
@@ -32,7 +32,7 @@ brands_body: |
 
   That's where made-to-measure earns its keep. We've measured curtains for cottages with original wattle-and-daub walls, Georgian townhouses on the High Street, barn conversions, and pretty much everything in between. The fitters know which tracks work on stone, which poles need extending, and how to handle a window that isn't square.
 
-  We carry fabric and ready-made curtains from {{CURTAIN_BRANDS_PLACEHOLDER}}. The made-to-measure side is fabric-led: you choose the cloth, then we make the curtain. Riva, Malini, and several smaller fabric houses on rotation.
+  We carry fabric and ready-made curtains from Riva, Malini, and several smaller fabric houses on rotation. The made-to-measure side is fabric-led: you choose the cloth, then we make the curtain.
 
 cta_eyebrow: "Ready to dress the window"
 cta_h2: "Visit to *feel the fabric*."

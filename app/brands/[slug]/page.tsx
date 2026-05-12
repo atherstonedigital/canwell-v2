@@ -17,7 +17,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const b = getBrand(slug);
   if (!b) return {};
-  return { title: b.meta_title, description: b.meta_description };
+  return {
+    title: b.meta_title,
+    description: b.meta_description,
+    alternates: { canonical: `/brands/${slug}` },
+  };
 }
 
 export default async function BrandPage({

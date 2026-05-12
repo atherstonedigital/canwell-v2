@@ -2,8 +2,8 @@
 parent: carpets
 subslug: measured-and-fitted
 
-meta_title: "Fitted Carpets in the Cotswolds | Free Home Measure | Canwell"
-meta_description: "Carpets measured and fitted across the Cotswolds. Free home measure. One quote, no hidden extras. Fitting within {{CARPET_FIT_LEAD_TIME}}."
+meta_title: "Fitted Carpets · Free Home Measure"
+meta_description: "Carpets measured and fitted across the Cotswolds. Free home measure. One quote, no hidden extras. Fitting within two to three weeks."
 
 eyebrow: "Carpets · Measured and fitted"
 h1: "Carpets, measured and fitted across the *Cotswolds*"
@@ -20,20 +20,20 @@ steps:
   - title: "Come in, or call"
     body: "Have a look at the sample wall, get a feel for what you like. We're happy to send you home with two or three sample books for a week. No deposit, no commitment."
   - title: "We come and measure"
-    body: "Free, anywhere within {{HOME_VISIT_AREA}}. We bring your chosen samples to the room itself so you can see them in your own light, next to your wall colour and the furniture you're keeping."
+    body: "Free, anywhere within a 30-mile radius of Broadway. We bring your chosen samples to the room itself so you can see them in your own light, next to your wall colour and the furniture you're keeping."
   - title: "We quote, in writing"
     body: "One number. Carpet, underlay, grippers, fitting, old carpet removal, furniture moves. If anything else is needed, it's listed separately so you can decide."
-  - title: "We fit, within {{CARPET_FIT_LEAD_TIME}}"
-    body: "{{NAMED_FITTERS}} have worked with us for years. Clean, careful, and finished when they say they will be."
+  - title: "We fit, within two to three weeks"
+    body: "The same fitters we've worked with for years. Clean, careful, and finished when they say they will be."
 
 why_h2: "Who turns up"
 why_body: |
-  {{NAMED_FITTERS_PARAGRAPH_PLACEHOLDER}}: A short paragraph naming the fitting team, how long they've worked with Canwell, and what to expect on the day. Boots off, dust sheets down, old carpet rolled and taken away.
+  The fitters who turn up at your door are the same team we've worked with since the showroom opened. Boots off, dust sheets down, furniture moved out and back, old carpet rolled and taken away. You'll get a tidy room and a fitter who'll talk you through anything that needs explaining on the day.
 
 faq_h2: "Questions people ask"
 faqs:
   - question: "How long does it take from measure to fitted?"
-    answer: "Usually {{CARPET_FIT_LEAD_TIME}}, depending on stock and which fitter is next available. Faster if you're flexible on dates."
+    answer: "Usually two to three weeks, depending on stock and which fitter is next available. Faster if you're flexible on dates."
   - question: "Do you move the furniture?"
     answer: "Yes, included in the price. The only exception is very heavy or fitted items (pianos, full fitted bedrooms, hot tubs)."
   - question: "Do you take away the old carpet?"

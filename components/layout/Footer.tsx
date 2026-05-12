@@ -35,8 +35,11 @@ function FooterLink({ link, site }: { link: NavLink; site: SiteSettings }) {
       </a>
     );
   }
+  // QA Audit 2026-05-12 — Task 5: Saverys URLs awaiting confirmation; render as
+  // muted text rather than href="#" placeholders.
+  // TODO(links): Saverys URLs awaiting confirmation
   if (url === "#") {
-    return <a href="#">{link.label}</a>;
+    return <span className="footer-link-pending">{link.label}</span>;
   }
   return <Link href={url}>{link.label}</Link>;
 }
@@ -51,9 +54,10 @@ export function Footer({ site, nav }: FooterProps) {
           <div className="footer-col">
             {footerLogo ? (
               <span className="footer-brand-logo">
+                {/* QA Audit 2026-05-12 — Task 22: footer logo is a decorative repeat. */}
                 <Image
                   src={footerLogo}
-                  alt={site.logo_alt || site.site_name}
+                  alt=""
                   width={160}
                   height={56}
                 />

@@ -1,7 +1,7 @@
 ---
 location_name: "Stratford-upon-Avon"
 
-meta_title: "Furniture & Interiors Near Stratford-upon-Avon | Canwell"
+meta_title: "Furniture & Interiors Near Stratford-upon-Avon"
 meta_description: "Twenty-five minutes from Stratford-upon-Avon through the Cotswolds. Furniture, carpets, curtains, and interior design help at Canwell Interiors, Broadway."
 
 eyebrow: "Areas we serve · Stratford-upon-Avon"
@@ -24,9 +24,9 @@ what_we_offer_body: |
 
   **Interior design help.** Free in the showroom, with home visits across the Stratford area. Most Stratford customers we see want help putting a room together rather than designing one from scratch.
 
-delivery_h2: "Recent Stratford projects"
+delivery_h2: "What we deliver across Stratford-upon-Avon"
 delivery_body: |
-  {{LOCAL_PROJECT_NOTES_STRATFORD}}: A short paragraph on recent Stratford-area customer work, with permission, or describing the kinds of properties we've worked on in the area.
+  Furniture, carpets, curtains, and blinds delivered and fitted across the Stratford postcodes. Free delivery on furniture orders over £500, and free home measures for carpets, curtains, and blinds within the same area.
 
 cta_eyebrow: "Twenty-five minutes through the Cotswolds"
 cta_h2: "Plan a *visit* from Stratford."
