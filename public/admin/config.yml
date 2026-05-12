@@ -55,7 +55,7 @@ collections:
     files:
       - file: content/singletons/not-found.md
         name: not_found
-        label: 404
+        label: "404"
         fields:
           - { name: meta_title, widget: string }
           - { name: meta_description, widget: text }
