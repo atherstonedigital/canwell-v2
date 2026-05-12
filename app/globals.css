@@ -983,6 +983,14 @@ em,
   text-transform: uppercase;
 }
 
+.service-image:has(img)::after {
+  display: none;
+}
+
+.service-image img {
+  z-index: 1;
+}
+
 .service-body {
   padding: var(--s-5) var(--s-5) var(--s-6);
 }
@@ -2588,6 +2596,14 @@ a.card:hover .card-link::after {
   font-size: var(--fs-caption);
   letter-spacing: 0.16em;
   text-transform: uppercase;
+}
+
+.article-card-image:has(img)::after {
+  display: none;
+}
+
+.article-card-image img {
+  z-index: 1;
 }
 
 .article-card h3 {

@@ -12,4 +12,18 @@ intro_body: |
   The pieces below are the questions we get asked most often in the showroom, written up properly so you can think them through before you visit. Choosing a carpet for a country home. Dressing the windows in an old Cotswold cottage. Refreshing a room over a weekend.
 
   No paid placements, no affiliate links, no thirteen-step buying processes. Just useful.
+
+subscribe_h2: "New pieces, in the *weekly email*."
+subscribe_body: "We publish a new piece roughly every fortnight. The Friday email includes anything new along with new arrivals in the showroom and any upcoming events. One email a week. Unsubscribe in one click."
+subscribe_ctas:
+  - { label: "Get the weekly update", url: "/#subscribe", variant: "primary" }
+  - { label: "Visit the showroom", url: "/visit", variant: "secondary" }
+  - { label: "Book a design consultation", url: "/design-help/in-store-consultation", variant: "tertiary" }
+
+article_end_eyebrow: "Useful?"
+article_end_h2: "Get the *weekly update*."
+article_end_body: "A short email every Friday with what's new in the showroom and any new pieces here."
+article_end_ctas:
+  - { label: "Get the weekly update", url: "/#subscribe", variant: "primary" }
+  - { label: "Visit the showroom", url: "/visit", variant: "secondary" }
 ---

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { Prose } from "@/components/sections/Prose";
@@ -48,7 +49,17 @@ export default function InspirationHubPage() {
                 href={`/inspiration/${article.slug}`}
                 className="article-card"
               >
-                <div className="article-card-image" />
+                <div className="article-card-image">
+                  {article.image && (
+                    <Image
+                      src={article.image}
+                      alt={article.title}
+                      fill
+                      sizes="(max-width: 900px) 100vw, 33vw"
+                      style={{ objectFit: "cover" }}
+                    />
+                  )}
+                </div>
                 <div className="article-meta">
                   <span>{article.category}</span>
                   <span className="sep" aria-hidden="true">·</span>
@@ -70,16 +81,14 @@ export default function InspirationHubPage() {
         </div>
       </section>
 
-      <CTABanner
-        eyebrow="Subscribe"
-        h2="New pieces, in the *weekly email*."
-        body="We publish a new piece roughly every fortnight. The Friday email includes anything new along with new arrivals in the showroom and any upcoming events. One email a week. Unsubscribe in one click."
-        ctas={[
-          { label: "Get the weekly update", url: "/#subscribe", variant: "primary" },
-          { label: "Visit the showroom", url: "/visit", variant: "secondary" },
-          { label: "Book a design consultation", url: "/design-help/in-store-consultation", variant: "tertiary" },
-        ]}
-      />
+      {hub.subscribe_h2 && (
+        <CTABanner
+          eyebrow="Subscribe"
+          h2={hub.subscribe_h2}
+          body={hub.subscribe_body}
+          ctas={hub.subscribe_ctas || []}
+        />
+      )}
     </>
   );
 }

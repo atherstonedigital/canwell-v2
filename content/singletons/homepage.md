@@ -10,6 +10,9 @@ hero_microcopy:
   - "FAMILY-RUN SINCE {{YEAR_ESTABLISHED}}"
   - "OPEN SEVEN DAYS"
   - "FREE PARKING"
+hero_ctas:
+  - { label: "Plan your visit", url: "/visit", variant: "primary" }
+  - { label: "Get the weekly update", url: "#subscribe", variant: "tertiary" }
 
 intro_eyebrow: "What we do"
 intro_h2: "Everything for a Cotswold home, *under one roof*."

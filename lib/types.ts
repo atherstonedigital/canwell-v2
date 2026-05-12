@@ -1,6 +1,9 @@
 export interface SiteSettings {
   site_name: string;
   tagline: string;
+  logo_image?: string;
+  logo_alt?: string;
+  footer_logo_image?: string;
   address_line_1: string;
   address_line_2: string;
   postcode: string;
@@ -20,11 +23,43 @@ export interface SiteSettings {
   directions_url: string;
 }
 
+export interface NavLink {
+  label: string;
+  url: string;
+  external?: boolean;
+}
+
+export interface FooterColumn {
+  heading: string;
+  links: NavLink[];
+}
+
+export interface NavigationContent {
+  primary_nav: NavLink[];
+  header_cta_label: string;
+  header_cta_url: string;
+  mobile_menu_cta_label: string;
+  mobile_menu_cta_url: string;
+  footer_brand_line: string;
+  footer_columns: FooterColumn[];
+  footer_copyright: string;
+  footer_bottom_links: NavLink[];
+}
+
+export interface NotFoundContent {
+  meta_title: string;
+  meta_description: string;
+  h1: string;
+  body: string;
+  ctas: CTA[];
+}
+
 export interface ServiceCard {
   title: string;
   body: string;
   link_label: string;
   link_url: string;
+  image?: string;
 }
 
 export interface Stamp {
@@ -68,6 +103,7 @@ export interface HomepageContent {
   hero_lead: string;
   hero_image?: string;
   hero_microcopy: string[];
+  hero_ctas?: CTA[];
 
   intro_eyebrow: string;
   intro_h2: string;
@@ -368,5 +404,12 @@ export interface InspirationHubContent {
   eyebrow: string;
   h1: string;
   lead: string;
+  subscribe_h2?: string;
+  subscribe_body?: string;
+  subscribe_ctas?: CTA[];
+  article_end_eyebrow?: string;
+  article_end_h2?: string;
+  article_end_body?: string;
+  article_end_ctas?: CTA[];
   intro_body: string;
 }

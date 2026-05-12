@@ -8,6 +8,66 @@ media_folder: public/uploads
 public_folder: /uploads
 
 collections:
+  # ----- Navigation singleton -----
+  - name: navigation
+    label: "Site · Navigation"
+    description: "Single record. Header nav, footer columns, and legal links."
+    files:
+      - file: content/singletons/navigation.md
+        name: navigation
+        label: Navigation
+        fields:
+          - name: primary_nav
+            label: "Primary navigation (header + mobile menu)"
+            widget: list
+            fields:
+              - { name: label, widget: string }
+              - { name: url, widget: string }
+          - { name: header_cta_label, label: "Header button · label", widget: string }
+          - { name: header_cta_url, label: "Header button · URL", widget: string }
+          - { name: mobile_menu_cta_label, label: "Mobile menu button · label", widget: string }
+          - { name: mobile_menu_cta_url, label: "Mobile menu button · URL", widget: string }
+          - { name: footer_brand_line, label: "Footer · tagline under brand name", widget: text }
+          - name: footer_columns
+            label: "Footer columns"
+            widget: list
+            fields:
+              - { name: heading, label: Heading, widget: string }
+              - name: links
+                label: Links
+                widget: list
+                fields:
+                  - { name: label, widget: string }
+                  - { name: url, widget: string, required: false, hint: "Leave blank to use the site singleton URL for sister sites." }
+                  - { name: external, widget: boolean, default: false, required: false, hint: "Tick for sister-site / off-site links." }
+          - { name: footer_copyright, label: "Footer · copyright suffix", widget: string, hint: "Appended after '© Site name YEAR · '" }
+          - name: footer_bottom_links
+            label: "Footer · legal links"
+            widget: list
+            fields:
+              - { name: label, widget: string }
+              - { name: url, widget: string }
+
+  # ----- 404 page singleton -----
+  - name: not-found
+    label: "Page · 404"
+    description: "Copy shown when a URL doesn't resolve."
+    files:
+      - file: content/singletons/not-found.md
+        name: not_found
+        label: 404
+        fields:
+          - { name: meta_title, widget: string }
+          - { name: meta_description, widget: text }
+          - { name: h1, widget: string }
+          - { name: body, widget: text }
+          - name: ctas
+            widget: list
+            fields:
+              - { name: label, widget: string }
+              - { name: url, widget: string }
+              - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
+
   - name: site
     label: Site settings
     description: "Single record. Contact details, hours, social links."
@@ -18,6 +78,9 @@ collections:
         fields:
           - { name: site_name, label: Site name, widget: string }
           - { name: tagline, label: Tagline, widget: string }
+          - { name: logo_image, label: Header logo (image), widget: image, required: false, hint: "Optional. If set, replaces the text logo in the header. Leave blank for the default CI brandmark." }
+          - { name: logo_alt, label: Logo alt text, widget: string, required: false, default: "Canwell Interiors" }
+          - { name: footer_logo_image, label: Footer logo (image), widget: image, required: false, hint: "Optional separate logo for the footer. Falls back to the header logo if blank." }
           - { name: address_line_1, label: Address line 1, widget: string }
           - { name: address_line_2, label: Address line 2, widget: string }
           - { name: postcode, label: Postcode, widget: string }
@@ -56,6 +119,13 @@ collections:
             label: "Hero · microcopy strip"
             widget: list
             field: { name: text, label: Item, widget: string }
+          - name: hero_ctas
+            label: "Hero · call-to-action buttons"
+            widget: list
+            fields:
+              - { name: label, label: Label, widget: string }
+              - { name: url, label: URL, widget: string }
+              - { name: variant, label: Style, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
 
           - { name: intro_eyebrow, label: "Intro · eyebrow", widget: string }
           - { name: intro_h2, label: "Intro · H2", widget: string, hint: "Use *asterisks* for italic emphasis." }
@@ -74,6 +144,7 @@ collections:
               - { name: body, label: Body, widget: string }
               - { name: link_label, label: Link label, widget: string }
               - { name: link_url, label: Link URL, widget: string }
+              - { name: image, label: Card image, widget: image, required: false }
 
           - { name: design_help_eyebrow, label: "Design help · eyebrow", widget: string }
           - { name: design_help_h2, label: "Design help · H2", widget: string }
@@ -204,7 +275,6 @@ collections:
           - { name: eyebrow, widget: string }
           - { name: h1, widget: string, hint: "Use *asterisks* for italic emphasis." }
           - { name: lead, widget: text }
-      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
           - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
           - { name: how_to_find_h2, widget: string }
           - { name: how_to_find_body, widget: text }
@@ -246,7 +316,6 @@ collections:
           - { name: eyebrow, widget: string }
           - { name: h1, widget: string }
           - { name: lead, widget: text }
-      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
           - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
           - { name: story_h2, widget: string }
           - { name: story_body, widget: text }
@@ -283,7 +352,6 @@ collections:
           - { name: eyebrow, widget: string }
           - { name: h1, widget: string }
           - { name: lead, widget: text }
-      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
           - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
           - { name: quick_h2, widget: string }
           - { name: call_label, widget: string }
@@ -310,7 +378,6 @@ collections:
           - { name: eyebrow, widget: string }
           - { name: h1, widget: string }
           - { name: lead, widget: text }
-      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
           - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
           - { name: intro_h2, widget: string }
           - { name: intro_body, widget: text }
@@ -362,7 +429,6 @@ collections:
           - { name: eyebrow, widget: string }
           - { name: h1, widget: string }
           - { name: lead, widget: text }
-      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
           - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
           - { name: intro_body, widget: text }
           - { name: cta_eyebrow, widget: string }
@@ -387,7 +453,6 @@ collections:
           - { name: eyebrow, widget: string }
           - { name: h1, widget: string }
           - { name: lead, widget: text }
-      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
           - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
           - { name: intro_body, widget: text }
           - { name: cta_eyebrow, widget: string }
@@ -412,9 +477,29 @@ collections:
           - { name: eyebrow, widget: string }
           - { name: h1, widget: string }
           - { name: lead, widget: text }
-      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
           - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
           - { name: intro_body, widget: text }
+          - { name: subscribe_h2, label: "Subscribe band · H2", widget: string, required: false }
+          - { name: subscribe_body, label: "Subscribe band · body", widget: text, required: false }
+          - name: subscribe_ctas
+            label: "Subscribe band · CTAs"
+            widget: list
+            required: false
+            fields:
+              - { name: label, widget: string }
+              - { name: url, widget: string }
+              - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
+          - { name: article_end_eyebrow, label: "End-of-article CTA · eyebrow", widget: string, required: false }
+          - { name: article_end_h2, label: "End-of-article CTA · H2", widget: string, required: false }
+          - { name: article_end_body, label: "End-of-article CTA · body", widget: text, required: false }
+          - name: article_end_ctas
+            label: "End-of-article CTA · buttons"
+            widget: list
+            required: false
+            fields:
+              - { name: label, widget: string }
+              - { name: url, widget: string }
+              - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
 
   # ----- Service hubs collection (5 records: carpets, curtains, blinds, furniture, soft-furnishings) -----
   - name: service-hubs
