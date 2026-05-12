@@ -81,6 +81,8 @@ collections:
           - { name: logo_image, label: Header logo (image), widget: image, required: false, hint: "Optional. If set, replaces the text logo in the header. Leave blank for the default CI brandmark." }
           - { name: logo_alt, label: Logo alt text, widget: string, required: false, default: "Canwell Interiors" }
           - { name: footer_logo_image, label: Footer logo (image), widget: image, required: false, hint: "Optional separate logo for the footer. Falls back to the header logo if blank." }
+          - { name: favicon, label: Favicon, widget: image, required: false, hint: "Browser tab icon. Square PNG or SVG works best (32×32 or higher). Leave blank to use the default." }
+          - { name: apple_touch_icon, label: Apple touch icon, widget: image, required: false, hint: "Optional. 180×180 PNG used when someone adds the site to their iPhone home screen. Falls back to the favicon." }
           - { name: address_line_1, label: Address line 1, widget: string }
           - { name: address_line_2, label: Address line 2, widget: string }
           - { name: postcode, label: Postcode, widget: string }

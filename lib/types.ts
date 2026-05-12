@@ -4,6 +4,8 @@ export interface SiteSettings {
   logo_image?: string;
   logo_alt?: string;
   footer_logo_image?: string;
+  favicon?: string;
+  apple_touch_icon?: string;
   address_line_1: string;
   address_line_2: string;
   postcode: string;
