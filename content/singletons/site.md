@@ -1,7 +1,7 @@
 ---
 site_name: Canwell Interiors
 tagline: The Cotswolds furnishings showroom
-logo_image: /uploads/sq-black-on-cream.png
+logo_image: /uploads/canwell-interiors-logo-sq.png
 logo_alt: Canwell Interiors
 footer_logo_image: ""
 favicon: ""
