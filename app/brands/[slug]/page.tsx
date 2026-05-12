@@ -35,6 +35,7 @@ export default async function BrandPage({
         eyebrow={`${brand.brand_name} stockist`}
         h1={`*${brand.brand_name}* at Canwell, Broadway`}
         lead={brand.tagline}
+        image={brand.image}
       />
       <Prose h2="About the brand" body={brand.intro_body} />
       <Prose

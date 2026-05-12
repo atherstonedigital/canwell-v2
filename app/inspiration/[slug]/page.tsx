@@ -63,6 +63,7 @@ export default async function ArticlePage({
         eyebrow={article.category}
         h1={article.title}
         lead={article.excerpt}
+        image={article.image}
       />
 
       <section className="prose-section">

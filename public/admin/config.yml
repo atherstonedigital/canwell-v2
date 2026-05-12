@@ -204,6 +204,8 @@ collections:
           - { name: eyebrow, widget: string }
           - { name: h1, widget: string, hint: "Use *asterisks* for italic emphasis." }
           - { name: lead, widget: text }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+          - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
           - { name: how_to_find_h2, widget: string }
           - { name: how_to_find_body, widget: text }
           - { name: opening_hours_h2, widget: string }
@@ -244,6 +246,8 @@ collections:
           - { name: eyebrow, widget: string }
           - { name: h1, widget: string }
           - { name: lead, widget: text }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+          - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
           - { name: story_h2, widget: string }
           - { name: story_body, widget: text }
           - { name: founders_h2, widget: string }
@@ -279,6 +283,8 @@ collections:
           - { name: eyebrow, widget: string }
           - { name: h1, widget: string }
           - { name: lead, widget: text }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+          - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
           - { name: quick_h2, widget: string }
           - { name: call_label, widget: string }
           - { name: call_note, widget: text }
@@ -304,6 +310,8 @@ collections:
           - { name: eyebrow, widget: string }
           - { name: h1, widget: string }
           - { name: lead, widget: text }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+          - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
           - { name: intro_h2, widget: string }
           - { name: intro_body, widget: text }
           - { name: routes_h2, widget: string }
@@ -354,6 +362,8 @@ collections:
           - { name: eyebrow, widget: string }
           - { name: h1, widget: string }
           - { name: lead, widget: text }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+          - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
           - { name: intro_body, widget: text }
           - { name: cta_eyebrow, widget: string }
           - { name: cta_h2, widget: string }
@@ -377,6 +387,8 @@ collections:
           - { name: eyebrow, widget: string }
           - { name: h1, widget: string }
           - { name: lead, widget: text }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+          - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
           - { name: intro_body, widget: text }
           - { name: cta_eyebrow, widget: string }
           - { name: cta_h2, widget: string }
@@ -400,6 +412,8 @@ collections:
           - { name: eyebrow, widget: string }
           - { name: h1, widget: string }
           - { name: lead, widget: text }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
+          - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
           - { name: intro_body, widget: text }
 
   # ----- Service hubs collection (5 records: carpets, curtains, blinds, furniture, soft-furnishings) -----
@@ -416,6 +430,7 @@ collections:
       - { name: eyebrow, widget: string }
       - { name: h1, widget: string }
       - { name: lead, widget: text }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
       - { name: intro_h2, widget: string }
       - { name: intro_body, widget: text }
       - { name: cards_h2, widget: string, required: false }
@@ -472,6 +487,7 @@ collections:
       - { name: eyebrow, widget: string }
       - { name: h1, widget: string }
       - { name: lead, widget: text }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
       - { name: intro_h2, widget: string }
       - { name: intro_body, widget: text }
       - { name: cards_h2, widget: string, required: false }
@@ -521,6 +537,7 @@ collections:
     fields:
       - { name: brand_name, widget: string }
       - { name: tagline, widget: string }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
       - { name: meta_title, widget: string }
       - { name: meta_description, widget: text }
       - { name: intro_body, widget: text }
@@ -552,6 +569,7 @@ collections:
       - { name: eyebrow, widget: string }
       - { name: h1, widget: string }
       - { name: lead, widget: text }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the H1." }
       - { name: intro_h2, widget: string }
       - { name: intro_body, widget: text }
       - { name: what_we_offer_h2, widget: string }
@@ -587,6 +605,7 @@ collections:
       - { name: meta_title, widget: string }
       - { name: meta_description, widget: text }
       - { name: excerpt, widget: text, hint: "Shown on the inspiration hub list page." }
+      - { name: image, label: Header image, widget: image, required: false, hint: "Optional. Sits to the right of the article title." }
       - { name: category, widget: string, hint: "e.g. Curtains, Carpets, Furniture" }
       - { name: date_published, widget: datetime }
       - { name: read_time, widget: string, hint: "e.g. '5 min read'" }

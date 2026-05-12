@@ -32,7 +32,7 @@ export default async function LocationPage({
 
   return (
     <>
-      <PageHeader eyebrow={loc.eyebrow} h1={loc.h1} lead={loc.lead} />
+      <PageHeader eyebrow={loc.eyebrow} h1={loc.h1} lead={loc.lead} image={loc.image} />
       <Prose h2={loc.intro_h2} body={loc.intro_body} />
       <Prose h2={loc.what_we_offer_h2} body={loc.what_we_offer_body} variant="tinted" />
       <Prose h2={loc.delivery_h2} body={loc.delivery_body} />

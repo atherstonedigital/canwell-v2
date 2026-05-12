@@ -27,7 +27,7 @@ export default function LocationsHubPage() {
 
   return (
     <>
-      <PageHeader eyebrow={hub.eyebrow} h1={hub.h1} lead={hub.lead} />
+      <PageHeader eyebrow={hub.eyebrow} h1={hub.h1} lead={hub.lead} image={hub.image} />
       <Prose body={hub.intro_body} />
 
       <section className="prose-section variant-tinted">

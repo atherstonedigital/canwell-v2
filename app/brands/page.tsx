@@ -28,7 +28,7 @@ export default function BrandsHubPage() {
 
   return (
     <>
-      <PageHeader eyebrow={hub.eyebrow} h1={hub.h1} lead={hub.lead} />
+      <PageHeader eyebrow={hub.eyebrow} h1={hub.h1} lead={hub.lead} image={hub.image} />
       <Prose h2="Why these, and not others" body={hub.intro_body} />
 
       <section className="prose-section variant-tinted">

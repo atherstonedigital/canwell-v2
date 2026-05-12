@@ -148,6 +148,7 @@ export interface NewInItem {
 export interface VisitContent {
   meta_title: string;
   meta_description: string;
+  image?: string;
   eyebrow: string;
   h1: string;
   lead: string;
@@ -173,6 +174,7 @@ export interface VisitContent {
 export interface AboutContent {
   meta_title: string;
   meta_description: string;
+  image?: string;
   eyebrow: string;
   h1: string;
   lead: string;
@@ -197,6 +199,7 @@ export interface AboutContent {
 export interface ContactContent {
   meta_title: string;
   meta_description: string;
+  image?: string;
   eyebrow: string;
   h1: string;
   lead: string;
@@ -216,6 +219,7 @@ export interface ContactContent {
 export interface ServiceHubContent {
   meta_title: string;
   meta_description: string;
+  image?: string;
   eyebrow: string;
   h1: string;
   lead: string;
@@ -241,6 +245,7 @@ export interface ServiceHubContent {
 export interface DesignHelpContent {
   meta_title: string;
   meta_description: string;
+  image?: string;
   eyebrow: string;
   h1: string;
   lead: string;
@@ -267,6 +272,7 @@ export interface SubPageContent {
   parent_label: string;
   meta_title: string;
   meta_description: string;
+  image?: string;
   eyebrow: string;
   h1: string;
   lead: string;
@@ -280,6 +286,7 @@ export interface BrandPageContent {
   slug: string;
   meta_title: string;
   meta_description: string;
+  image?: string;
   brand_name: string;
   tagline: string;
   intro_body: string;
@@ -297,6 +304,7 @@ export interface LocationPageContent {
   location_name: string;
   meta_title: string;
   meta_description: string;
+  image?: string;
   eyebrow: string;
   h1: string;
   lead: string;
@@ -318,6 +326,7 @@ export interface ArticleContent {
   title: string;
   meta_title: string;
   meta_description: string;
+  image?: string;
   excerpt: string;
   category: string;
   date_published: string;
@@ -329,6 +338,7 @@ export interface ArticleContent {
 export interface BrandsHubContent {
   meta_title: string;
   meta_description: string;
+  image?: string;
   eyebrow: string;
   h1: string;
   lead: string;
@@ -341,6 +351,7 @@ export interface BrandsHubContent {
 export interface LocationsHubContent {
   meta_title: string;
   meta_description: string;
+  image?: string;
   eyebrow: string;
   h1: string;
   lead: string;
@@ -353,6 +364,7 @@ export interface LocationsHubContent {
 export interface InspirationHubContent {
   meta_title: string;
   meta_description: string;
+  image?: string;
   eyebrow: string;
   h1: string;
   lead: string;

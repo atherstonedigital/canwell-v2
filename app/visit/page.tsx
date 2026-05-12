@@ -21,7 +21,7 @@ export default function VisitPage() {
 
   return (
     <>
-      <PageHeader eyebrow={v.eyebrow} h1={v.h1} lead={v.lead} />
+      <PageHeader eyebrow={v.eyebrow} h1={v.h1} lead={v.lead} image={v.image} />
 
       <section className="prose-section">
         <div className="container">

@@ -16,7 +16,7 @@ export default function DesignHelpPage() {
   const d = getDesignHelpHub();
   return (
     <>
-      <PageHeader eyebrow={d.eyebrow} h1={d.h1} lead={d.lead} />
+      <PageHeader eyebrow={d.eyebrow} h1={d.h1} lead={d.lead} image={d.image} />
       <Prose h2={d.intro_h2} body={d.intro_body} />
 
       <Cards

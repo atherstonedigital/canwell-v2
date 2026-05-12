@@ -13,7 +13,7 @@ export default function AboutPage() {
   const a = getAbout();
   return (
     <>
-      <PageHeader eyebrow={a.eyebrow} h1={a.h1} lead={a.lead} />
+      <PageHeader eyebrow={a.eyebrow} h1={a.h1} lead={a.lead} image={a.image} />
       <Prose h2={a.story_h2} body={a.story_body} />
       <Prose h2={a.founders_h2} body={a.founders_body} variant="tinted" />
       <Prose h2={a.team_h2} body={a.team_body} />

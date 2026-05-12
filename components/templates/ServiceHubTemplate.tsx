@@ -13,7 +13,12 @@ interface Props {
 export function ServiceHubTemplate({ hub }: Props) {
   return (
     <>
-      <PageHeader eyebrow={hub.eyebrow} h1={hub.h1} lead={hub.lead} />
+      <PageHeader
+        eyebrow={hub.eyebrow}
+        h1={hub.h1}
+        lead={hub.lead}
+        image={hub.image}
+      />
       <Prose h2={hub.intro_h2} body={hub.intro_body} />
 
       {hub.cards && hub.cards.length > 0 && (

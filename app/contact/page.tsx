@@ -15,7 +15,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <PageHeader eyebrow={c.eyebrow} h1={c.h1} lead={c.lead} />
+      <PageHeader eyebrow={c.eyebrow} h1={c.h1} lead={c.lead} image={c.image} />
 
       <section className="quick-contact">
         <div className="container">
