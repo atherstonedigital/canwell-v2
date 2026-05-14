@@ -2665,6 +2665,22 @@ a.card:hover .card-link::after {
   }
 }
 
+/* QA Audit 2026-05-14 — honeypot fix: visually hide the bot-field wrapper.
+   Used by both the contact form and the newsletter signup to keep the
+   "Don't fill this out" label out of the rendered layout while remaining
+   discoverable to crawlers and screen readers. */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 /* QA Audit 2026-05-14 — Task 19: privacy-respecting Google Maps embed.
    Iframe loads only after the user clicks the placeholder, so no third-party
    cookies are set on first paint. */
