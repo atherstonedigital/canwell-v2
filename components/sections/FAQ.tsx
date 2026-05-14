@@ -1,4 +1,5 @@
-import { Inline, Paragraphs } from "@/components/signature/RichText";
+import { Inline } from "@/components/signature/RichText";
+import { MarkdownBody } from "@/components/signature/MarkdownBody";
 
 export interface FAQItem {
   question: string;
@@ -27,9 +28,7 @@ export function FAQ({ eyebrow, h2, items }: FAQProps) {
               <h3 className="faq-question">
                 <Inline text={item.question} />
               </h3>
-              <div className="faq-answer">
-                <Paragraphs text={item.answer} />
-              </div>
+              <MarkdownBody className="faq-answer" text={item.answer} />
             </li>
           ))}
         </ul>

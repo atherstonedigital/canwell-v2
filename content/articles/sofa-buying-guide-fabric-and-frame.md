@@ -6,7 +6,9 @@ excerpt: "Fabric first, then frame. Cushion construction. Depth and back-height.
 category: "Furniture"
 date_published: "2026-04-29"
 read_time: "8 min read"
-is_placeholder: true
+# QA Audit 2026-05-14 — Task 4: hidden from public listing until full copy
+# arrives from Atherstone. Flip to "published" via the CMS to launch.
+status: draft
 ---
 
 A sofa is one of the few pieces of furniture in a house that everyone in the family uses every day, often for fifteen years or more. Most regret over sofa purchases is about how it feels, not how it looks, and the way to avoid that is to spend more time choosing one than the average customer does.

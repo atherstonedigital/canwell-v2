@@ -4,8 +4,10 @@ import Link from "next/link";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { Prose } from "@/components/sections/Prose";
 import { CTABanner } from "@/components/sections/CTABanner";
-import { Placeholder } from "@/components/signature/Placeholder";
-import { getArticles, getInspirationHub } from "@/lib/content";
+import { Schema } from "@/components/Schema";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { breadcrumbSchema } from "@/lib/schema";
+import { getInspirationHub, getPublishedArticles } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
   const h = getInspirationHub();
@@ -32,12 +34,25 @@ function formatDate(iso: string) {
 
 export default function InspirationHubPage() {
   const hub = getInspirationHub();
-  const articles = getArticles().sort((a, b) =>
-    (b.date_published || "").localeCompare(a.date_published || "")
-  );
+  // QA Audit 2026-05-14 — Task 3/4: only published articles appear publicly.
+  // Drafts stay invisible until an editor flips status in the CMS.
+  const articles = getPublishedArticles();
 
   return (
     <>
+      <Schema
+        id="ld-breadcrumb-inspiration"
+        payload={breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Inspiration", url: "/inspiration" },
+        ])}
+      />
+      <Breadcrumbs
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Inspiration", url: "/inspiration" },
+        ]}
+      />
       <PageHeader eyebrow={hub.eyebrow} h1={hub.h1} lead={hub.lead} image={hub.image} />
       <Prose h2="Why we write these" body={hub.intro_body} />
 
@@ -46,42 +61,49 @@ export default function InspirationHubPage() {
           <h2 className="display-h2" style={{ marginBottom: "var(--s-7)" }}>
             Articles
           </h2>
-          <div className="article-list">
-            {articles.map((article) => (
-              <Link
-                key={article.slug}
-                href={`/inspiration/${article.slug}`}
-                className="article-card"
-              >
-                <div className="article-card-image">
-                  {article.image && (
-                    <Image
-                      src={article.image}
-                      alt={article.title}
-                      fill
-                      sizes="(max-width: 900px) 100vw, 33vw"
-                      style={{ objectFit: "cover" }}
-                    />
-                  )}
-                </div>
-                <div className="article-meta">
-                  <span>{article.category}</span>
-                  <span className="sep" aria-hidden="true">·</span>
-                  <span>{formatDate(article.date_published)}</span>
-                  <span className="sep" aria-hidden="true">·</span>
-                  <span>{article.read_time}</span>
-                  {article.is_placeholder && (
-                    <>
-                      <span className="sep" aria-hidden="true">·</span>
-                      <Placeholder label="Draft" />
-                    </>
-                  )}
-                </div>
-                <h3>{article.title}</h3>
-                <p>{article.excerpt}</p>
+          {articles.length === 0 ? (
+            // QA Audit 2026-05-14 — Task 4: empty-state until first article publishes.
+            <div className="article-empty-state">
+              <p>
+                More pieces coming soon. Sign up for the Friday email to know
+                when they go live.
+              </p>
+              <Link href="/#subscribe" className="btn btn-primary">
+                Get the weekly update
               </Link>
-            ))}
-          </div>
+            </div>
+          ) : (
+            <div className="article-list">
+              {articles.map((article) => (
+                <Link
+                  key={article.slug}
+                  href={`/inspiration/${article.slug}`}
+                  className="article-card"
+                >
+                  <div className="article-card-image">
+                    {article.image && (
+                      <Image
+                        src={article.image}
+                        alt={article.title}
+                        fill
+                        sizes="(max-width: 900px) 100vw, 33vw"
+                        style={{ objectFit: "cover" }}
+                      />
+                    )}
+                  </div>
+                  <div className="article-meta">
+                    <span>{article.category}</span>
+                    <span className="sep" aria-hidden="true">·</span>
+                    <span>{formatDate(article.date_published)}</span>
+                    <span className="sep" aria-hidden="true">·</span>
+                    <span>{article.read_time}</span>
+                  </div>
+                  <h3>{article.title}</h3>
+                  <p>{article.excerpt}</p>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

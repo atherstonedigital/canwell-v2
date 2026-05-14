@@ -1,4 +1,5 @@
-import { Inline, Paragraphs } from "@/components/signature/RichText";
+import { Inline } from "@/components/signature/RichText";
+import { MarkdownBody } from "@/components/signature/MarkdownBody";
 
 interface ProseProps {
   eyebrow?: string;
@@ -29,11 +30,9 @@ export function Prose({
               <Inline text={h2} />
             </h2>
           )}
-          {body && (
-            <div className="prose-body">
-              <Paragraphs text={body} />
-            </div>
-          )}
+          {/* QA Audit 2026-05-14 — Task 7: body now renders through marked so
+              **bold**, bullet lists, and inline links work consistently. */}
+          {body && <MarkdownBody text={body} className="prose-body" />}
           {children}
         </div>
       </div>

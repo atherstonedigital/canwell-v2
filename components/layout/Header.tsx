@@ -45,6 +45,7 @@ export function Header() {
             links={nav.primary_nav}
             cta_label={nav.mobile_menu_cta_label}
             cta_url={nav.mobile_menu_cta_url}
+            phone={site.phone}
           />
         </div>
       </div>

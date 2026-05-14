@@ -32,7 +32,13 @@ cards:
 
 why_h2: "Choosing the frame"
 why_body: |
-  Frames come in three broad shapes. **Classic** is rolled arms, deep cushions, often a tufted back; best in older houses and traditional schemes. **Contemporary** is lower profile, sharper lines, fewer cushions; best in newer houses and open-plan spaces. **Sectional and corner** is larger format for big rooms, often configurable; best for families and entertainment rooms.
+  Frames come in three broad shapes.
+
+  **Classic.** Rolled arms, deep cushions, often a tufted back. Best in older houses and traditional schemes.
+
+  **Contemporary.** Lower profile, sharper lines, fewer cushions. Best in newer houses and open-plan spaces.
+
+  **Sectional and corner.** Larger format for big rooms, often configurable. Best for families and entertainment rooms.
 
 brands_h2: "Sofa brands on the floor"
 brands_body: |

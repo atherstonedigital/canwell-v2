@@ -108,7 +108,7 @@ email_h2: "What's new, *every Friday*."
 email_body: "A short email every Friday. New arrivals, what's just landed, the occasional weekend opening or in-store event. No filler."
 email_form_label: "Email address"
 email_form_placeholder: "you@example.com"
-email_form_button: "Sign me up"
+email_form_button: "Subscribe"
 email_microcopy: "One email a week. Unsubscribe in one click."
 email_confirm_message: "Thanks. We'll send the first one soon."
 

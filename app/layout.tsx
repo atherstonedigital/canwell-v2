@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import Script from "next/script";
 import { getNavigation, getSite } from "@/lib/content";
-import { localBusinessSchema } from "@/lib/schema";
+import { localBusinessSchema, websiteSchema } from "@/lib/schema";
 import { UtilityBar } from "@/components/layout/UtilityBar";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Analytics } from "@/components/Analytics";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -107,6 +108,14 @@ export default function RootLayout({
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema(site)) }}
         />
+        {/* QA Audit 2026-05-14 — Task 10: WebSite schema sits alongside the
+            LocalBusiness so search engines have the canonical site identity. */}
+        <Script
+          id="ld-website"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema(site)) }}
+        />
         {/* QA Audit 2026-05-12 — Task 20: Plausible analytics (gated until production domain set). */}
         {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN ? (
           <Script
@@ -116,6 +125,8 @@ export default function RootLayout({
             strategy="afterInteractive"
           />
         ) : null}
+        {/* QA Audit 2026-05-14 — Task 13: GA4, gated to production hostname only. */}
+        <Analytics />
         <Script
           src="https://identity.netlify.com/v1/netlify-identity-widget.js"
           strategy="afterInteractive"

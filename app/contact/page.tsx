@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { Schema } from "@/components/Schema";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { breadcrumbSchema } from "@/lib/schema";
 import { getContact, getSite } from "@/lib/content";
 
@@ -29,6 +30,12 @@ export default function ContactPage() {
           { name: "Home", url: "/" },
           { name: "Contact", url: "/contact" },
         ])}
+      />
+      <Breadcrumbs
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Contact", url: "/contact" },
+        ]}
       />
       <PageHeader eyebrow={c.eyebrow} h1={c.h1} lead={c.lead} image={c.image} />
 
