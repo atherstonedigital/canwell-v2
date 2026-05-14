@@ -4,6 +4,10 @@ import { PageHeader } from "@/components/sections/PageHeader";
 import { Prose } from "@/components/sections/Prose";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { FAQ } from "@/components/sections/FAQ";
+import { Schema } from "@/components/Schema";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { RelatedLinks } from "@/components/sections/RelatedLinks";
+import { breadcrumbSchema, faqSchema, locationSchema } from "@/lib/schema";
 import { getLocation, getLocations } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -36,6 +40,25 @@ export default async function LocationPage({
 
   return (
     <>
+      <Schema
+        id={`ld-breadcrumb-location-${slug}`}
+        payload={breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Locations", url: "/locations" },
+          { name: loc.location_name, url: `/locations/${slug}` },
+        ])}
+      />
+      <Schema id={`ld-location-${slug}`} payload={locationSchema(loc)} />
+      {loc.faqs && loc.faqs.length > 0 && (
+        <Schema id={`ld-faq-location-${slug}`} payload={faqSchema(loc.faqs)} />
+      )}
+      <Breadcrumbs
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Locations", url: "/locations" },
+          { name: loc.location_name, url: `/locations/${slug}` },
+        ]}
+      />
       <PageHeader eyebrow={loc.eyebrow} h1={loc.h1} lead={loc.lead} image={loc.image} />
       <Prose h2={loc.intro_h2} body={loc.intro_body} />
       <Prose h2={loc.what_we_offer_h2} body={loc.what_we_offer_body} variant="tinted" />
@@ -47,6 +70,13 @@ export default async function LocationPage({
         eyebrow={loc.cta_eyebrow}
         h2={loc.cta_h2}
         ctas={loc.ctas}
+      />
+      {/* QA Audit 2026-05-14 — Task 26: location pages link to visit + home visit. */}
+      <RelatedLinks
+        links={[
+          { label: "Plan your visit", url: "/visit" },
+          { label: "Free home design visit", url: "/design-help/home-visit" },
+        ]}
       />
     </>
   );

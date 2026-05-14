@@ -732,6 +732,19 @@ em,
 .mobile-menu-cta {
   margin-top: var(--s-7);
   padding: 0 var(--container-pad);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+/* QA Audit 2026-05-14 — Task 22: tap-to-call CTA in the mobile drawer
+   sits below "Plan your visit" and meets the WCAG 44px tap target. */
+.mobile-menu-call {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-3);
+  min-height: 44px;
 }
 
 /* Hero */
@@ -1532,6 +1545,24 @@ em,
 .email-form-row {
   display: flex;
   gap: var(--s-3);
+}
+
+/* QA Audit 2026-05-14 — Task 23: stack the email form vertically below 640px
+   so the submit button doesn't wrap to three lines on narrow viewports. The
+   button keeps a 44px minimum tap target either way. */
+@media (max-width: 640px) {
+  .email-form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .email-form-row .btn {
+    width: 100%;
+  }
+}
+
+.email-form-row .btn {
+  min-height: 44px;
 }
 
 .email-form input {
@@ -2634,6 +2665,180 @@ a.card:hover .card-link::after {
   }
 }
 
+/* QA Audit 2026-05-14 — Task 19: privacy-respecting Google Maps embed.
+   Iframe loads only after the user clicks the placeholder, so no third-party
+   cookies are set on first paint. */
+.map-embed-section {
+  padding: var(--s-7) 0;
+  background: var(--color-cream-light);
+}
+
+.map-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  min-height: 280px;
+  border: 1px solid var(--color-border-light);
+  background: var(--color-cream-tinted);
+  overflow: hidden;
+}
+
+.map-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.map-embed-placeholder {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: linear-gradient(
+    135deg,
+    var(--color-cream-tinted) 0%,
+    var(--color-gold-pale) 60%,
+    var(--color-border-medium) 100%
+  );
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold-dark);
+}
+
+.map-embed-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-5) var(--s-6);
+  background: rgba(244, 237, 220, 0.85);
+  border: 1px solid var(--color-gold);
+}
+
+.map-embed-cta {
+  font-family: var(--font-display);
+  font-size: var(--fs-h4);
+  letter-spacing: 0.02em;
+}
+
+.map-embed-note {
+  font-size: var(--fs-caption);
+  color: var(--color-text-secondary);
+}
+
+.map-embed-caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  margin-top: var(--s-5);
+  color: var(--color-text-secondary);
+  font-size: var(--fs-small);
+}
+
+@media (min-width: 901px) {
+  .map-embed {
+    aspect-ratio: 21 / 8;
+    min-height: 400px;
+  }
+}
+
+/* QA Audit 2026-05-14 — Task 21: visible breadcrumbs sit between the header
+   and the page header so users can orient themselves on every inner page. */
+.breadcrumbs {
+  background: transparent;
+  font-size: var(--fs-caption);
+  letter-spacing: 0.02em;
+  color: var(--color-text-muted);
+  padding-top: var(--s-5);
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+.breadcrumbs a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs a:focus-visible {
+  color: var(--color-gold-dark);
+  text-decoration: underline;
+}
+
+.breadcrumbs [aria-current="page"] {
+  color: var(--color-text-primary);
+}
+
+.breadcrumb-sep {
+  color: var(--color-text-muted);
+  margin-left: var(--s-2);
+}
+
+/* QA Audit 2026-05-14 — Task 26: related-content block at the foot of
+   long-form pages. */
+.related-links {
+  padding: var(--s-7) 0 var(--s-9);
+  background: var(--color-cream);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.related-links-heading {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  margin-bottom: var(--s-5);
+}
+
+.related-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.related-links a {
+  color: var(--color-gold-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.related-links a:hover,
+.related-links a:focus-visible {
+  color: var(--color-black);
+}
+
+/* QA Audit 2026-05-14 — Task 4: empty state for the inspiration listing
+   while the first published articles are still being written. */
+.article-empty-state {
+  border: 1px solid var(--color-border-light);
+  background: var(--color-cream-light);
+  padding: var(--s-7);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-5);
+  color: var(--color-text-secondary);
+}
+
 /* ============================================================
    QA Audit 2026-05-12 — Tasks 4, 5, 7, 17, 19, 25
    ============================================================ */
@@ -2719,6 +2924,34 @@ a.card:hover .card-link::after {
 .footer-link-pending {
   color: var(--color-text-muted);
   cursor: default;
+}
+
+/* QA Audit 2026-05-14 — Task 20: footer social icon row, hidden when no
+   URLs have been supplied yet. */
+.footer-social {
+  display: flex;
+  gap: var(--s-3);
+  list-style: none;
+  margin-top: var(--s-4);
+  padding: 0;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--color-border-medium);
+  color: var(--color-text-secondary);
+  border-radius: 50%;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.footer-social a:hover,
+.footer-social a:focus-visible {
+  color: var(--color-gold-dark);
+  border-color: var(--color-gold);
 }
 
 /* Task 12 — non-linked brand entries on the homepage and brands hub */

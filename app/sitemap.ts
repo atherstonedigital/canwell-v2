@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 import {
-  getArticles,
   getBrands,
   getLocations,
+  getPublishedArticles,
   getServiceHubs,
   getSubPages,
 } from "@/lib/content";
@@ -32,7 +32,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const brandRoutes = getBrands().map((b) => `/brands/${b.slug}`);
   const locationRoutes = getLocations().map((l) => `/locations/${l.slug}`);
-  const articleRoutes = getArticles().map((a) => `/inspiration/${a.slug}`);
+  // QA Audit 2026-05-14 — Task 4: drafts stay out of the sitemap.
+  const articleRoutes = getPublishedArticles().map(
+    (a) => `/inspiration/${a.slug}`
+  );
 
   const all = [
     ...staticRoutes,

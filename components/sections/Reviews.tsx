@@ -43,10 +43,11 @@ export function Reviews({
           ))}
         </div>
 
-        {/* QA Audit 2026-05-12 — Task 19: until the Google Business Profile is
-            rebuilt, show a plain note rather than a dead "Read more on Google" link. */}
-        <div className="reviews-cta">
-          {reviews_cta_url ? (
+        {/* QA Audit 2026-05-14 — Task 27: removed the "more reviews coming"
+            disclaimer; three real testimonials carry the section on their own.
+            Google Business Profile link reappears once the URL is supplied. */}
+        {reviews_cta_url && (
+          <div className="reviews-cta">
             <a
               href={reviews_cta_url}
               className="btn btn-tertiary"
@@ -55,12 +56,8 @@ export function Reviews({
             >
               {reviews_cta_label}
             </a>
-          ) : (
-            <p className="reviews-cta-note">
-              More reviews coming as we rebuild our Google Business Profile.
-            </p>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );

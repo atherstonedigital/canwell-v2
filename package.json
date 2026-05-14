@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/check-tokens.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check:tokens": "node scripts/check-tokens.mjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

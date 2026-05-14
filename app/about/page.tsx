@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/sections/PageHeader";
 import { Prose } from "@/components/sections/Prose";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { Schema } from "@/components/Schema";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { breadcrumbSchema } from "@/lib/schema";
 import { getAbout } from "@/lib/content";
 
@@ -27,6 +28,13 @@ export default function AboutPage() {
           { name: "Home", url: "/" },
           { name: "About", url: "/about" },
         ])}
+      />
+      {/* QA Audit 2026-05-14 — Task 21: visible breadcrumbs. */}
+      <Breadcrumbs
+        items={[
+          { name: "Home", url: "/" },
+          { name: "About", url: "/about" },
+        ]}
       />
       <PageHeader eyebrow={a.eyebrow} h1={a.h1} lead={a.lead} image={a.image} />
       <Prose h2={a.story_h2} body={a.story_body} />

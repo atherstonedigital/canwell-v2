@@ -1,4 +1,5 @@
-import { Inline, Paragraphs } from "@/components/signature/RichText";
+import { Inline } from "@/components/signature/RichText";
+import { MarkdownBody } from "@/components/signature/MarkdownBody";
 
 export interface Step {
   title: string;
@@ -30,9 +31,7 @@ export function Steps({ eyebrow, h2, steps }: StepsProps) {
               <h3 className="step-title">
                 <Inline text={step.title} />
               </h3>
-              <div className="step-body">
-                <Paragraphs text={step.body} />
-              </div>
+              <MarkdownBody className="step-body" text={step.body} />
             </li>
           ))}
         </ol>

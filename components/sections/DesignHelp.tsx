@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { SectionMarker } from "@/components/signature/SectionMarker";
 import { Stamp } from "@/components/signature/Stamp";
-import { Inline, Paragraphs } from "@/components/signature/RichText";
+import { Inline } from "@/components/signature/RichText";
+import { MarkdownBody } from "@/components/signature/MarkdownBody";
 import type { HomepageContent } from "@/lib/types";
 
 type DesignHelpProps = Pick<
@@ -39,7 +40,7 @@ export function DesignHelp({
             <h2 className="display-h2">
               <Inline text={design_help_h2} />
             </h2>
-            <Paragraphs text={design_help_body} />
+            <MarkdownBody text={design_help_body} />
             {design_help_saverys_note && (
               <p className="small design-help-saverys">
                 <Inline text={design_help_saverys_note} />

@@ -3,17 +3,15 @@ import Link from "next/link";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { Prose } from "@/components/sections/Prose";
 import { CTABanner } from "@/components/sections/CTABanner";
+import { Schema } from "@/components/Schema";
+import { breadcrumbSchema } from "@/lib/schema";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { getLocations, getLocationsHub } from "@/lib/content";
 
-const ALL_LOCATIONS = [
-  { slug: "cheltenham", name: "Cheltenham", note: "Twenty minutes via the A46" },
-  { slug: "stratford-upon-avon", name: "Stratford-upon-Avon", note: "Twenty-five minutes through the Cotswolds" },
-  { slug: "evesham", name: "Evesham", note: "Fifteen minutes" },
-  { slug: "worcester", name: "Worcester", note: "Thirty-five minutes" },
-  { slug: "chipping-campden", name: "Chipping Campden", note: "Ten minutes" },
-  { slug: "stow-on-the-wold", name: "Stow-on-the-Wold", note: "Twenty-five minutes" },
-  { slug: "moreton-in-marsh", name: "Moreton-in-Marsh", note: "Twenty minutes" },
-];
+const LOCATION_NOTES: Record<string, string> = {
+  cheltenham: "Twenty minutes via the A46",
+  "stratford-upon-avon": "Twenty-five minutes through the Cotswolds",
+};
 
 export async function generateMetadata(): Promise<Metadata> {
   const h = getLocationsHub();
@@ -26,11 +24,26 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function LocationsHubPage() {
   const hub = getLocationsHub();
+  // QA Audit 2026-05-14 — Task 11: only render real, built location pages.
+  // Placeholder "Coming soon" entries are removed this sprint; the missing
+  // areas are flagged in the hub intro instead.
   const built = getLocations();
-  const builtSlugs = new Set(built.map((l) => l.slug));
 
   return (
     <>
+      <Schema
+        id="ld-breadcrumb-locations"
+        payload={breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Locations", url: "/locations" },
+        ])}
+      />
+      <Breadcrumbs
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Locations", url: "/locations" },
+        ]}
+      />
       <PageHeader eyebrow={hub.eyebrow} h1={hub.h1} lead={hub.lead} image={hub.image} />
       <Prose body={hub.intro_body} />
 
@@ -39,26 +52,21 @@ export default function LocationsHubPage() {
           <h2 className="display-h2" style={{ marginBottom: "var(--s-7)" }}>
             Areas we serve
           </h2>
-          {ALL_LOCATIONS.map((loc) => {
-            if (builtSlugs.has(loc.slug)) {
-              return (
-                <Link key={loc.slug} href={`/locations/${loc.slug}`} className="brand-row">
-                  <span className="brand-row-name">{loc.name}</span>
-                  <span className="brand-row-tag">{loc.note}</span>
-                  <span className="brand-row-cta">See the {loc.name} page</span>
-                </Link>
-              );
-            }
-            return (
-              <div key={loc.slug} className="brand-row" style={{ cursor: "default" }}>
-                <span className="brand-row-name">{loc.name}</span>
-                <span className="brand-row-tag">{loc.note}</span>
-                <span className="brand-row-cta" style={{ color: "var(--color-text-muted)" }}>
-                  Page coming soon
-                </span>
-              </div>
-            );
-          })}
+          {built.map((loc) => (
+            <Link
+              key={loc.slug}
+              href={`/locations/${loc.slug}`}
+              className="brand-row"
+            >
+              <span className="brand-row-name">{loc.location_name}</span>
+              <span className="brand-row-tag">
+                {LOCATION_NOTES[loc.slug] ?? ""}
+              </span>
+              <span className="brand-row-cta">
+                See the {loc.location_name} page
+              </span>
+            </Link>
+          ))}
         </div>
       </section>
 

@@ -6,7 +6,9 @@ excerpt: "Stone reveals, leaded casements, sash, and shaped windows. The decisio
 category: "Curtains"
 date_published: "2026-04-15"
 read_time: "6 min read"
-is_placeholder: true
+# QA Audit 2026-05-14 — Task 4: draft until full copy arrives. Flip to
+# "published" in the CMS once the article is finished.
+status: draft
 ---
 
 Cotswold cottage windows are a particular puzzle. Most are tall and narrow, in stone reveals that don't play nicely with standard tracks. Some are leaded, which means the curtain can't sit too close to the glass. Most aren't square, because they've been settling for two or three centuries. And the light through them at four o'clock on a winter afternoon is one of the better things about living in this part of the country, which means the curtain has to work hard not to ruin it.

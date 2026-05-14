@@ -1,15 +1,15 @@
 ---
 meta_title: "Areas We Serve | Cotswolds Furnishings | Canwell, Broadway"
-meta_description: "Canwell Interiors serves Cheltenham, Stratford-upon-Avon, Evesham, Worcester, Chipping Campden, Stow, and Moreton-in-Marsh from our Broadway showroom."
+meta_description: "Canwell Interiors serves Cheltenham, Stratford-upon-Avon, and the wider Cotswolds from our Broadway showroom. Free home measure within 30 miles."
 
 eyebrow: "Areas we serve"
 h1: "Furnishings *across the Cotswolds*"
-lead: "Most of our customers come from a 30-mile radius around Broadway. The pages below cover what people in each area most often visit for, and how to find us."
+lead: "Most of our customers come from a 30-mile radius around Broadway. Two of the most-asked areas are covered in detail below. If you're elsewhere in the Cotswolds and considering the drive, ring or email and we'll tell you whether it's worth it."
 
 intro_body: |
-  We deliver, measure, and home-visit across the Cotswolds and the surrounding counties. Free home measure for carpets, curtains, and blinds. Home design visits across the area listed below. Larger furniture deliveries by arrangement.
+  We deliver, measure, and home-visit across the Cotswolds and the surrounding counties. Free home measure for carpets, curtains, and blinds. Home design visits within a 30-mile radius of Broadway. Larger furniture deliveries by arrangement.
 
-  If you're outside the area shown and considering the drive, ring or email and we'll tell you whether it's worth it.
+  More area pages are on the way for Evesham, Worcester, Chipping Campden, Stow-on-the-Wold, and Moreton-in-Marsh. In the meantime, ring or email and we'll tell you what we cover and whether the visit makes sense.
 
 cta_eyebrow: "Whichever way you're coming"
 cta_h2: "Plan a *visit* to the showroom."

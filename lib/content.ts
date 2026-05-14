@@ -159,3 +159,20 @@ export function getArticles(): ArticleContent[] {
 export function getArticle(slug: string): ArticleContent | undefined {
   return getArticles().find((a) => a.slug === slug);
 }
+
+// QA Audit 2026-05-14 — Task 3/4: derive publish status with a legacy fallback.
+// Anything missing an explicit `status` field, or carrying the legacy
+// `is_placeholder: true` marker, is treated as a draft.
+export function isPublishedArticle(article: ArticleContent): boolean {
+  if (article.status === "published") return true;
+  if (article.status === "draft") return false;
+  return article.is_placeholder === false;
+}
+
+export function getPublishedArticles(): ArticleContent[] {
+  return getArticles()
+    .filter(isPublishedArticle)
+    .sort((a, b) =>
+      (b.date_published || "").localeCompare(a.date_published || "")
+    );
+}

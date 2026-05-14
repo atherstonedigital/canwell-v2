@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SectionMarker } from "@/components/signature/SectionMarker";
 import { Stamp } from "@/components/signature/Stamp";
 import { Inline, PlainWithPlaceholders } from "@/components/signature/RichText";
+import { MapEmbed } from "@/components/sections/MapEmbed";
 import type { HomepageContent, SiteSettings } from "@/lib/types";
 
 interface VisitProps {
@@ -99,16 +100,13 @@ export function Visit({
             )}
           </div>
 
-          {/* QA Audit 2026-05-12 — Task 7: empty map slot — no "MAP" literal. */}
-          {/* TODO(photo): embed an interactive map or replace with a static showroom map image. */}
+          {/* QA Audit 2026-05-14 — Task 19: real Google Maps embed (click-to-load). */}
           <div className="visit-map">
-            <div className="visit-map-placeholder" aria-hidden="true" />
-            <p className="visit-map-caption">
-              {site.address_line_1}
-              <span className="visit-map-coords">
-                {site.address_line_2}, {site.postcode}
-              </span>
-            </p>
+            <MapEmbed
+              address={fullAddress}
+              directionsUrl={site.directions_url}
+              caption={`${site.address_line_1}, ${site.address_line_2}, ${site.postcode}`}
+            />
           </div>
         </div>
       </div>

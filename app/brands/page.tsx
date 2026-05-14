@@ -4,6 +4,7 @@ import { PageHeader } from "@/components/sections/PageHeader";
 import { Prose } from "@/components/sections/Prose";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { Schema } from "@/components/Schema";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { breadcrumbSchema } from "@/lib/schema";
 import { getBrands, getBrandsHub, getHomepage } from "@/lib/content";
 
@@ -40,6 +41,12 @@ export default function BrandsHubPage() {
           { name: "Home", url: "/" },
           { name: "Brands", url: "/brands" },
         ])}
+      />
+      <Breadcrumbs
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Brands", url: "/brands" },
+        ]}
       />
       <PageHeader eyebrow={hub.eyebrow} h1={hub.h1} lead={hub.lead} image={hub.image} />
       <Prose h2="Why these, and not others" body={hub.intro_body} />

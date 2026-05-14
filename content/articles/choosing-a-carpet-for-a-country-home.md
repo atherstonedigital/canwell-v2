@@ -6,7 +6,9 @@ excerpt: "Wool, wool blend, or synthetic. Pile height. Underlay. Stairs. Sloping
 category: "Carpets"
 date_published: "2026-04-22"
 read_time: "5 min read"
-is_placeholder: true
+# QA Audit 2026-05-14 — Task 4: draft until full copy arrives. Flip to
+# "published" in the CMS once the article is finished.
+status: draft
 ---
 
 Choosing a carpet for a country home is harder than choosing one for a new-build, and most carpet retailers don't know it. Older houses come with sloping floors, mismatched levels between rooms, exposed stone or timber thresholds that the carpet has to die into honestly, dogs that come in muddy, and underfloor that often isn't level enough for the cheaper underlay.

@@ -4,7 +4,10 @@ import { Prose } from "@/components/sections/Prose";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { Schema } from "@/components/Schema";
 import { breadcrumbSchema } from "@/lib/schema";
-import { Inline, Paragraphs } from "@/components/signature/RichText";
+import { Inline } from "@/components/signature/RichText";
+import { MarkdownBody } from "@/components/signature/MarkdownBody";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { MapEmbed } from "@/components/sections/MapEmbed";
 import { getSite, getVisit } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -25,6 +28,14 @@ export default function VisitPage() {
       : cta
   );
 
+  // QA Audit 2026-05-14 — Task 17: render the "How to find us" body with
+  // tappable tel: and mailto: links. The content keeps the phone and email
+  // as plain markdown link references so the source is still editable.
+  const phoneTel = site.phone.replace(/\s+/g, "");
+  const howToFindBody = v.how_to_find_body
+    .replace(site.phone, `[${site.phone}](tel:${phoneTel})`)
+    .replace(site.email, `[${site.email}](mailto:${site.email})`);
+
   return (
     <>
       <Schema
@@ -34,6 +45,12 @@ export default function VisitPage() {
           { name: "Visit", url: "/visit" },
         ])}
       />
+      <Breadcrumbs
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Visit", url: "/visit" },
+        ]}
+      />
       <PageHeader eyebrow={v.eyebrow} h1={v.h1} lead={v.lead} image={v.image} />
 
       <section className="prose-section">
@@ -42,9 +59,7 @@ export default function VisitPage() {
             <h2 className="display-h2">
               <Inline text={v.how_to_find_h2} />
             </h2>
-            <div className="prose-body">
-              <Paragraphs text={v.how_to_find_body} />
-            </div>
+            <MarkdownBody className="prose-body" text={howToFindBody} />
 
             <h2 className="display-h2" style={{ marginTop: "var(--s-8)" }}>
               <Inline text={v.opening_hours_h2} />
@@ -72,6 +87,12 @@ export default function VisitPage() {
         </div>
       </section>
 
+      {/* QA Audit 2026-05-14 — Task 19: embedded Google Map. */}
+      <MapEmbed
+        address={`${site.address_line_1}, ${site.address_line_2}, ${site.postcode}`}
+        directionsUrl={site.directions_url}
+      />
+
       <Prose
         h2={v.getting_here_h2}
         body={v.getting_here_intro}
@@ -81,7 +102,7 @@ export default function VisitPage() {
           {v.getting_here_blocks.map((block, i) => (
             <div key={i} style={{ marginBottom: "var(--s-5)" }}>
               <h3>{block.title}</h3>
-              <Paragraphs text={block.body} />
+              <MarkdownBody text={block.body} />
             </div>
           ))}
         </div>

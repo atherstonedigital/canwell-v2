@@ -1,0 +1,24 @@
+<!doctype html>
+<!--
+  QA Audit 2026-05-14 — Task 12: Netlify Forms detection.
+  Netlify scans static HTML at build time and registers any form carrying
+  data-netlify="true". The actual user-facing forms in /contact and the
+  homepage subscribe block POST in via fetch; this file simply exists so the
+  static crawler can find their schemas.
+-->
+<html>
+  <body>
+    <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="postcode" />
+      <textarea name="message"></textarea>
+      <input type="text" name="referrer" />
+      <input type="hidden" name="subject" />
+    </form>
+    <form name="newsletter" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="email" name="email" />
+    </form>
+  </body>
+</html>

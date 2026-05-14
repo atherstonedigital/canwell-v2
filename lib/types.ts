@@ -360,6 +360,11 @@ export interface LocationPageContent {
   ctas: CTA[];
 }
 
+// QA Audit 2026-05-14 — Task 3/4: explicit publish status. Articles
+// default to "draft" so partial copy from CMS never leaks to public until
+// an editor flips status to "published".
+export type ArticleStatus = "draft" | "published";
+
 export interface ArticleContent {
   slug: string;
   title: string;
@@ -371,7 +376,9 @@ export interface ArticleContent {
   date_published: string;
   read_time: string;
   body: string;
-  is_placeholder: boolean;
+  status?: ArticleStatus;
+  // Legacy flag kept only so old CMS records read as drafts until migrated.
+  is_placeholder?: boolean;
 }
 
 export interface BrandsHubContent {

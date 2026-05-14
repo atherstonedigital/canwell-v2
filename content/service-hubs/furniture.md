@@ -43,14 +43,14 @@ brands_h2: "Brands on the floor"
 brands_body: |
   The brand matters because it tells you about the construction, the materials, and how the piece will age. Most of what we stock comes from these makers.
 
-  - **Richmond Interiors:** classic and contemporary upholstery and casegoods.
-  - **Hills Furniture:** dining and living room pieces in solid hardwood.
-  - **IFD:** hardwood furniture with character.
-  - **Light & Living:** lighting, ceramics, and decorative pieces.
-  - **Riva:** cushions, throws, fabric, and curtains.
-  - **Malini:** fabric, cushions, and finishing pieces.
+  - **Richmond Interiors.** Classic and contemporary upholstery and casegoods.
+  - **Hills Furniture.** Dining and living room pieces in solid hardwood.
+  - **IFD.** Hardwood furniture with character.
+  - **Light & Living.** Lighting, ceramics, and decorative pieces.
+  - **Riva.** Cushions, throws, fabric, and curtains.
+  - **Malini.** Fabric, cushions, and finishing pieces.
 
-  See all brands at /brands.
+  [See all brands and the rest of the range.](/brands)
 
 why_h2: "Delivery and take-home"
 why_body: |
