@@ -5,7 +5,7 @@ meta_description: "Made-to-measure and ready-made curtains in Broadway. Fabric t
 eyebrow: "Curtains"
 h1: "Curtains in Broadway: *made-to-measure* and ready-made"
 lead: "Hundreds of fabrics to feel in person, a home measure for the made-to-measure side, and ready-made options if you need something today."
-image: "/images/accessories/accessories-circular-shelving.jpg"
+image: "/images/curtains/curtains-vignette-placeholder.jpg"
 
 intro_h2: "Two ways to do curtains"
 intro_body: "Most rooms get the right answer from one of two routes. Made-to-measure is for windows that don't fit standard sizes, fabric you want to choose properly, and rooms where you want the curtain to do its job. Ready-made is for guest rooms, holiday lets, and refreshes that have to happen this weekend."
