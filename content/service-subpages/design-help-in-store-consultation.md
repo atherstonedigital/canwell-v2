@@ -8,6 +8,7 @@ meta_description: "A free 30 to 60 minute consultation at the Canwell showroom i
 eyebrow: "Design help · In-store"
 h1: "Free *in-store* design consultation"
 lead: "30 to 60 minutes at the consultation table in the showroom, free of charge, with samples to take home at the end."
+image: "/images/showroom/showroom-walkthrough.jpg"
 
 intro_h2: "What a consultation actually involves"
 intro_body: |

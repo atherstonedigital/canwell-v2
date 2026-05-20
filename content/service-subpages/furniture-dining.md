@@ -8,6 +8,7 @@ meta_description: "Dining tables, chairs, and sideboards in oak, walnut, marble,
 eyebrow: "Furniture · Dining"
 h1: "Dining tables, chairs, and *sideboards*"
 lead: "The pieces a room of people will sit around for the next twenty years."
+image: "/images/dining/dining-oval-table-vignette.jpg"
 
 intro_h2: "How to choose a dining table"
 intro_body: |

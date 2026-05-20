@@ -5,6 +5,7 @@ meta_description: "Canwell Interiors serves Cheltenham, Stratford-upon-Avon, and
 eyebrow: "Areas we serve"
 h1: "Furnishings *across the Cotswolds*"
 lead: "Most of our customers come from a 30-mile radius around Broadway. Two of the most-asked areas are covered in detail below. If you're elsewhere in the Cotswolds and considering the drive, ring or email and we'll tell you whether it's worth it."
+image: "/images/showroom/showroom-walkthrough.jpg"
 
 intro_body: |
   We deliver, measure, and home-visit across the Cotswolds and the surrounding counties. Free home measure for carpets, curtains, and blinds. Home design visits within a 30-mile radius of Broadway. Larger furniture deliveries by arrangement.

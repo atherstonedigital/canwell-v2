@@ -5,6 +5,7 @@ meta_description: "Free in-store design consultation, home visits across the Cot
 eyebrow: "Design help"
 h1: "Honest, unfussy *design help*"
 lead: "Free in the showroom. Available at home across the Cotswolds. No project fees, no commission on what you choose. Just useful help from people who do this every day."
+image: "/images/lifestyle/lifestyle-woodburner-green-sofa.jpg"
 
 intro_h2: "What this actually is"
 intro_body: |

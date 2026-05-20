@@ -6,6 +6,7 @@ hero_eyebrow: "Cotswold Design Centre · Broadway"
 hero_pretitle: "The Cotswolds furnishings showroom."
 hero_title: "Walk in, *choose*, take home."
 hero_lead: "At the Cotswold Design Centre in Broadway, with carpets, curtains, blinds, furniture, and the kind of design help you actually want."
+hero_image: "/images/showroom/showroom-hero-wide.jpg"
 hero_microcopy:
   - "FAMILY-RUN SINCE 2009"
   - "OPEN SEVEN DAYS"

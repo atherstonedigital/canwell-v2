@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Inline } from "@/components/signature/RichText";
 import { SectionMarker } from "@/components/signature/SectionMarker";
 import { RuleRinged } from "@/components/signature/RuleRinged";
+import { getShowroomImage } from "@/lib/showroom-images";
 
 interface PageHeaderProps {
   eyebrow?: string;
@@ -22,7 +23,9 @@ export function PageHeader({
   image,
   image_label,
 }: PageHeaderProps) {
+  const imageMeta = getShowroomImage(image);
   const labelText = image_label || eyebrow || marker_label || "Photography";
+  const altText = imageMeta?.alt ?? labelText;
 
   return (
     <section className="page-header">
@@ -47,13 +50,11 @@ export function PageHeader({
             </div>
           </div>
 
-          {/* QA Audit 2026-05-12 — Task 7: empty image slot, no visible "IMG" label. */}
-          {/* TODO(photo): page header image for this route. */}
           <div className="page-header-image">
             {image ? (
               <Image
                 src={image}
-                alt={labelText}
+                alt={altText}
                 fill
                 priority
                 sizes="(max-width: 900px) 100vw, 50vw"

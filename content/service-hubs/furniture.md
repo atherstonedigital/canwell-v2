@@ -5,6 +5,7 @@ meta_description: "Sofas, beds, dining, and occasional furniture from Richmond I
 eyebrow: "Furniture"
 h1: "Furniture in Broadway, from *brands we trust*"
 lead: "Sofas you can sit on. Tables you can put a glass on. Beds you can lie on. The whole point of a showroom is doing this in person."
+image: "/images/sofas/sofas-bolton-cushions.jpg"
 
 intro_h2: "What you'll find"
 intro_body: |

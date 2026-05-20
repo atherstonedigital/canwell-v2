@@ -5,6 +5,7 @@ meta_description: "Guides to dressing Cotswold windows, choosing carpets for cou
 eyebrow: "Inspiration"
 h1: "*Cotswold home* inspiration"
 lead: "The pieces we write are the same conversations we have in the showroom. Honest, plain-English, and aimed at the room you're actually working on."
+image: "/images/lighting/lighting-lamps-display.jpg"
 
 intro_body: |
   Most interiors content online is either glossy magazine spreads (beautiful, unrelated to your actual house) or affiliate-driven product round-ups (twelve cushions you can buy right now, none of which sit in front of you in a real room).

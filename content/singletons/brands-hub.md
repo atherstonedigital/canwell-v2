@@ -5,6 +5,7 @@ meta_description: "The brands we stock: Richmond Interiors, Hills Furniture, Riv
 eyebrow: "Brands we stock"
 h1: "*Brands* we stock"
 lead: "The makers we trust to be in the showroom. Click through to see each brand's range, or visit to see them all in person."
+image: "/images/sofas/sofas-bolton-cushions.jpg"
 
 intro_body: |
   We don't carry a brand unless we can stand behind it. The shortlist below is what survived the test of years on the showroom floor: construction that holds up, materials that age well, after-sales service that's there when something needs sorting.

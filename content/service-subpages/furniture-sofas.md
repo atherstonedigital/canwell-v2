@@ -8,6 +8,7 @@ meta_description: "Two-seater to large corners, in velvet, leather, boucle, line
 eyebrow: "Furniture · Sofas"
 h1: "Sofas in Broadway, in *every fabric and frame*"
 lead: "Two-seater to large corners. Velvet, leather, boucle, linen, woven, performance fabric. From Richmond Interiors, Hills Furniture, IFD, and our wider stock."
+image: "/images/sofas/sofas-bolton-cushions.jpg"
 
 intro_h2: "Sit on it before you buy it"
 intro_body: |

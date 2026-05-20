@@ -8,6 +8,7 @@ meta_description: "We come to you. £75 across the Cotswolds, refunded against a
 eyebrow: "Design help · Home visit"
 h1: "Design help *at home*, across the Cotswolds"
 lead: "For when photos aren't enough, the room is awkward, or you're planning more than one room at a time. £75, refunded against any purchase over £500. Covers a 30-mile radius of Broadway."
+image: "/images/lifestyle/lifestyle-woodburner-green-sofa.jpg"
 
 intro_h2: "When to ask us to come to you"
 intro_body: |
