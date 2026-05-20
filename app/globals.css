@@ -763,6 +763,14 @@ em,
   min-height: 640px;
 }
 
+.hero-grid--single {
+  grid-template-columns: 1fr;
+}
+
+.hero-grid--single .hero-content {
+  max-width: 760px;
+}
+
 .hero-content {
   max-width: 580px;
 }
@@ -1894,6 +1902,14 @@ em,
   align-items: center;
 }
 
+.page-header-grid--single {
+  grid-template-columns: 1fr;
+}
+
+.page-header-grid--single .page-header-content {
+  max-width: 760px;
+}
+
 .page-header-content {
   max-width: 580px;
 }
@@ -2885,24 +2901,16 @@ a.card:hover .card-link::after {
   letter-spacing: 0.04em;
 }
 
-/* Task 7 — neutral image-slot placeholders (no visible HERO/IMG/MAP text) */
-.hero-image-placeholder,
-.page-header-image-placeholder,
 .visit-map-placeholder {
   position: absolute;
   inset: 0;
+  z-index: 0;
   background: linear-gradient(
     135deg,
     var(--color-cream-tinted) 0%,
     var(--color-gold-pale) 60%,
     var(--color-border-medium) 100%
   );
-}
-
-.visit-map-placeholder {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
 }
 
 .visit-map-caption {

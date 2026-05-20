@@ -5,6 +5,7 @@ meta_description: "Made-to-measure blinds for any room, any window. Roman, rolle
 eyebrow: "Blinds"
 h1: "Blinds in Broadway, *measured and fitted*"
 lead: "Roman, roller, wooden, Venetian, perfect-fit, vertical. All measured at home and fitted by people who do this every week."
+image: "/images/showroom/showroom-walkthrough.jpg"
 
 intro_h2: "What blinds do we do"
 intro_body: |

@@ -1,6 +1,7 @@
 ---
 brand_name: "Riva"
 tagline: "Cushions, throws, fabric, and curtains"
+image: "/images/accessories/accessories-mirror-hydrangeas-p.jpg"
 
 meta_title: "Riva Stockist in the Cotswolds"
 meta_description: "Riva cushions, throws, and fabric on the showroom floor at Canwell, Broadway. Soft furnishings to feel in the hand before you commit."

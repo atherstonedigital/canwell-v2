@@ -1,6 +1,7 @@
 ---
 brand_name: "Malini"
 tagline: "Fabric, cushions, and finishing pieces"
+image: "/images/accessories/accessories-sences-fragrance.jpg"
 
 meta_title: "Malini Stockist in the Cotswolds"
 meta_description: "Malini cushions, fabric, and finishing pieces at Canwell Interiors, Broadway. Soft furnishings with weight, weave, and pattern worth feeling in person."

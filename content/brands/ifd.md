@@ -1,6 +1,7 @@
 ---
 brand_name: "IFD"
 tagline: "Hardwood furniture with character"
+image: "/images/lighting/lighting-table-lamp-detail.jpg"
 
 meta_title: "IFD Hardwood Furniture Stockist in the Cotswolds"
 meta_description: "IFD hardwood dining, bedroom, and occasional pieces at Canwell Interiors, Broadway. Solid wood furniture sized for older Cotswold houses."

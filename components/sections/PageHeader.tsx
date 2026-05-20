@@ -30,7 +30,7 @@ export function PageHeader({
   return (
     <section className="page-header">
       <div className="container">
-        <div className="page-header-grid">
+        <div className={`page-header-grid${image ? "" : " page-header-grid--single"}`}>
           <div className="page-header-content">
             {marker_num && marker_label ? (
               <SectionMarker num={marker_num} label={marker_label} />
@@ -50,8 +50,8 @@ export function PageHeader({
             </div>
           </div>
 
-          <div className="page-header-image">
-            {image ? (
+          {image && (
+            <div className="page-header-image">
               <Image
                 src={image}
                 alt={altText}
@@ -60,10 +60,8 @@ export function PageHeader({
                 sizes="(max-width: 900px) 100vw, 50vw"
                 style={{ objectFit: "cover" }}
               />
-            ) : (
-              <div className="page-header-image-placeholder" aria-hidden="true" />
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 ---
 brand_name: "Hills Furniture"
 tagline: "Solid hardwood dining and bedroom pieces"
+image: "/images/dining/dining-round-table-vignette.jpg"
 
 meta_title: "Hills Furniture Stockist in the Cotswolds"
 meta_description: "Hills Furniture dining tables, chairs, sideboards, and bedroom pieces at Canwell Interiors, Broadway. The Cotswolds Hills stockist."
