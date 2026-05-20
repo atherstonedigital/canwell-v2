@@ -1,5 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Inline } from "@/components/signature/RichText";
+import { getShowroomImage } from "@/lib/showroom-images";
 
 export interface Card {
   title: string;
@@ -50,10 +52,19 @@ export function Cards({
           data-cols={columns}
         >
           {cards.map((card, idx) => {
+            const meta = getShowroomImage(card.image);
             const inner = (
               <>
-                {variant === "service" && (
-                  <div className="card-image" aria-hidden="true" />
+                {variant === "service" && card.image && (
+                  <div className="card-image">
+                    <Image
+                      src={card.image}
+                      alt={meta?.alt ?? card.title}
+                      fill
+                      sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
                 )}
                 <div className="card-body">
                   <h3 className="card-title">
