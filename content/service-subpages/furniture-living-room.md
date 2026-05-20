@@ -8,6 +8,7 @@ meta_description: "Armchairs, coffee tables, console tables, side tables, and th
 eyebrow: "Furniture · Living room"
 h1: "Living room furniture: *armchairs, coffee tables, consoles*"
 lead: "The pieces that work around the sofa. Often the difference between a room that feels finished and one that doesn't."
+image: "/images/sofas/sofas-snuggler-armchair.jpg"
 
 intro_h2: "The living room range"
 intro_body: |

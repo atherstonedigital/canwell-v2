@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { SectionMarker } from "@/components/signature/SectionMarker";
 import { Inline, PlainWithPlaceholders } from "@/components/signature/RichText";
+import { getShowroomImage } from "@/lib/showroom-images";
 import type { CTA, HomepageContent } from "@/lib/types";
 
 interface HeroProps {
@@ -41,6 +42,7 @@ export function Hero({
   hero_ctas,
 }: HeroProps) {
   const ctas = hero_ctas && hero_ctas.length > 0 ? hero_ctas : DEFAULT_HERO_CTAS;
+  const heroImageMeta = getShowroomImage(hero_image);
 
   return (
     <section className="hero">
@@ -91,15 +93,13 @@ export function Hero({
             {hero_image ? (
               <Image
                 src={hero_image}
-                alt="Canwell Interiors showroom"
+                alt={heroImageMeta?.alt ?? "Canwell Interiors showroom"}
                 fill
                 priority
                 sizes="(max-width: 900px) 100vw, 50vw"
                 style={{ objectFit: "cover" }}
               />
             ) : (
-              // QA Audit 2026-05-12 — Task 7: empty image slot, no visible "HERO" label.
-              // TODO(photo): hero image — Broadway showroom interior, landscape.
               <div className="hero-image-placeholder" aria-hidden="true" />
             )}
           </div>

@@ -136,3 +136,11 @@ export const showroomImages = {
     height: 1350,
   },
 } as const satisfies Record<string, ShowroomImage>;
+
+const showroomImagesBySrc: Map<string, ShowroomImage> = new Map(
+  Object.values(showroomImages).map((img) => [img.src, img])
+);
+
+export function getShowroomImage(src: string | undefined): ShowroomImage | undefined {
+  return src ? showroomImagesBySrc.get(src) : undefined;
+}

@@ -8,6 +8,7 @@ meta_description: "Carpets measured and fitted across the Cotswolds. Free home m
 eyebrow: "Carpets · Measured and fitted"
 h1: "Carpets, measured and fitted across the *Cotswolds*"
 lead: "Sample books to take home, a free home measure, one honest quote, and fitters who turn up when they say they will."
+image: "/images/carpets/carpets-cormar-display.jpg"
 
 intro_h2: "What's in the price"
 intro_body: |

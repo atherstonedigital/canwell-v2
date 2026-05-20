@@ -5,6 +5,7 @@ meta_description: "Carpets and flooring at Canwell Interiors, Broadway. Sample b
 eyebrow: "Carpets and flooring"
 h1: "Carpets and flooring in the *Cotswolds*"
 lead: "Choosing a carpet is one of the bigger calls you'll make in a room. Best done in person, in good light, with the rest of your scheme in mind."
+image: "/images/carpets/carpets-cormar-display.jpg"
 
 intro_h2: "What we do"
 intro_body: |

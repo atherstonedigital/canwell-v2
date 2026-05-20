@@ -5,6 +5,7 @@ meta_description: "Canwell Interiors is a family-run furnishings showroom in Bro
 eyebrow: "Our story"
 h1: "The family behind *Canwell Interiors*"
 lead: "A family-run furnishings showroom at the Cotswold Design Centre in Broadway, run by people who care more about getting the room right than closing the sale."
+image: "/images/showroom/showroom-accessories-wide.jpg"
 
 story_h2: "How we got here"
 story_body: |

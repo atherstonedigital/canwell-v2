@@ -5,6 +5,7 @@ meta_description: "Call, email, or visit Canwell Interiors at the Cotswold Desig
 eyebrow: "Get in touch"
 h1: "Get in touch"
 lead: "A question about a piece, an enquiry about a service, or want to book a design consultation. Whichever it is, we answer within one working day."
+image: "/images/exterior/exterior-window-signage.jpg"
 
 quick_h2: "The fastest way to reach us"
 call_label: "Call us"

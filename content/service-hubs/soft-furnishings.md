@@ -5,6 +5,7 @@ meta_description: "Cushions, throws, lamps, art, mirrors, and the finishing touc
 eyebrow: "Soft furnishings"
 h1: "Soft furnishings, lighting, and the *finishing touches*"
 lead: "The pieces that turn a room of furniture into a room. Stock changes weekly, so it's worth visiting more than once a season."
+image: "/images/lighting/lighting-lamps-display.jpg"
 
 intro_h2: "What we mean by finishing touches"
 intro_body: |
