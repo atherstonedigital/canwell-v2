@@ -26,6 +26,7 @@ export function PageHeader({
   const imageMeta = getShowroomImage(image);
   const labelText = image_label || eyebrow || marker_label || "Photography";
   const altText = imageMeta?.alt ?? labelText;
+  const isPortrait = imageMeta ? imageMeta.height > imageMeta.width : false;
 
   return (
     <section className="page-header">
@@ -51,7 +52,7 @@ export function PageHeader({
           </div>
 
           {image && (
-            <div className="page-header-image">
+            <div className={`page-header-image${isPortrait ? " page-header-image--portrait" : ""}`}>
               <Image
                 src={image}
                 alt={altText}
