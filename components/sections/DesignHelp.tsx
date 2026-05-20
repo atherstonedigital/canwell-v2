@@ -1,8 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import { SectionMarker } from "@/components/signature/SectionMarker";
 import { Stamp } from "@/components/signature/Stamp";
 import { Inline } from "@/components/signature/RichText";
 import { MarkdownBody } from "@/components/signature/MarkdownBody";
+import { getShowroomImage } from "@/lib/showroom-images";
 import type { HomepageContent } from "@/lib/types";
 
 type DesignHelpProps = Pick<
@@ -10,6 +12,7 @@ type DesignHelpProps = Pick<
   | "design_help_eyebrow"
   | "design_help_h2"
   | "design_help_body"
+  | "design_help_image"
   | "design_help_saverys_note"
   | "design_help_primary_cta_label"
   | "design_help_primary_cta_url"
@@ -22,6 +25,7 @@ export function DesignHelp({
   design_help_eyebrow,
   design_help_h2,
   design_help_body,
+  design_help_image,
   design_help_saverys_note,
   design_help_primary_cta_label,
   design_help_primary_cta_url,
@@ -29,11 +33,22 @@ export function DesignHelp({
   design_help_secondary_cta_url,
   design_help_stamps,
 }: DesignHelpProps) {
+  const imageMeta = getShowroomImage(design_help_image);
   return (
     <section className="design-help-feature">
       <div className="container">
-        <div className="design-help-grid">
-          <div className="design-help-image" aria-hidden="true" />
+        <div className={`design-help-grid${design_help_image ? "" : " design-help-grid--single"}`}>
+          {design_help_image && (
+            <div className="design-help-image">
+              <Image
+                src={design_help_image}
+                alt={imageMeta?.alt ?? "Canwell Interiors design help"}
+                fill
+                sizes="(max-width: 900px) 100vw, 50vw"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+          )}
 
           <div className="design-help-content">
             <SectionMarker num="03" label={design_help_eyebrow} />

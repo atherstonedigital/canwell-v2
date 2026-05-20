@@ -61,6 +61,7 @@ export default function Home() {
         design_help_eyebrow={homepage.design_help_eyebrow}
         design_help_h2={homepage.design_help_h2}
         design_help_body={homepage.design_help_body}
+        design_help_image={homepage.design_help_image}
         design_help_saverys_note={homepage.design_help_saverys_note}
         design_help_primary_cta_label={homepage.design_help_primary_cta_label}
         design_help_primary_cta_url={homepage.design_help_primary_cta_url}
