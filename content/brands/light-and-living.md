@@ -1,6 +1,7 @@
 ---
 brand_name: "Light & Living"
 tagline: "Lighting, ceramics, and decorative pieces"
+image: "/images/lighting/lighting-console-vignette.jpg"
 
 meta_title: "Light & Living Stockist in the Cotswolds"
 meta_description: "Light & Living table lamps, floor lamps, ceramics, and decorative pieces at Canwell Interiors, Broadway. The finishing touches that warm a room."

@@ -1,6 +1,7 @@
 ---
 brand_name: "Richmond Interiors"
 tagline: "Classic and contemporary upholstery and accessories"
+image: "/images/accessories/accessories-mirror-hydrangeas-l.jpg"
 
 meta_title: "Richmond Interiors Stockist in the Cotswolds"
 meta_description: "Richmond Interiors sofas, dining furniture, and accessories on the showroom floor at Canwell, Broadway. The Cotswolds Richmond stockist."

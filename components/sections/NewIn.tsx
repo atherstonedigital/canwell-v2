@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { SectionMarker } from "@/components/signature/SectionMarker";
 import { Inline, PlainWithPlaceholders } from "@/components/signature/RichText";
+import { getShowroomImage } from "@/lib/showroom-images";
 import type { NewInItem } from "@/lib/types";
 
 interface NewInProps {
@@ -50,19 +52,31 @@ export function NewIn({
         {/* QA Audit 2026-05-12 — Task 4: cards render as non-link tiles until the
             xshowhome.com Storefront integration lands. No dead href="#" placeholders. */}
         <div className="new-in-grid">
-          {items.map((item) => (
-            <div key={item.slug} className="new-in-card">
-              <div className="new-in-image">
-                <div className="new-in-badge" aria-hidden="true">
-                  New
+          {items.map((item) => {
+            const imageMeta = getShowroomImage(item.image);
+            return (
+              <div key={item.slug} className="new-in-card">
+                <div className="new-in-image">
+                  {item.image && (
+                    <Image
+                      src={item.image}
+                      alt={imageMeta?.alt ?? item.name}
+                      fill
+                      sizes="(max-width: 700px) 100vw, 33vw"
+                      style={{ objectFit: "cover" }}
+                    />
+                  )}
+                  <div className="new-in-badge" aria-hidden="true">
+                    New
+                  </div>
                 </div>
+                <h3 className="new-in-name">{item.name}</h3>
+                <p className="new-in-meta">
+                  {item.brand.toUpperCase()} · <PlainWithPlaceholders text={item.meta_label} />
+                </p>
               </div>
-              <h3 className="new-in-name">{item.name}</h3>
-              <p className="new-in-meta">
-                {item.brand.toUpperCase()} · <PlainWithPlaceholders text={item.meta_label} />
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <p className="new-in-footer">

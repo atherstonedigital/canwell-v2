@@ -54,6 +54,7 @@ design_help_body: |
   Most people who come in for help don't want a six-month design project. They want someone who knows their stuff to listen, look at a few photos, and tell them what would actually work in the room.
 
   That's what we do. Free, unfussy, no commission on what you choose. Bring photos, dimensions if you have them, and the curtain you're trying to match. Or tell us roughly what you're thinking and we'll take it from there.
+design_help_image: "/images/lifestyle/lifestyle-woodburner-green-sofa.jpg"
 design_help_saverys_note: "For full bespoke design projects, our sister showroom Saverys of Broadway handles those."
 design_help_primary_cta_label: "Book a free consultation"
 design_help_primary_cta_url: "/design-help/in-store-consultation"

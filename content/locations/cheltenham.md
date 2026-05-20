@@ -7,6 +7,7 @@ meta_description: "Twenty minutes from Cheltenham on the A46. Furniture, carpets
 eyebrow: "Areas we serve · Cheltenham"
 h1: "Furniture, carpets, and *interior design help* near Cheltenham"
 lead: "Twenty minutes up the A46 from Cheltenham. The Cotswold furnishings showroom worth the short drive."
+image: "/images/showroom/showroom-hero-wide.jpg"
 
 intro_h2: "Getting to Broadway from Cheltenham"
 intro_body: |

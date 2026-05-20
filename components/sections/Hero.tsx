@@ -47,7 +47,7 @@ export function Hero({
   return (
     <section className="hero">
       <div className="container">
-        <div className="hero-grid">
+        <div className={`hero-grid${hero_image ? "" : " hero-grid--single"}`}>
           <div className="hero-content">
             <SectionMarker num="01" label={hero_eyebrow} />
             <p className="hero-pretitle">{hero_pretitle}</p>
@@ -89,8 +89,8 @@ export function Hero({
             )}
           </div>
 
-          <div className="hero-image">
-            {hero_image ? (
+          {hero_image && (
+            <div className="hero-image">
               <Image
                 src={hero_image}
                 alt={heroImageMeta?.alt ?? "Canwell Interiors showroom"}
@@ -99,10 +99,8 @@ export function Hero({
                 sizes="(max-width: 900px) 100vw, 50vw"
                 style={{ objectFit: "cover" }}
               />
-            ) : (
-              <div className="hero-image-placeholder" aria-hidden="true" />
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

@@ -7,6 +7,7 @@ meta_description: "Twenty-five minutes from Stratford-upon-Avon through the Cots
 eyebrow: "Areas we serve · Stratford-upon-Avon"
 h1: "Furniture, carpets, and *interior design help* near Stratford-upon-Avon"
 lead: "Twenty-five minutes south-west through some of the prettiest Cotswold villages. The kind of drive that's worth the trip on its own."
+image: "/images/showroom/showroom-accessories-wide.jpg"
 
 intro_h2: "Getting to Broadway from Stratford-upon-Avon"
 intro_body: |
