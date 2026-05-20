@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { SectionMarker } from "@/components/signature/SectionMarker";
 import { Inline } from "@/components/signature/RichText";
+import { getShowroomImage } from "@/lib/showroom-images";
 import type { ServiceCard } from "@/lib/types";
 
 interface ServicesProps {
@@ -33,26 +34,29 @@ export function Services({
         </div>
 
         <div className="services-grid">
-          {service_cards.map((card) => (
+          {service_cards.map((card) => {
+            const meta = getShowroomImage(card.image);
+            return (
             <Link key={card.link_url} href={card.link_url} className="service-card">
-              <div className="service-image" aria-hidden="true">
-                {card.image && (
+              {card.image && (
+                <div className="service-image">
                   <Image
                     src={card.image}
-                    alt={card.title}
+                    alt={meta?.alt ?? card.title}
                     fill
                     sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
                     style={{ objectFit: "cover" }}
                   />
-                )}
-              </div>
+                </div>
+              )}
               <div className="service-body">
                 <h3 className="service-title">{card.title}</h3>
                 <p className="service-description">{card.body}</p>
                 <span className="service-link">{card.link_label}</span>
               </div>
             </Link>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
