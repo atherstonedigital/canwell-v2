@@ -125,7 +125,6 @@ export default function RootLayout({
             strategy="afterInteractive"
           />
         ) : null}
-        {/* QA Audit 2026-05-14 — Task 13: GA4, gated to production hostname only. */}
         <Analytics />
         <Script
           src="https://identity.netlify.com/v1/netlify-identity-widget.js"

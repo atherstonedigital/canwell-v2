@@ -2,6 +2,9 @@
   command = "npm run build"
   publish = ".next"
 
+[build.environment]
+  NEXT_PUBLIC_GA_ID = "G-VSDK6W40MJ"
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
