@@ -88,29 +88,34 @@ export async function POST(req: Request) {
   try {
     const result = await subscribeContact({ email, firstName, lastName });
     if (result.ok) {
+      console.log("[newsletter] result", { branch: "success", email });
       return NextResponse.json({
         ok: true,
         message: "Check your email to confirm your subscription.",
       });
     }
     if (result.code === "already_subscribed") {
+      console.log("[newsletter] result", { branch: "already_subscribed", email });
       return NextResponse.json({
         ok: true,
         message: "You're already on the list.",
       });
     }
     if (result.code === "invalid_email") {
+      console.log("[newsletter] result", { branch: "invalid_email", email, code: result.code });
       return NextResponse.json(
         { ok: false, message: "That email doesn't look right." },
         { status: 400 }
       );
     }
     if (result.code === "rate_limited") {
+      console.log("[newsletter] result", { branch: "rate_limited", email, code: result.code });
       return NextResponse.json(
         { ok: false, message: "We're hitting a rate limit. Try again in a moment." },
         { status: 429 }
       );
     }
+    console.log("[newsletter] result", { branch: "server_error", email, code: result.code });
     return NextResponse.json(
       {
         ok: false,
@@ -122,6 +127,7 @@ export async function POST(req: Request) {
     console.error("[newsletter] subscribeContact threw", {
       error: err instanceof Error ? err.message : String(err),
     });
+    console.log("[newsletter] result", { branch: "exception", email });
     return NextResponse.json(
       {
         ok: false,

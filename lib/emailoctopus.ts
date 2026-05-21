@@ -43,6 +43,13 @@ export async function subscribeContact({
   if (firstName) fields.FirstName = firstName;
   if (lastName) fields.LastName = lastName;
 
+  console.log("[emailoctopus] config", {
+    hasApiKey: !!process.env.EMAILOCTOPUS_API_KEY,
+    apiKeyTail: process.env.EMAILOCTOPUS_API_KEY?.slice(-4) ?? null,
+    listId: process.env.EMAILOCTOPUS_LIST_ID ?? null,
+    endpoint: `https://api.emailoctopus.com/lists/${process.env.EMAILOCTOPUS_LIST_ID}/contacts`,
+  });
+
   try {
     const res = await fetch(`${ENDPOINT}/lists/${listId}/contacts`, {
       method: "POST",
@@ -58,11 +65,18 @@ export async function subscribeContact({
       signal: controller.signal,
     });
 
+    const responseText = await res.text();
+    console.log("[emailoctopus] response", {
+      status: res.status,
+      statusText: res.statusText,
+      body: responseText,
+    });
+
     if (res.ok) return { ok: true };
 
     let body: EmailOctopusError = {};
     try {
-      body = (await res.json()) as EmailOctopusError;
+      body = responseText ? (JSON.parse(responseText) as EmailOctopusError) : {};
     } catch {
       // Body wasn't JSON — fall through and use status code only.
     }
