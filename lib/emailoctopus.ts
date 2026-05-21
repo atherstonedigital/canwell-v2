@@ -68,6 +68,12 @@ export async function subscribeContact({
     }
     const code = body.error?.code;
 
+    console.error("[emailoctopus] non-ok response", {
+      status: res.status,
+      providerCode: code,
+      providerMessage: body.error?.message,
+    });
+
     if (res.status === 409 || code === "MEMBER_EXISTS_WITH_EMAIL_ADDRESS") {
       return {
         ok: false,
@@ -96,6 +102,10 @@ export async function subscribeContact({
     };
   } catch (err) {
     const aborted = err instanceof Error && err.name === "AbortError";
+    console.error("[emailoctopus] request failed", {
+      aborted,
+      error: err instanceof Error ? err.message : String(err),
+    });
     return {
       ok: false,
       code: "server_error",

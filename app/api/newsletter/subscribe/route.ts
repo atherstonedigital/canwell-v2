@@ -68,6 +68,23 @@ export async function POST(req: Request) {
     );
   }
 
+  if (!process.env.EMAILOCTOPUS_API_KEY || !process.env.EMAILOCTOPUS_LIST_ID) {
+    console.error(
+      "[newsletter] EmailOctopus env vars missing",
+      {
+        hasKey: Boolean(process.env.EMAILOCTOPUS_API_KEY),
+        hasListId: Boolean(process.env.EMAILOCTOPUS_LIST_ID),
+      }
+    );
+    return NextResponse.json(
+      {
+        ok: false,
+        message: "Newsletter signup isn't configured yet. Please try again soon.",
+      },
+      { status: 503 }
+    );
+  }
+
   try {
     const result = await subscribeContact({ email, firstName, lastName });
     if (result.ok) {
@@ -101,7 +118,10 @@ export async function POST(req: Request) {
       },
       { status: 502 }
     );
-  } catch {
+  } catch (err) {
+    console.error("[newsletter] subscribeContact threw", {
+      error: err instanceof Error ? err.message : String(err),
+    });
     return NextResponse.json(
       {
         ok: false,
