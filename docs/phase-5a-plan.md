@@ -7,7 +7,7 @@
 | # | Question | Decision |
 |---|---|---|
 | 1 | Repo identity | Stay in `canwell-v2`. Ignore the brief's "canwell-interiors-site" line. Scaffold inside this repo on whatever branch is agreed for the build session. |
-| 2 | Netlify provisioning | Already set up. `canwell-v2.netlify.app` exists; Identity + Git Gateway enabled. Build agent can deploy directly. |
+| 2 | Netlify provisioning | Already set up. `canwellinteriors.com` exists; Identity + Git Gateway enabled. Build agent can deploy directly. |
 | 3 | Strategy brief | Added to the repo by Dan (verify on next push — was not yet present on this branch at plan-write time). Build agent should read it once available, but proceed without if needed. |
 | 4 | Photography placeholders | Keep the mockup's CSS-gradient "Photography" blocks. Zero asset weight, easiest to swap via Decap when real images arrive. |
 | 5 | `{{CURLY_BRACE}}` rendering | Render as a **styled pill component**, not literal `{{...}}` text. Use gold-pale background, gold-dark text, small caps, label like "Needs Gary". Build a `<Placeholder>` component the section components can reuse. |
@@ -21,7 +21,7 @@
 
 ## 1. Scope confirmation & gaps
 
-The brief's Phase 5A deliverable (lines 292–308) demands: a working staging site at `canwell-v2.netlify.app` with the homepage built in Next.js components pulling from Decap, `/admin` operational via Netlify Identity, design system fully ported, responsive at 900/640px, mobile menu working, and Lighthouse 95+ on all four scores.
+The brief's Phase 5A deliverable (lines 292–308) demands: a working staging site at `canwellinteriors.com` with the homepage built in Next.js components pulling from Decap, `/admin` operational via Netlify Identity, design system fully ported, responsive at 900/640px, mobile menu working, and Lighthouse 95+ on all four scores.
 
 **Source documents present in the repo** (verified via `ls`): the eight files match the brief's table EXCEPT one — `canwell-strategy-brief.md` is referenced as source #1 (brief lines 25, 144) but is **not in the repository**. The strategy framing instead sits inline in the brief's own opening sections plus the voice/tone doc. This is a documented gap, not a blocker for 5A code.
 
@@ -54,7 +54,7 @@ The brief's Phase 5A deliverable (lines 292–308) demands: a working staging si
 ## 2. Open questions for Dan/Gary (BLOCKERS)
 
 1. **Repo identity.** Brief says "Repo name: canwell-interiors-site … start clean," but we are on `canwell-v2`, branch `claude/ultraplan-setup-uN9PW`. **Decision:** scaffold inside this repo (treat `canwell-v2` as the working name, ignore the brief's repo-name line) OR create `canwell-interiors-site` as a new GitHub repo and abandon this one? Recommend the former for continuity; the source docs already sit here.
-2. **Netlify site provisioning.** Does `canwell-v2.netlify.app` exist? Has someone created the Netlify project, connected GitHub, and enabled Netlify Identity? The build agent cannot turn Identity on through code — it requires UI clicks in app.netlify.com. **Decision:** Dan creates the Netlify site + enables Identity (with "Invite only" registration) before the deploy step (4.11), OR confirm it's already done.
+2. **Netlify site provisioning.** Does `canwellinteriors.com` exist? Has someone created the Netlify project, connected GitHub, and enabled Netlify Identity? The build agent cannot turn Identity on through code — it requires UI clicks in app.netlify.com. **Decision:** Dan creates the Netlify site + enables Identity (with "Invite only" registration) before the deploy step (4.11), OR confirm it's already done.
 3. **Strategy brief location.** Brief lists `canwell-strategy-brief.md` as source doc #1 but it isn't in the repo. Is this redundant (positioning is implicit in voice/tone + sitemap), or do we need it added? Build agent will proceed without it.
 4. **Placeholder treatment for photography.** Mockup uses CSS gradient blocks with the word "Photography" centred. Confirm: keep this treatment (recommended — matches mockup, zero asset weight, easiest for Gary to replace via Decap), OR something else? Stock images are out (voice/tone implications and licence cost).
 5. **Visible placeholder rendering for `{{CURLY_BRACES}}` copy.** Build agent must show `{{REVIEW_QUOTE_1}}` etc. visibly in the staging site. Confirm: show literally as `{{...}}` in muted gold-pale block, OR substitute a "needs Gary input" pill component?
@@ -159,7 +159,7 @@ For every singleton/collection, create the markdown files that the build will re
 ### 4.11 Netlify deploy & Identity setup
 1. **Pre-step (manual, Dan):** create Netlify site `canwell-v2`, link to GitHub repo, enable Netlify Identity (Invite only), enable Git Gateway, invite Gary's email.
 2. Push to GitHub `main` (or whichever branch Netlify watches).
-3. Verify build succeeds, site loads at `canwell-v2.netlify.app`.
+3. Verify build succeeds, site loads at `canwellinteriors.com`.
 4. Browse `/admin`, log in, verify homepage edits round-trip a Git commit.
 
 ### 4.12 Lighthouse pass & DoD checklist
