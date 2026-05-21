@@ -57,6 +57,7 @@ export function ContactForm({ microcopy, confirmMessage }: ContactFormProps) {
       action="/contact/thanks"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
+      data-netlify-recaptcha="true"
       onSubmit={handleSubmit}
       noValidate
     >
@@ -157,6 +158,8 @@ export function ContactForm({ microcopy, confirmMessage }: ContactFormProps) {
           <option value="other">Other</option>
         </select>
       </div>
+
+      <div className="field" data-netlify-recaptcha="true"></div>
 
       <button type="submit" className="btn btn-primary">
         Send your enquiry
