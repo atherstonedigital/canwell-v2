@@ -8,6 +8,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Analytics } from "@/components/Analytics";
 import { MetaPixel } from "@/components/MetaPixel";
+import { LinkTracker } from "@/components/LinkTracker";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -128,6 +129,7 @@ export default function RootLayout({
         ) : null}
         <Analytics />
         <MetaPixel />
+        <LinkTracker />
         <Script
           src="https://identity.netlify.com/v1/netlify-identity-widget.js"
           strategy="afterInteractive"
