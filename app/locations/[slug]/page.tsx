@@ -9,6 +9,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { RelatedLinks } from "@/components/sections/RelatedLinks";
 import { breadcrumbSchema, faqSchema, locationSchema } from "@/lib/schema";
 import { getLocation, getLocations } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return getLocations().map((l) => ({ slug: l.slug }));
@@ -22,11 +23,12 @@ export async function generateMetadata({
   const { slug } = await params;
   const l = getLocation(slug);
   if (!l) return {};
-  return {
+  return pageMetadata({
     title: l.meta_title,
     description: l.meta_description,
-    alternates: { canonical: `/locations/${slug}` },
-  };
+    canonical: `/locations/${slug}`,
+    image: l.image,
+  });
 }
 
 export default async function LocationPage({

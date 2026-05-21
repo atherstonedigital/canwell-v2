@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import type { ServiceHubContent } from "./types";
 import { getSubPages } from "./content";
+import { pageMetadata } from "./seo";
 
 interface SubPageWithMeta extends ServiceHubContent {
   parent: string;
@@ -21,12 +22,12 @@ export function listSubPagesForParent(parent: string): SubPageWithMeta[] {
 export function buildSubPageMetadata(parent: string, subslug: string): Metadata {
   const page = findSubPage(parent, subslug);
   if (!page) return {};
-  // QA Audit 2026-05-12 — Task 15: canonical mirrors the routing path.
-  return {
+  return pageMetadata({
     title: page.meta_title,
     description: page.meta_description,
-    alternates: { canonical: `/${parent}/${subslug}` },
-  };
+    canonical: `/${parent}/${subslug}`,
+    image: page.image,
+  });
 }
 
 export function getSubPageOr404(parent: string, subslug: string): SubPageWithMeta {

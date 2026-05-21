@@ -2,15 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { Prose } from "@/components/sections/Prose";
+import { pageMetadata } from "@/lib/seo";
 
 // QA Audit 2026-05-12 — Task 13: Netlify Forms thank-you destination.
-export const metadata: Metadata = {
-  title: "Thank You",
-  description:
-    "Thanks for getting in touch with Canwell Interiors. We reply within one working day.",
-  alternates: { canonical: "/contact/thanks" },
-  robots: { index: false, follow: true },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return pageMetadata({
+    title: "Thank You",
+    description:
+      "Thanks for getting in touch with Canwell Interiors. We reply within one working day.",
+    canonical: "/contact/thanks",
+    robots: { index: false, follow: true },
+  });
+}
 
 export default function ContactThanksPage() {
   return (
