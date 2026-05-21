@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE = process.env.NEXT_PUBLIC_SITE_URL || "https://canwell-v2.netlify.app";
+const BASE = process.env.NEXT_PUBLIC_SITE_URL || "https://canwellinteriors.com";
 
 // AI agents we want indexing the site. Listed explicitly (rather than
 // relying on the User-agent: * fallback) so the intent is unmistakable

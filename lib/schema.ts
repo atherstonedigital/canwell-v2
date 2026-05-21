@@ -7,7 +7,7 @@ import type {
   SiteSettings,
 } from "./types";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://canwell-v2.netlify.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://canwellinteriors.com";
 
 export function siteUrl(path = "/") {
   return new URL(path, SITE_URL).toString();

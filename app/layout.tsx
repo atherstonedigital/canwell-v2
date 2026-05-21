@@ -27,7 +27,7 @@ const dmSans = DM_Sans({
 });
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://canwell-v2.netlify.app";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://canwellinteriors.com";
 // QA Audit 2026-05-12 — Task 21: dev site noindex; flip to true at launch.
 const INDEXABLE = process.env.NEXT_PUBLIC_INDEXABLE === "true";
 

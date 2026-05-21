@@ -7,7 +7,7 @@ import {
   getSubPages,
 } from "@/lib/content";
 
-const BASE = process.env.NEXT_PUBLIC_SITE_URL || "https://canwell-v2.netlify.app";
+const BASE = process.env.NEXT_PUBLIC_SITE_URL || "https://canwellinteriors.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
