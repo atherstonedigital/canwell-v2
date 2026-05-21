@@ -1523,9 +1523,50 @@ em,
   display: block;
 }
 
+.email-form-label + .email-form-row {
+  margin-bottom: var(--s-4);
+}
+
+.email-form-optional {
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
 .email-form-row {
   display: flex;
   gap: var(--s-3);
+}
+
+.email-form-row-single {
+  display: block;
+}
+
+.email-form-row-single input {
+  width: 100%;
+}
+
+.email-form-consent {
+  display: flex;
+  gap: var(--s-3);
+  align-items: flex-start;
+  font-size: var(--fs-small);
+  color: var(--color-text-primary);
+  margin-top: var(--s-4);
+  line-height: 1.5;
+}
+
+.email-form-consent input[type="checkbox"] {
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.email-form-consent a {
+  text-decoration: underline;
+}
+
+.email-form-confirm-error {
+  background: rgba(180, 70, 60, 0.08);
+  color: var(--color-text-primary);
 }
 
 /* QA Audit 2026-05-14 — Task 23: stack the email form vertically below 640px

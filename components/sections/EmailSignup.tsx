@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, type FormEvent } from "react";
 import { SectionMarker } from "@/components/signature/SectionMarker";
 import { Inline } from "@/components/signature/RichText";
@@ -15,13 +16,7 @@ interface EmailSignupProps {
   email_confirm_message: string;
 }
 
-// QA Audit 2026-05-14 — Task 12 + 23: when NEXT_PUBLIC_KLAVIYO_LIST_ID is
-// supplied the form POSTs to Klaviyo's public list-signup endpoint. Until
-// then the form falls back to Netlify Forms ("newsletter") so subscriptions
-// still land somewhere reachable. The static <form> below is detected by
-// Netlify at build time via data-netlify="true".
-const KLAVIYO_LIST_ID = process.env.NEXT_PUBLIC_KLAVIYO_LIST_ID;
-const KLAVIYO_COMPANY_ID = process.env.NEXT_PUBLIC_KLAVIYO_COMPANY_ID;
+type FormState = "idle" | "submitting" | "success" | "error";
 
 export function EmailSignup({
   email_eyebrow,
@@ -33,62 +28,50 @@ export function EmailSignup({
   email_microcopy,
   email_confirm_message,
 }: EmailSignupProps) {
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [state, setState] = useState<FormState>("idle");
+  const [message, setMessage] = useState<string>("");
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setError(null);
+    if (state === "submitting") return;
+
     const form = event.currentTarget;
     const data = new FormData(form);
     const email = String(data.get("email") || "").trim();
-    if (!email) return;
+    const firstName = String(data.get("firstName") || "").trim();
+    const consent = data.get("consent") === "on";
+    const hp = String(data.get("hp") || "");
+
+    setState("submitting");
+    setMessage("");
 
     try {
-      if (KLAVIYO_LIST_ID && KLAVIYO_COMPANY_ID) {
-        // Klaviyo public client subscribe API — no secret key required.
-        await fetch(
-          `https://a.klaviyo.com/client/subscriptions/?company_id=${KLAVIYO_COMPANY_ID}`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              revision: "2024-10-15",
-            },
-            body: JSON.stringify({
-              data: {
-                type: "subscription",
-                attributes: {
-                  profile: {
-                    data: {
-                      type: "profile",
-                      attributes: { email },
-                    },
-                  },
-                  custom_source: "Canwell homepage footer",
-                },
-                relationships: {
-                  list: { data: { type: "list", id: KLAVIYO_LIST_ID } },
-                },
-              },
-            }),
-          }
-        );
+      const res = await fetch("/api/newsletter/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          firstName: firstName || undefined,
+          consent,
+          hp,
+        }),
+      });
+      const payload = (await res.json().catch(() => ({}))) as {
+        ok?: boolean;
+        message?: string;
+      };
+
+      if (payload.ok) {
+        setState("success");
+        setMessage(payload.message || email_confirm_message);
+        form.reset();
       } else {
-        const body = new URLSearchParams();
-        data.forEach((value, key) => body.append(key, value.toString()));
-        body.set("form-name", "newsletter");
-        await fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: body.toString(),
-        });
+        setState("error");
+        setMessage(payload.message || "Something went wrong. Please try again.");
       }
-      setSubmitted(true);
     } catch {
-      // Show the confirm anyway so the user isn't stuck on local/dev.
-      setSubmitted(true);
-      setError(null);
+      setState("error");
+      setMessage("Couldn't reach the server. Please try again.");
     }
   };
 
@@ -106,23 +89,33 @@ export function EmailSignup({
             </p>
           </div>
 
-          <form
-            className="email-form"
-            name="newsletter"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            data-netlify-recaptcha="true"
-            onSubmit={handleSubmit}
-            noValidate
-          >
-            <input type="hidden" name="form-name" value="newsletter" />
-            <p className="visually-hidden">
+          <form className="email-form" onSubmit={handleSubmit} noValidate>
+            <p className="visually-hidden" aria-hidden="true">
               <label>
                 Don&apos;t fill this out:{" "}
-                <input name="bot-field" tabIndex={-1} autoComplete="off" />
+                <input
+                  type="text"
+                  name="hp"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  defaultValue=""
+                />
               </label>
             </p>
+
+            <label htmlFor="newsletter-first-name" className="email-form-label">
+              First name <span className="email-form-optional">(optional)</span>
+            </label>
+            <div className="email-form-row email-form-row-single">
+              <input
+                id="newsletter-first-name"
+                type="text"
+                name="firstName"
+                autoComplete="given-name"
+                placeholder="First name"
+              />
+            </div>
+
             <label htmlFor="email-input" className="email-form-label">
               {email_form_label}
             </label>
@@ -135,20 +128,42 @@ export function EmailSignup({
                 required
                 autoComplete="email"
               />
-              <button type="submit" className="btn btn-gold">
-                {email_form_button}
+              <button
+                type="submit"
+                className="btn btn-gold"
+                disabled={state === "submitting"}
+              >
+                {state === "submitting" ? "Sending…" : email_form_button}
               </button>
             </div>
-            <div className="email-form-recaptcha" data-netlify-recaptcha="true"></div>
+
+            <label className="email-form-consent">
+              <input type="checkbox" name="consent" required />
+              <span>
+                I&apos;d like to hear from Canwell about new arrivals, showroom events
+                and seasonal offers. Unsubscribe any time. See our{" "}
+                <Link href="/privacy">Privacy Policy</Link>.
+              </span>
+            </label>
+
             <p className="email-form-microcopy">{email_microcopy}</p>
-            {submitted && (
-              <p className="email-form-confirm" role="status">
-                {email_confirm_message}
+
+            {state === "success" && (
+              <p
+                className="email-form-confirm"
+                role="status"
+                aria-live="polite"
+              >
+                {message}
               </p>
             )}
-            {error && (
-              <p className="email-form-confirm" role="status">
-                {error}
+            {state === "error" && (
+              <p
+                className="email-form-confirm email-form-confirm-error"
+                role="alert"
+                aria-live="assertive"
+              >
+                {message}
               </p>
             )}
           </form>
