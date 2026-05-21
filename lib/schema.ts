@@ -13,18 +13,66 @@ export function siteUrl(path = "/") {
   return new URL(path, SITE_URL).toString();
 }
 
-// QA Audit 2026-05-12 — Task 10: richer LocalBusiness payload with geo and areaServed.
-const AREA_SERVED = [
+// AreaServed: the cities and towns we deliver to and visit from Broadway.
+const AREA_SERVED_CITIES = [
   "Broadway",
   "Chipping Campden",
   "Willersey",
   "Snowshill",
-  "Evesham",
   "Stratford-upon-Avon",
   "Cheltenham",
+  "Worcester",
+  "Evesham",
+];
+
+// Top-level service categories that the showroom offers. Mirrored from the
+// site's primary nav so the OfferCatalog stays in step with what we sell.
+const OFFER_CATALOG: Array<{ name: string; url: string; description: string }> = [
+  {
+    name: "Carpets and flooring",
+    url: "/carpets",
+    description: "Carpets and flooring, measured and fitted across the Cotswolds.",
+  },
+  {
+    name: "Curtains",
+    url: "/curtains",
+    description: "Made-to-measure and ready-made curtains, with fabric to feel in person.",
+  },
+  {
+    name: "Blinds",
+    url: "/blinds",
+    description: "Roman, roller, wooden, perfect-fit and vertical blinds, measured and fitted.",
+  },
+  {
+    name: "Furniture",
+    url: "/furniture",
+    description: "Sofas, dining, bedroom and occasional furniture from premium brands.",
+  },
+  {
+    name: "Soft furnishings",
+    url: "/soft-furnishings",
+    description: "Cushions, throws, lighting, art and mirrors that finish a room.",
+  },
+  {
+    name: "Design help",
+    url: "/design-help",
+    description: "Free in-store design consultation and home visits across the Cotswolds.",
+  },
 ];
 
 export function organizationSchema(site: SiteSettings) {
+  const sameAs = [
+    site.sister_site_xshowhome_url,
+    site.social_facebook,
+    site.social_instagram,
+    site.social_google_business,
+  ].filter((url): url is string => Boolean(url && url.trim()));
+
+  const areaServed = [
+    ...AREA_SERVED_CITIES.map((name) => ({ "@type": "City", name })),
+    { "@type": "AdministrativeArea", name: "The Cotswolds" },
+  ];
+
   return {
     "@context": "https://schema.org",
     "@type": "FurnitureStore",
@@ -36,17 +84,17 @@ export function organizationSchema(site: SiteSettings) {
     url: siteUrl("/"),
     telephone: site.phone,
     email: site.email,
-    image: siteUrl("/og/canwell-default.jpg"),
+    image: [siteUrl("/og/canwell-default.jpg")],
     logo: site.logo_image ? siteUrl(site.logo_image) : undefined,
     address: {
       "@type": "PostalAddress",
-      streetAddress: `${site.address_line_1}, ${site.address_line_2}`,
+      streetAddress: "Cotswold Design Centre, Kennel Lane",
       addressLocality: "Broadway",
       addressRegion: "Worcestershire",
       postalCode: site.postcode,
       addressCountry: "GB",
     },
-    // Approximate Broadway, Worcestershire coordinates — verify with Google Maps.
+    // Broadway, Worcestershire — Cotswold Design Centre on Kennel Lane.
     geo: {
       "@type": "GeoCoordinates",
       latitude: 52.0382,
@@ -72,22 +120,30 @@ export function organizationSchema(site: SiteSettings) {
         closes: "16:00",
       },
     ],
-    areaServed: AREA_SERVED.map((name) => ({ "@type": "City", name })),
-    sameAs: [
-      site.social_facebook,
-      site.social_instagram,
-      site.social_google_business,
-    ].filter(Boolean),
+    areaServed,
+    priceRange: "££",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Showroom services",
+      itemListElement: OFFER_CATALOG.map((item) => ({
+        "@type": "Offer",
+        url: siteUrl(item.url),
+        itemOffered: {
+          "@type": "Service",
+          name: item.name,
+          description: item.description,
+          url: siteUrl(item.url),
+        },
+      })),
+    },
+    ...(sameAs.length > 0 && { sameAs }),
   };
 }
 
+// FurnitureStore is a LocalBusiness subtype; emit the richer type directly
+// so search engines and AI agents pick up the more specific signal.
 export function localBusinessSchema(site: SiteSettings) {
-  return {
-    ...organizationSchema(site),
-    "@type": "LocalBusiness",
-    "@id": siteUrl("/#localbusiness"),
-    priceRange: "££-£££",
-  };
+  return organizationSchema(site);
 }
 
 export function websiteSchema(site: SiteSettings) {

@@ -10,7 +10,7 @@ address_line_1: Cotswold Design Centre
 address_line_2: Kennel Lane, Broadway
 postcode: WR12 7DJ
 phone: 01905 964994
-email: canwellcotswolds@gmail.com
+email: broadway@canwellinteriors.com
 opening_hours_summary: Open seven days
 opening_hours_weekday: 9am to 5pm
 opening_hours_saturday: 9am to 5pm
