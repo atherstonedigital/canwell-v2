@@ -8,14 +8,15 @@ import { Schema } from "@/components/Schema";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { breadcrumbSchema } from "@/lib/schema";
 import { getInspirationHub, getPublishedArticles } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const h = getInspirationHub();
-  return {
+  return pageMetadata({
     title: h.meta_title,
     description: h.meta_description,
-    alternates: { canonical: "/inspiration" },
-  };
+    canonical: "/inspiration",
+  });
 }
 
 function formatDate(iso: string) {

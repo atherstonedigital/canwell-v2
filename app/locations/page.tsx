@@ -7,6 +7,7 @@ import { Schema } from "@/components/Schema";
 import { breadcrumbSchema } from "@/lib/schema";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { getLocations, getLocationsHub } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 
 const LOCATION_NOTES: Record<string, string> = {
   cheltenham: "Twenty minutes via the A46",
@@ -15,11 +16,11 @@ const LOCATION_NOTES: Record<string, string> = {
 
 export async function generateMetadata(): Promise<Metadata> {
   const h = getLocationsHub();
-  return {
+  return pageMetadata({
     title: h.meta_title,
     description: h.meta_description,
-    alternates: { canonical: "/locations" },
-  };
+    canonical: "/locations",
+  });
 }
 
 export default function LocationsHubPage() {

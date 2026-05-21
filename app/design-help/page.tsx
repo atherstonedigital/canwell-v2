@@ -8,14 +8,15 @@ import { Schema } from "@/components/Schema";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { Inline } from "@/components/signature/RichText";
 import { getDesignHelpHub } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const d = getDesignHelpHub();
-  return {
+  return pageMetadata({
     title: d.meta_title,
     description: d.meta_description,
-    alternates: { canonical: "/design-help" },
-  };
+    canonical: "/design-help",
+  });
 }
 
 export default function DesignHelpPage() {

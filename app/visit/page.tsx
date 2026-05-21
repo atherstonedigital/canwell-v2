@@ -9,14 +9,15 @@ import { MarkdownBody } from "@/components/signature/MarkdownBody";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { MapEmbed } from "@/components/sections/MapEmbed";
 import { getSite, getVisit } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const v = getVisit();
-  return {
+  return pageMetadata({
     title: v.meta_title,
     description: v.meta_description,
-    alternates: { canonical: "/visit" },
-  };
+    canonical: "/visit",
+  });
 }
 
 export default function VisitPage() {

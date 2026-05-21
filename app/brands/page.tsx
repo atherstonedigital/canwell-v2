@@ -7,14 +7,15 @@ import { Schema } from "@/components/Schema";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { breadcrumbSchema } from "@/lib/schema";
 import { getBrands, getBrandsHub, getHomepage } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const h = getBrandsHub();
-  return {
+  return pageMetadata({
     title: h.meta_title,
     description: h.meta_description,
-    alternates: { canonical: "/brands" },
-  };
+    canonical: "/brands",
+  });
 }
 
 const FALLBACK_BRANDS = [

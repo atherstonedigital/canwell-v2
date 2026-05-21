@@ -6,15 +6,15 @@ import { Schema } from "@/components/Schema";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { breadcrumbSchema } from "@/lib/schema";
 import { getContact, getSite } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const c = getContact();
-  // QA Audit 2026-05-12 — Task 15: per-page canonical.
-  return {
+  return pageMetadata({
     title: c.meta_title,
     description: c.meta_description,
-    alternates: { canonical: "/contact" },
-  };
+    canonical: "/contact",
+  });
 }
 
 export default function ContactPage() {

@@ -3,10 +3,15 @@ import type { Metadata } from "next";
 import { RuleRinged } from "@/components/signature/RuleRinged";
 import { Inline } from "@/components/signature/RichText";
 import { getNotFound } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const nf = getNotFound();
-  return { title: nf.meta_title, description: nf.meta_description };
+  return pageMetadata({
+    title: nf.meta_title,
+    description: nf.meta_description,
+    robots: { index: false, follow: true },
+  });
 }
 
 export default function NotFound() {

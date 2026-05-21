@@ -14,6 +14,7 @@ import {
   isPublishedArticle,
 } from "@/lib/content";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 
 // QA Audit 2026-05-14 — Task 4: only pre-render published articles. Drafts
 // fall through to the production-time check below and 404 cleanly.
@@ -31,14 +32,17 @@ export async function generateMetadata({
   const { slug } = await params;
   const a = getArticle(slug);
   if (!a) return {};
-  return {
+  const base = pageMetadata({
     title: a.meta_title,
     description: a.meta_description,
-    alternates: { canonical: `/inspiration/${slug}` },
+    canonical: `/inspiration/${slug}`,
+    image: a.image,
+  });
+  return {
+    ...base,
     openGraph: {
+      ...base.openGraph,
       type: "article",
-      title: a.meta_title,
-      description: a.meta_description,
       publishedTime: a.date_published || undefined,
       authors: ["Canwell Interiors"],
     },

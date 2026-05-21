@@ -11,7 +11,7 @@ how_to_find_h2: "How to find us"
 how_to_find_body: |
   Address: Cotswold Design Centre, Kennel Lane, Broadway WR12 7DJ.
 
-  Phone: 01905 964994. Email: canwellcotswolds@gmail.com.
+  Phone: 01905 964994. Email: broadway@canwellinteriors.com.
 
   We're a short walk from the centre of Broadway, just off the High Street.
 

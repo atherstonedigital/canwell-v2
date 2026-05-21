@@ -8,6 +8,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { RelatedLinks } from "@/components/sections/RelatedLinks";
 import { brandSchema, breadcrumbSchema } from "@/lib/schema";
 import { getBrand, getBrands } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return getBrands().map((b) => ({ slug: b.slug }));
@@ -21,16 +22,12 @@ export async function generateMetadata({
   const { slug } = await params;
   const b = getBrand(slug);
   if (!b) return {};
-  return {
+  return pageMetadata({
     title: b.meta_title,
     description: b.meta_description,
-    alternates: { canonical: `/brands/${slug}` },
-    openGraph: {
-      type: "website",
-      title: b.meta_title,
-      description: b.meta_description,
-    },
-  };
+    canonical: `/brands/${slug}`,
+    image: b.image,
+  });
 }
 
 export default async function BrandPage({

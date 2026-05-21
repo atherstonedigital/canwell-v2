@@ -3,15 +3,16 @@ import { notFound } from "next/navigation";
 import { ServiceHubTemplate } from "@/components/templates/ServiceHubTemplate";
 import { RelatedLinks } from "@/components/sections/RelatedLinks";
 import { getServiceHub } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const hub = getServiceHub("furniture");
   if (!hub) return {};
-  return {
+  return pageMetadata({
     title: hub.meta_title,
     description: hub.meta_description,
-    alternates: { canonical: "/furniture" },
-  };
+    canonical: "/furniture",
+  });
 }
 
 export default function FurniturePage() {
