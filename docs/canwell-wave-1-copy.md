@@ -161,7 +161,7 @@ Stock changes weekly. Pieces in the showroom today won't necessarily be there ne
 **Three thumbnails:** Manual or CMS-driven. Each thumbnail: product photo, name, short note ("New for {{MONTH}}", "Last one in store", etc.)
 
 **Link:** Get the weekly update →
-(EmailOctopus signup)
+(newsletter signup)
 
 ---
 
@@ -1164,7 +1164,7 @@ This page isn't here. It may have moved, or the link may have been wrong. Try th
 
 **CTAs:** Back to the homepage · Browse what we do · Visit the showroom
 
-### EmailOctopus signup confirmation
+### Newsletter signup confirmation
 
 **H1:** Thanks, you're on the list
 

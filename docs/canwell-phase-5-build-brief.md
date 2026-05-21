@@ -83,7 +83,7 @@ The 11 service sub-pages, the Brands hub, two priority brand stockist pages (Ric
 
 ### Phase 5D: SEO, schema, infrastructure
 
-JSON-LD schema for every page type (LocalBusiness, Organization, Service, Product, Brand, Article, FAQPage, BreadcrumbList, Review). sitemap.xml generated at build. robots.txt and llms.txt. 301 redirects from the existing canwellinteriors.com URLs. Open Graph and Twitter card metadata. Google Analytics 4 and the Meta pixel installed gated on environment. EmailOctopus signup form working.
+JSON-LD schema for every page type (LocalBusiness, Organization, Service, Product, Brand, Article, FAQPage, BreadcrumbList, Review). sitemap.xml generated at build. robots.txt and llms.txt. 301 redirects from the existing canwellinteriors.com URLs. Open Graph and Twitter card metadata. Google Analytics 4 and the Meta pixel installed gated on environment. Newsletter signup form working (ESP wiring deferred to Phase 2).
 
 **Deliverable:** Site SEO-ready, schema validated, redirects mapped, analytics firing.
 
@@ -311,7 +311,7 @@ What 5A does NOT include:
 - JSON-LD schema beyond a stub utility (full in 5D)
 - Redirects from the old GoDaddy site (5D)
 - sitemap.xml beyond a basic structure (5D)
-- Real form submissions to EmailOctopus (5D)
+- Real form submissions to an ESP (deferred to Phase 2)
 - Analytics installation (5D)
 - Cross-browser QA (5E)
 

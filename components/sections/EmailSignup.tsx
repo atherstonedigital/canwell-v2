@@ -37,41 +37,29 @@ export function EmailSignup({
 
     const form = event.currentTarget;
     const data = new FormData(form);
-    const email = String(data.get("email") || "").trim();
-    const firstName = String(data.get("firstName") || "").trim();
-    const consent = data.get("consent") === "on";
-    const hp = String(data.get("hp") || "");
+    const body = new URLSearchParams();
+    data.forEach((value, key) => body.append(key, value.toString()));
 
     setState("submitting");
     setMessage("");
 
     try {
-      const res = await fetch("/api/newsletter/subscribe", {
+      const res = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email,
-          firstName: firstName || undefined,
-          consent,
-          hp,
-        }),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
       });
-      const payload = (await res.json().catch(() => ({}))) as {
-        ok?: boolean;
-        message?: string;
-      };
-
-      if (payload.ok) {
+      if (res.ok) {
         setState("success");
-        setMessage(payload.message || email_confirm_message);
+        setMessage(email_confirm_message || "Thanks — we'll be in touch.");
         form.reset();
       } else {
         setState("error");
-        setMessage(payload.message || "Something went wrong. Please try again.");
+        setMessage("Something went wrong. Please try again.");
       }
     } catch {
       setState("error");
-      setMessage("Couldn't reach the server. Please try again.");
+      setMessage("Something went wrong. Please try again.");
     }
   };
 
@@ -89,17 +77,20 @@ export function EmailSignup({
             </p>
           </div>
 
-          <form className="email-form" onSubmit={handleSubmit} noValidate>
-            <p className="visually-hidden" aria-hidden="true">
+          <form
+            className="email-form"
+            name="newsletter"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
+            noValidate
+          >
+            <input type="hidden" name="form-name" value="newsletter" />
+            <p hidden>
               <label>
                 Don&apos;t fill this out:{" "}
-                <input
-                  type="text"
-                  name="hp"
-                  tabIndex={-1}
-                  autoComplete="off"
-                  defaultValue=""
-                />
+                <input name="bot-field" tabIndex={-1} autoComplete="off" />
               </label>
             </p>
 

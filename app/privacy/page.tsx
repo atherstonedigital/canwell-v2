@@ -40,20 +40,9 @@ export default function PrivacyPage() {
         <p>
           When you subscribe to our newsletter we collect your email address, and
           optionally your first name, so we can send you updates about new arrivals,
-          showroom events and seasonal offers. We use{" "}
-          <a
-            href="https://emailoctopus.com/privacy-policy"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            EmailOctopus
-          </a>{" "}
-          to deliver these emails. They process your data on our behalf. You can
-          unsubscribe at any time from the link in the footer of any email.
-        </p>
-        <p>
-          We use a double opt-in: after submitting the form you&rsquo;ll receive a
-          confirmation email and only become an active subscriber once you confirm.
+          showroom events and seasonal offers. Submissions are stored by Netlify
+          Forms for the purpose of responding to enquiries. You can unsubscribe at
+          any time by replying to one of our emails.
         </p>
         <p>
           <strong>This page is a placeholder.</strong> Full privacy policy copy is
