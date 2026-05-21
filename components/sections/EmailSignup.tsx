@@ -112,6 +112,7 @@ export function EmailSignup({
             method="POST"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
+            data-netlify-recaptcha="true"
             onSubmit={handleSubmit}
             noValidate
           >
@@ -138,6 +139,7 @@ export function EmailSignup({
                 {email_form_button}
               </button>
             </div>
+            <div className="email-form-recaptcha" data-netlify-recaptcha="true"></div>
             <p className="email-form-microcopy">{email_microcopy}</p>
             {submitted && (
               <p className="email-form-confirm" role="status">

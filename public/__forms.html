@@ -8,7 +8,7 @@
 -->
 <html>
   <body>
-    <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+    <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true" hidden>
       <input type="text" name="name" />
       <input type="email" name="email" />
       <input type="tel" name="phone" />
@@ -16,9 +16,11 @@
       <textarea name="message"></textarea>
       <input type="text" name="referrer" />
       <input type="hidden" name="subject" />
+      <div data-netlify-recaptcha="true"></div>
     </form>
-    <form name="newsletter" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+    <form name="newsletter" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true" hidden>
       <input type="email" name="email" />
+      <div data-netlify-recaptcha="true"></div>
     </form>
   </body>
 </html>
