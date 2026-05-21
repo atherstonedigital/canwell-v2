@@ -37,12 +37,9 @@ Per `docs/canwell-phase-5-build-brief.md` and `docs/phase-5a-plan.md`, this buil
 - GA4 + Meta pixel installation (need real measurement IDs)
 - Cross-browser QA, Lighthouse audit, DNS cutover (5E launch tasks)
 
-## Email
+## Forms
 
-Newsletter signups go to **EmailOctopus** (list: "Broadway Insider", double opt-in enabled). The signup form posts to `/api/newsletter/subscribe`, which calls the EmailOctopus v2 API server-side. Required env vars (set in Netlify and `.env.local` for local dev):
-
-- `EMAILOCTOPUS_API_KEY`
-- `EMAILOCTOPUS_LIST_ID`
+Both the contact form and the newsletter signup post to **Netlify Forms**. Submissions appear in Netlify → Forms, and email notifications are configured per-form under each form's *Settings & usage → Form notifications*. No third-party ESP is wired up in this phase; reconnecting one is deferred to Phase 2.
 
 ## Run locally
 
