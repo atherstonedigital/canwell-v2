@@ -13,7 +13,7 @@
 | 5 | `{{CURLY_BRACE}}` rendering | Render as a **styled pill component**, not literal `{{...}}` text. Use gold-pale background, gold-dark text, small caps, label like "Needs Gary". Build a `<Placeholder>` component the section components can reuse. |
 | 6 | Reviews fallback | Keep the three placeholder reviews seeded — the section always renders three cards. Mark each with `is_placeholder: true` in the Decap reviews collection so they show the styled pill in the corner. |
 | 7 | Phone | `01905 964994` confirmed correct. Use this in both site singleton seed and the hard-coded utility bar. |
-| 8 | Email signup stub | Confirmed: visible button "Sign me up", on submit show non-functional inline confirmation ("Thanks. We'll send the first one soon."), no network call. Wire to Klaviyo in Phase 5D. |
+| 8 | Email signup stub | Confirmed: visible button "Sign me up", on submit show non-functional inline confirmation ("Thanks. We'll send the first one soon."), no network call. Wire to EmailOctopus in Phase 5D. |
 
 **Net effect on schema** — add `is_placeholder: boolean` to the reviews collection so the placeholder pill can be toggled per-record.
 
@@ -60,7 +60,7 @@ The brief's Phase 5A deliverable (lines 292–308) demands: a working staging si
 5. **Visible placeholder rendering for `{{CURLY_BRACES}}` copy.** Build agent must show `{{REVIEW_QUOTE_1}}` etc. visibly in the staging site. Confirm: show literally as `{{...}}` in muted gold-pale block, OR substitute a "needs Gary input" pill component?
 6. **Review-cards behaviour when fewer than 3 featured reviews exist.** Mockup expects exactly 3. Decap relation `limit: 3` allows 0–3. **Decision:** seed three from wave-1 placeholder text so the layout is always populated, or hide the section when empty?
 7. **Phone number consistency.** Mockup uses `01905 964994`. Wave 1 doc uses the same number, but voice/tone calls out UK phone format. Confirm this is the live number (it appears Worcestershire-coded — Broadway is in Worcs/Glos border; sounds plausible).
-8. **Klaviyo list ID for the email form.** Brief defers form wiring to Phase 5D, so 5A only stubs. Confirm the visible button reads "Sign me up" and on submit shows a non-functional confirmation, no network call.
+8. **EmailOctopus list ID for the email form.** Brief defers form wiring to Phase 5D, so 5A only stubs. Confirm the visible button reads "Sign me up" and on submit shows a non-functional confirmation, no network call.
 
 ## 3. Risks & mitigations
 

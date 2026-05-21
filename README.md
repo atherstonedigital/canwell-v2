@@ -35,8 +35,14 @@ Per `docs/canwell-phase-5-build-brief.md` and `docs/phase-5a-plan.md`, this buil
 - Wiring `serviceSchema`/`articleSchema`/`faqSchema` into each page (utilities are built; not yet injected per page)
 - 301 redirects from the old GoDaddy site (need the URL list)
 - GA4 + Meta pixel installation (need real measurement IDs)
-- Klaviyo signup wiring (form is currently a stub)
 - Cross-browser QA, Lighthouse audit, DNS cutover (5E launch tasks)
+
+## Email
+
+Newsletter signups go to **EmailOctopus** (list: "Broadway Insider", double opt-in enabled). The signup form posts to `/api/newsletter/subscribe`, which calls the EmailOctopus v2 API server-side. Required env vars (set in Netlify and `.env.local` for local dev):
+
+- `EMAILOCTOPUS_API_KEY`
+- `EMAILOCTOPUS_LIST_ID`
 
 ## Run locally
 
@@ -122,7 +128,7 @@ For Decap CMS to work in production:
 
 - Wave 1 pages other than homepage (Visit, About, Contact, six service hubs) → **5B**
 - Wave 2 pages (sub-services, brand stockists, locations, articles) → **5C**
-- JSON-LD schema, sitemap.xml, robots.txt, llms.txt, 301 redirects, GA4, Meta pixel, Klaviyo integration → **5D**
+- JSON-LD schema, sitemap.xml, robots.txt, llms.txt, 301 redirects, GA4, Meta pixel → **5D**
 - WCAG 2.1 AA audit, Lighthouse pass, cross-browser QA, DNS cutover → **5E**
 
 ## Voice rules

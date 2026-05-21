@@ -83,7 +83,7 @@ Leading to lagging:
 | # | Metric | Target | Time signal |
 |---|---|---|---|
 | 1 | GBP actions (directions, calls, website clicks) | +X% vs baseline | Weeks 2-6 (leading) |
-| 2 | Klaviyo subscribers (engaged, local) | 500 minimum, 35% open rate or higher | Compounding |
+| 2 | EmailOctopus subscribers (engaged, local) | 500 minimum, 35% open rate or higher | Compounding |
 | 3 | Weekend footfall (Jella) | +15% vs pre-launch baseline | Weeks 6-12 |
 | 4 | Total revenue | +30% vs same period last year | Day 90 (lagging) |
 

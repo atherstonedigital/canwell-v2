@@ -117,7 +117,7 @@ These are the pages the site cannot launch without. They cover the homepage, the
 | **User question answered** | "What is this place and why should I visit?" |
 | **Primary CTA** | Plan your visit (links to /visit) |
 | **Secondary CTA** | Browse services (links to service hubs) |
-| **Tertiary CTA** | Get the weekly update (Klaviyo signup) |
+| **Tertiary CTA** | Get the weekly update (EmailOctopus signup) |
 | **Proof to show** | Hero photography of the showroom, three featured services, three featured product categories, recent customer reviews, premium brand logos, "open 7 days" trust signal, Cotswold location anchor |
 | **Inbound links** | All external (organic, ads, GBP, direct, referral) |
 | **Outbound links** | /visit, all service hubs, /design-help, /about |
@@ -721,7 +721,7 @@ Inspiration content is the slow-build of organic authority and the workhorse of 
 | **Primary keyword** | Cotswold home interiors |
 | **Secondary keywords** | country home inspiration, Cotswold cottage interiors, English country interiors |
 | **Primary CTA** | Browse the guides |
-| **Secondary CTA** | Get the weekly update (Klaviyo signup) |
+| **Secondary CTA** | Get the weekly update (EmailOctopus signup) |
 | **Notes** | This hub lists all inspiration articles, with featured / latest at the top. Updates monthly minimum. |
 
 ### Launch articles (seed five)
@@ -734,7 +734,7 @@ Inspiration content is the slow-build of organic authority and the workhorse of 
 | 4 | /inspiration/refresh-a-room-on-a-weekend | How to refresh a room over a single weekend | room refresh guide |
 | 5 | /inspiration/holiday-let-furnishing-checklist | The Cotswolds holiday let furnishing checklist | holiday let furnishing |
 
-Each article should: solve a real reader question, link to two or three relevant service hubs or brand pages, include a Klaviyo signup inline, and reference Canwell's design help service where natural.
+Each article should: solve a real reader question, link to two or three relevant service hubs or brand pages, include a EmailOctopus signup inline, and reference Canwell's design help service where natural.
 
 ---
 
