@@ -61,7 +61,7 @@ Five sub-phases. Each has its own Claude Code prompt, deliverable, and review ga
 
 Initialise the Next.js project. Port the design tokens into Tailwind config. Set up Decap CMS with content models matching the Wave 1 and Wave 2 page structures. Build the base component library. Build the homepage as the first complete page, pulling from Decap. Deploy to a Netlify staging subdomain.
 
-**Deliverable:** A working staging site at `canwell-v2.netlify.app` showing the homepage with all sections, all interactions, the design system fully working. Decap admin at `/admin` operational. Content for the homepage editable through Decap.
+**Deliverable:** A working staging site at `canwellinteriors.com` showing the homepage with all sections, all interactions, the design system fully working. Decap admin at `/admin` operational. Content for the homepage editable through Decap.
 
 **Gate:** Gary and Dan review the homepage on staging before Phase 5B begins.
 
@@ -157,7 +157,7 @@ working code.
 - next/font: Cormorant Garamond (display) and DM Sans (body)
 - Decap CMS at /admin, Git-based, content in /content directory
 - Netlify Identity for Decap authentication
-- Deployment to Netlify, staging subdomain canwell-v2.netlify.app
+- Deployment to Netlify, staging subdomain canwellinteriors.com
 - next/image with sharp for image optimisation
 - Schema (JSON-LD) via a custom utility (full implementation in Phase 5D, stub it for now)
 
@@ -291,7 +291,7 @@ For images, use placeholder structures that the photography day will overwrite.
 
 ## Phase 5A deliverable
 
-A working staging site at canwell-v2.netlify.app showing:
+A working staging site at canwellinteriors.com showing:
 
 1. The homepage exactly as in canwell-homepage-mockup.html, but built in Next.js
    components and pulling from Decap content
@@ -362,7 +362,7 @@ A short checklist Claude Code runs through before declaring 5A complete:
 - [ ] Lighthouse Performance, Accessibility, Best Practices, SEO all 95+
 - [ ] No console errors in browser dev tools
 - [ ] No accessibility violations from axe-core
-- [ ] Site deployed to canwell-v2.netlify.app and publicly accessible
+- [ ] Site deployed to canwellinteriors.com and publicly accessible
 - [ ] README in the repo documenting how to run locally and how to edit content
 
 When all of the above is true, ping Dan for the Phase 5A review gate.

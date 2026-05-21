@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
+import { trackEvent } from "@/lib/analytics";
 
 interface ContactFormProps {
   microcopy: string;
@@ -46,6 +47,7 @@ export function ContactForm({ microcopy, confirmMessage }: ContactFormProps) {
       // Even if the fetch errors (e.g. local dev), we still show the confirm
       // so the user isn't stuck. Submissions in production go to Netlify.
     }
+    trackEvent("form_submit", { form_name: "contact" });
     setSubmitted(true);
   };
 

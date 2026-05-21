@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, type FormEvent } from "react";
 import { SectionMarker } from "@/components/signature/SectionMarker";
 import { Inline } from "@/components/signature/RichText";
+import { trackEvent } from "@/lib/analytics";
 
 interface EmailSignupProps {
   email_eyebrow: string;
@@ -50,6 +51,7 @@ export function EmailSignup({
         body: body.toString(),
       });
       if (res.ok) {
+        trackEvent("form_submit", { form_name: "newsletter" });
         setState("success");
         setMessage(email_confirm_message || "Thanks — we'll be in touch.");
         form.reset();
