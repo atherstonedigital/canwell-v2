@@ -37,7 +37,7 @@ export function ContactForm({ microcopy, confirmMessage }: ContactFormProps) {
     const body = new URLSearchParams();
     data.forEach((value, key) => body.append(key, value.toString()));
     try {
-      await fetch("/", {
+      await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: body.toString(),
