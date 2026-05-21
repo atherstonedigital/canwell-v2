@@ -136,15 +136,17 @@ export const showroomImages = {
     height: 1350,
   },
 
-  // Placeholder vignettes — to be replaced with proper photography
+  // Placeholder vignettes — to be replaced with proper photography.
+  // Paths match the CMS uploads directory so editors can swap the files
+  // in place via Decap without breaking the manifest reference.
   curtainsVignettePlaceholder: {
-    src: "/images/curtains/curtains-vignette-placeholder.jpg",
+    src: "/uploads/curtains-vignette-placeholder.jpg",
     alt: "Curtain fabrics on display at the Canwell Interiors showroom",
     width: 1350,
     height: 2400,
   },
   blindsVignettePlaceholder: {
-    src: "/images/blinds/blinds-vignette-placeholder.jpg",
+    src: "/uploads/blinds-vignette-placeholder.jpg",
     alt: "Blinds on display at the Canwell Interiors showroom",
     width: 1350,
     height: 2400,

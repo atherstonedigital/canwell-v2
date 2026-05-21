@@ -5,7 +5,7 @@ meta_description: "Made-to-measure and ready-made curtains in Broadway. Fabric t
 eyebrow: "Curtains"
 h1: "Curtains in Broadway: *made-to-measure* and ready-made"
 lead: "Hundreds of fabrics to feel in person, a home measure for the made-to-measure side, and ready-made options if you need something today."
-image: "/images/curtains/curtains-vignette-placeholder.jpg"
+image: "/uploads/curtains-vignette-placeholder.jpg"
 
 intro_h2: "Two ways to do curtains"
 intro_body: "Most rooms get the right answer from one of two routes. Made-to-measure is for windows that don't fit standard sizes, fabric you want to choose properly, and rooms where you want the curtain to do its job. Ready-made is for guest rooms, holiday lets, and refreshes that have to happen this weekend."
@@ -16,10 +16,12 @@ cards:
     body: "For windows that don't fit standard sizes, fabric you want to choose properly, and rooms where you want the curtain to do the job properly. We measure, you choose the fabric, lining, and heading, and they're made up and hung within four to six weeks."
     link_label: "How made-to-measure works"
     link_url: "/curtains/made-to-measure"
+    image: "/uploads/curtains-vignette-placeholder.jpg"
   - title: "Ready-made curtains"
     body: "Standard sizes, in stock today, ready to take home. Useful for guest rooms, holiday lets, or when a refresh has to happen this weekend rather than in six weeks."
     link_label: "See what's in stock"
     link_url: "/curtains/ready-made"
+    image: "/uploads/curtains-vignette-placeholder.jpg"
 
 why_h2: "Why come in"
 why_body: |
