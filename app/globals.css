@@ -1921,8 +1921,9 @@ em,
 
 .page-header-image--portrait {
   aspect-ratio: 3 / 4;
-  max-width: 480px;
-  justify-self: end;
+  width: 100%;
+  max-width: 560px;
+  justify-self: center;
 }
 
 .page-header-image img {
@@ -1967,7 +1968,8 @@ em,
 
   .page-header-image--portrait {
     aspect-ratio: 3 / 4;
-    max-width: 360px;
+    width: 100%;
+    max-width: 420px;
     justify-self: center;
   }
 

@@ -5,7 +5,7 @@ meta_description: "Made-to-measure blinds for any room, any window. Roman, rolle
 eyebrow: "Blinds"
 h1: "Blinds in Broadway, *measured and fitted*"
 lead: "Roman, roller, wooden, Venetian, perfect-fit, vertical. All measured at home and fitted by people who do this every week."
-image: "/images/blinds/blinds-vignette-placeholder.jpg"
+image: "/uploads/blinds-vignette-placeholder.jpg"
 
 intro_h2: "What blinds do we do"
 intro_body: |
@@ -17,16 +17,22 @@ cards_h2: "The types, in plain English"
 cards:
   - title: "Roman blinds"
     body: "Soft, fabric, folds into pleats when raised. Best for living rooms, bedrooms, and anywhere you want softness rather than utility. Made-to-measure in any fabric we stock."
+    image: "/uploads/blinds-vignette-placeholder.jpg"
   - title: "Roller blinds"
     body: "Simple, clean, modern. Best for kitchens, bathrooms, and rooms where you want light control without fuss. Plain, patterned, blackout, or moisture-resistant."
+    image: "/uploads/blinds-vignette-placeholder.jpg"
   - title: "Wooden Venetian blinds"
     body: "Real wood or wood-effect, with adjustable slats. Best for studies, dressing rooms, and bay windows. Warm and timeless."
+    image: "/uploads/blinds-vignette-placeholder.jpg"
   - title: "Aluminium Venetian blinds"
     body: "Slim, modern, low-profile. Best for offices, kitchens, and minimal schemes."
+    image: "/uploads/blinds-vignette-placeholder.jpg"
   - title: "Perfect-fit blinds"
     body: "Frame-mounted, no drilling. Best for tilt-and-turn windows, conservatories, and rented properties."
+    image: "/uploads/blinds-vignette-placeholder.jpg"
   - title: "Vertical blinds"
     body: "Floor-to-ceiling slats. Best for very tall windows, sliding doors, and patio doors."
+    image: "/uploads/blinds-vignette-placeholder.jpg"
 
 steps_h2: "How a blind fitting works"
 steps:
