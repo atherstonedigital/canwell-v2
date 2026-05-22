@@ -28,8 +28,8 @@ const dmSans = DM_Sans({
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://canwellinteriors.com";
-// QA Audit 2026-05-12 — Task 21: dev site noindex; flip to true at launch.
-const INDEXABLE = process.env.NEXT_PUBLIC_INDEXABLE === "true";
+// Indexable by default; set NEXT_PUBLIC_INDEXABLE=false on dev/preview deploys.
+const INDEXABLE = process.env.NEXT_PUBLIC_INDEXABLE !== "false";
 
 export async function generateMetadata(): Promise<Metadata> {
   const site = getSite();
@@ -60,7 +60,6 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: {
       canonical: "/",
     },
-    // QA Audit 2026-05-12 — Task 21: gate indexing behind env flag.
     robots: INDEXABLE
       ? { index: true, follow: true }
       : { index: false, follow: false },

@@ -1,14 +1,16 @@
 <!doctype html>
 <!--
-  QA Audit 2026-05-14 — Task 12: Netlify Forms detection.
-  Netlify scans static HTML at build time and registers any form carrying
-  data-netlify="true". The actual user-facing forms in /contact and the
-  homepage subscribe block POST in via fetch; this file simply exists so the
-  static crawler can find their schemas.
+  Netlify Forms detection.
+  Netlify scans static HTML in the publish output at build time and registers
+  any form carrying data-netlify="true". The actual user-facing forms in
+  /contact and the homepage subscribe block POST to /__forms.html via fetch,
+  so the request hits this static path (caught by the CDN edge) before the
+  Next.js Runtime sees it. Keep the field set here in sync with the live
+  forms in components/sections/ContactForm.tsx and EmailSignup.tsx.
 -->
 <html>
   <body>
-    <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true" hidden>
+    <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" />
       <input type="email" name="email" />
       <input type="tel" name="phone" />
@@ -16,11 +18,11 @@
       <textarea name="message"></textarea>
       <input type="text" name="referrer" />
       <input type="hidden" name="subject" />
-      <div data-netlify-recaptcha="true"></div>
     </form>
-    <form name="newsletter" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true" hidden>
+    <form name="newsletter" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="text" name="firstName" />
       <input type="email" name="email" />
-      <div data-netlify-recaptcha="true"></div>
+      <input type="checkbox" name="consent" />
     </form>
   </body>
 </html>
