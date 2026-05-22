@@ -38,7 +38,7 @@ export function ContactForm({ microcopy, confirmMessage }: ContactFormProps) {
     const body = new URLSearchParams();
     data.forEach((value, key) => body.append(key, value.toString()));
     try {
-      await fetch("/", {
+      await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: body.toString(),
@@ -59,7 +59,6 @@ export function ContactForm({ microcopy, confirmMessage }: ContactFormProps) {
       action="/contact/thanks"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      data-netlify-recaptcha="true"
       onSubmit={handleSubmit}
       noValidate
     >
@@ -160,8 +159,6 @@ export function ContactForm({ microcopy, confirmMessage }: ContactFormProps) {
           <option value="other">Other</option>
         </select>
       </div>
-
-      <div className="field" data-netlify-recaptcha="true"></div>
 
       <button type="submit" className="btn btn-primary">
         Send your enquiry
