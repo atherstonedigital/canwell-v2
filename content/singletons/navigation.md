@@ -5,6 +5,7 @@ primary_nav:
   - { label: "Blinds", url: "/blinds" }
   - { label: "Furniture", url: "/furniture" }
   - { label: "Soft furnishings", url: "/soft-furnishings" }
+  - { label: "Holiday lets", url: "/holiday-lets" }
   - { label: "Design help", url: "/design-help" }
 
 header_cta_label: "Plan your visit"
@@ -22,6 +23,7 @@ footer_columns:
       - { label: "Blinds", url: "/blinds" }
       - { label: "Furniture", url: "/furniture" }
       - { label: "Soft furnishings", url: "/soft-furnishings" }
+      - { label: "Holiday lets", url: "/holiday-lets" }
       - { label: "Design help", url: "/design-help" }
   - heading: "About"
     links:
