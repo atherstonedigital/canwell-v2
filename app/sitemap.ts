@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/contact",
     "/design-help",
+    "/holiday-lets",
     "/brands",
     "/locations",
     "/inspiration",
