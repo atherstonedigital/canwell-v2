@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { FAQ, type FAQItem } from "@/components/sections/FAQ";
+import { showroomImages, type ShowroomImage } from "@/lib/showroom-images";
 import { HolidayLetEnquiryForm } from "@/components/sections/HolidayLetEnquiryForm";
 import { Schema } from "@/components/Schema";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
@@ -62,10 +64,19 @@ const PACKAGES: Array<{ name: string; summary: string; points: string[] }> = [
   },
 ];
 
-const SUPPLY: Array<{ title: string; alt: string; points: string[] }> = [
+type SupplyCategory = {
+  title: string;
+  points: string[];
+  // Real showroom photography from the manifest (accurate alt text), or a
+  // flagged placeholder where we don't yet have a relevant shot.
+  image?: ShowroomImage;
+  placeholderAlt?: string;
+};
+
+const SUPPLY: SupplyCategory[] = [
   {
     title: "Carpets and flooring",
-    alt: "A hard-wearing wool-blend carpet fitted in a Cotswold holiday let bedroom",
+    image: showroomImages.carpetsCormarDisplay,
     points: [
       "Wool blends and stain-resistant synthetics for high traffic",
       "Hard flooring and runners for halls and stairs",
@@ -74,7 +85,7 @@ const SUPPLY: Array<{ title: string; alt: string; points: string[] }> = [
   },
   {
     title: "Furniture",
-    alt: "A styled living room with a fabric sofa and dining set in a Cotswold holiday let",
+    image: showroomImages.sofasBolton,
     points: [
       "Sofas, beds, dining and occasional furniture",
       "Frames and fabrics that stand up to guest turnover",
@@ -83,7 +94,7 @@ const SUPPLY: Array<{ title: string; alt: string; points: string[] }> = [
   },
   {
     title: "Curtains and blinds",
-    alt: "Made-to-measure curtains and a roman blind dressing a cottage window",
+    image: showroomImages.curtainsVignettePlaceholder,
     points: [
       "Made-to-measure and ready-made curtains",
       "Roman, roller, wooden and perfect-fit blinds",
@@ -92,7 +103,9 @@ const SUPPLY: Array<{ title: string; alt: string; points: string[] }> = [
   },
   {
     title: "Beds and mattresses",
-    alt: "A dressed double bed with quality mattress and linen in a holiday let guest room",
+    // No bedroom shot in the current set — flagged for the next photography drop.
+    placeholderAlt:
+      "A dressed double bed with quality mattress and linen in a holiday let guest room",
     points: [
       "Mattresses chosen for comfort across many guests",
       "Divans, frames and headboards",
@@ -101,7 +114,7 @@ const SUPPLY: Array<{ title: string; alt: string; points: string[] }> = [
   },
   {
     title: "Soft furnishings and finishing touches",
-    alt: "Cushions, lamps, mirrors and accessories styling a Cotswold holiday let",
+    image: showroomImages.lightingLampsDisplay,
     points: [
       "Cushions, throws and bedding",
       "Lighting, mirrors and art",
@@ -151,7 +164,7 @@ export default function HolidayLetsPage() {
       {/* Hero */}
       <section className="page-header hl-hero">
         <div className="container">
-          <div className="page-header-grid page-header-grid--single">
+          <div className="page-header-grid">
             <div className="page-header-content">
               <p className="eyebrow page-header-eyebrow">
                 For holiday let and second-home owners
@@ -176,6 +189,17 @@ export default function HolidayLetsPage() {
                   Call {site.phone}
                 </a>
               </div>
+            </div>
+
+            <div className="page-header-image">
+              <Image
+                src={showroomImages.lifestyleWoodburner.src}
+                alt={showroomImages.lifestyleWoodburner.alt}
+                fill
+                priority
+                sizes="(max-width: 900px) 100vw, 50vw"
+                style={{ objectFit: "cover" }}
+              />
             </div>
           </div>
         </div>
@@ -235,16 +259,28 @@ export default function HolidayLetsPage() {
           <div className="hl-supply-grid">
             {SUPPLY.map((cat) => (
               <div key={cat.title} className="hl-supply-item">
-                {/* TODO(photography): swap placeholder for real image; alt text is final. */}
-                <div
-                  className="hl-supply-image"
-                  role="img"
-                  aria-label={cat.alt}
-                >
-                  <span className="hl-supply-image-note" aria-hidden="true">
-                    Photography to follow
-                  </span>
-                </div>
+                {cat.image ? (
+                  <div className="hl-supply-image">
+                    <Image
+                      src={cat.image.src}
+                      alt={cat.image.alt}
+                      fill
+                      sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                ) : (
+                  // TODO(photography): no relevant shot yet; alt text is final.
+                  <div
+                    className="hl-supply-image hl-supply-image--placeholder"
+                    role="img"
+                    aria-label={cat.placeholderAlt}
+                  >
+                    <span className="hl-supply-image-note" aria-hidden="true">
+                      Photography to follow
+                    </span>
+                  </div>
+                )}
                 <h3 className="hl-supply-title">{cat.title}</h3>
                 <ul className="hl-bullets">
                   {cat.points.map((point) => (
