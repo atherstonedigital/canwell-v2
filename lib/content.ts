@@ -8,6 +8,7 @@ import type {
   BrandsHubContent,
   ContactContent,
   DesignHelpContent,
+  HolidayLetsContent,
   HomepageContent,
   InspirationHubContent,
   LocationPageContent,
@@ -96,6 +97,10 @@ export function getLocationsHub(): LocationsHubContent {
 
 export function getInspirationHub(): InspirationHubContent {
   return readMarkdown("singletons/inspiration-hub.md") as unknown as InspirationHubContent;
+}
+
+export function getHolidayLets(): HolidayLetsContent {
+  return readMarkdown("singletons/holiday-lets.md") as unknown as HolidayLetsContent;
 }
 
 export function getReviews(): Review[] {

@@ -1,6 +1,7 @@
 import type {
   ArticleContent,
   BrandPageContent,
+  HolidayLetsContent,
   LocationPageContent,
   Review,
   ServiceHubContent,
@@ -188,60 +189,33 @@ export function serviceSchema(service: ServiceHubContent, parentUrl: string) {
   };
 }
 
-// Holiday lets service page. Copy is hardcoded (not Decap-managed in v1), so
-// the schema lives here alongside the other JSON-LD builders. provider points
-// at the existing Organization / LocalBusiness @id so the two stay linked.
-const HOLIDAY_LET_AREAS = [
-  "Broadway",
-  "Chipping Campden",
-  "Stow-on-the-Wold",
-  "Moreton-in-Marsh",
-  "Stratford-upon-Avon",
-  "Cheltenham",
-];
-
-const HOLIDAY_LET_PACKAGES: Array<{ name: string; description: string }> = [
-  {
-    name: "Bronze",
-    description:
-      "A practical refresh — flooring, window dressings and the soft furnishings that bring a tired let back up to standard.",
-  },
-  {
-    name: "Silver",
-    description:
-      "A room-by-room furnishing — beds, sofas, dining, flooring and window dressings, specified for guest wear and fitted together.",
-  },
-  {
-    name: "Gold",
-    description:
-      "A complete fit-out — whole-property furnishing from floor to finishing touches, managed by one team and ready for the first booking.",
-  },
-];
-
-export function holidayLetServiceSchema() {
+// Holiday lets service page. Copy now comes from the Decap-managed
+// holiday-lets singleton, so the schema is derived from that content and stays
+// in step with editor changes. provider points at the existing Organization /
+// LocalBusiness @id so the two stay linked.
+export function holidayLetServiceSchema(content: HolidayLetsContent) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
     name: "Holiday let interiors",
     serviceType: "Holiday let interiors",
-    description:
-      "Furnishing and styling for holiday lets across the Cotswolds. Carpets, furniture, blinds and full fit-outs, measured, supplied and fitted by one team.",
+    description: content.meta_description,
     provider: {
       "@type": "FurnitureStore",
       "@id": siteUrl("/#organization"),
     },
     areaServed: [
       { "@type": "AdministrativeArea", name: "The Cotswolds" },
-      ...HOLIDAY_LET_AREAS.map((name) => ({ "@type": "City", name })),
+      ...content.service_areas.map((name) => ({ "@type": "City", name })),
     ],
     url: siteUrl("/holiday-lets"),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Holiday let furnishing packages",
-      itemListElement: HOLIDAY_LET_PACKAGES.map((pkg) => ({
+      itemListElement: content.packages.map((pkg) => ({
         "@type": "Offer",
         name: pkg.name,
-        description: pkg.description,
+        description: pkg.summary,
         itemOffered: {
           "@type": "Service",
           name: `${pkg.name} holiday let package`,

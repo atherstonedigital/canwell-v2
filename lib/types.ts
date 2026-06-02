@@ -423,3 +423,53 @@ export interface InspirationHubContent {
   article_end_ctas?: CTA[];
   intro_body: string;
 }
+
+export interface HolidayLetPackage {
+  name: string;
+  summary: string;
+  points: string[];
+}
+
+export interface HolidayLetSupplyCategory {
+  title: string;
+  // Optional photography. When blank, the page renders a flagged placeholder
+  // using image_alt as the accessible label so the slot is ready for a shoot.
+  image?: string;
+  image_alt: string;
+  points: string[];
+}
+
+export interface HolidayLetsContent {
+  meta_title: string;
+  meta_description: string;
+
+  hero_eyebrow: string;
+  h1: string;
+  hero_emphasis: string;
+  hero_lead: string;
+  hero_image?: string;
+  hero_image_alt: string;
+  hero_cta_label: string;
+
+  why_h2: string;
+  why_points: string[];
+
+  packages_h2: string;
+  packages_intro: string;
+  packages: HolidayLetPackage[];
+  packages_note: string;
+
+  supply_h2: string;
+  supply: HolidayLetSupplyCategory[];
+
+  faq_h2: string;
+  faqs: FAQItem[];
+
+  enquiry_h2: string;
+  enquiry_lead: string;
+  enquiry_microcopy: string;
+  enquiry_confirm: string;
+
+  // Towns surfaced in the Service schema areaServed (alongside "The Cotswolds").
+  service_areas: string[];
+}

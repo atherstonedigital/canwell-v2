@@ -503,6 +503,78 @@ collections:
               - { name: url, widget: string }
               - { name: variant, widget: select, options: ["primary", "secondary", "tertiary"], default: "primary" }
 
+  # ----- Holiday lets page singleton -----
+  - name: holiday-lets
+    label: "Page · Holiday lets"
+    description: "Single record. The /holiday-lets service page: hero, packages, what we supply, FAQ and enquiry copy."
+    files:
+      - file: content/singletons/holiday-lets.md
+        name: holiday_lets
+        label: Holiday lets
+        fields:
+          - { name: meta_title, label: Meta title, widget: string }
+          - { name: meta_description, label: Meta description, widget: text }
+
+          - { name: hero_eyebrow, label: "Hero · eyebrow", widget: string }
+          - { name: h1, label: "Hero · H1", widget: string, hint: "Use *asterisks* for italic emphasis." }
+          - { name: hero_emphasis, label: "Hero · emphasis line (italic)", widget: string }
+          - { name: hero_lead, label: "Hero · lead paragraph", widget: text }
+          - { name: hero_image, label: "Hero · image", widget: image, required: false }
+          - { name: hero_image_alt, label: "Hero · image alt text", widget: string, hint: "Describe the photo for screen readers and SEO." }
+          - { name: hero_cta_label, label: "Hero · enquiry button label", widget: string }
+
+          - { name: why_h2, label: "Why owners · H2", widget: string }
+          - name: why_points
+            label: "Why owners · bullet points"
+            widget: list
+            field: { name: point, label: Point, widget: string }
+
+          - { name: packages_h2, label: "Packages · H2", widget: string }
+          - { name: packages_intro, label: "Packages · intro", widget: text }
+          - name: packages
+            label: "Packages · cards"
+            widget: list
+            fields:
+              - { name: name, label: Package name, widget: string }
+              - { name: summary, label: Summary, widget: text }
+              - name: points
+                label: What's included
+                widget: list
+                field: { name: point, label: Point, widget: string }
+          - { name: packages_note, label: "Packages · note under cards", widget: text }
+
+          - { name: supply_h2, label: "What we supply · H2", widget: string }
+          - name: supply
+            label: "What we supply · categories"
+            widget: list
+            fields:
+              - { name: title, label: Category title, widget: string }
+              - { name: image, label: Image, widget: image, required: false, hint: "Leave blank to show a 'Photography to follow' placeholder." }
+              - { name: image_alt, label: Image alt text, widget: string, hint: "Describe the photo. Used even while the slot is a placeholder." }
+              - name: points
+                label: Bullet points
+                widget: list
+                field: { name: point, label: Point, widget: string }
+
+          - { name: faq_h2, label: "FAQ · H2", widget: string }
+          - name: faqs
+            label: "FAQ · questions"
+            widget: list
+            fields:
+              - { name: question, label: Question, widget: string }
+              - { name: answer, label: Answer, widget: text }
+
+          - { name: enquiry_h2, label: "Enquiry · H2", widget: string }
+          - { name: enquiry_lead, label: "Enquiry · lead paragraph", widget: text }
+          - { name: enquiry_microcopy, label: "Enquiry · form microcopy", widget: text }
+          - { name: enquiry_confirm, label: "Enquiry · confirmation message", widget: text }
+
+          - name: service_areas
+            label: "Service areas (for search schema)"
+            widget: list
+            field: { name: area, label: Town, widget: string }
+            hint: "Towns listed in the page's Service structured data, alongside 'The Cotswolds'."
+
   # ----- Service hubs collection (5 records: carpets, curtains, blinds, furniture, soft-furnishings) -----
   - name: service-hubs
     label: "Service hubs"
