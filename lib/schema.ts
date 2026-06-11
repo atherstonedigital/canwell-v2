@@ -105,14 +105,14 @@ export function organizationSchema(site: SiteSettings) {
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "17:00",
+        opens: "10:00",
+        closes: "16:00",
       },
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: "Saturday",
-        opens: "09:00",
-        closes: "17:00",
+        opens: "10:00",
+        closes: "16:00",
       },
       {
         "@type": "OpeningHoursSpecification",
@@ -255,6 +255,7 @@ export function articleSchema(article: ArticleContent, site: SiteSettings) {
     "@type": "Article",
     headline: article.title,
     description: article.meta_description,
+    ...(article.image && { image: siteUrl(article.image) }),
     datePublished: article.date_published,
     author: { "@type": "Organization", name: site.site_name },
     publisher: {
@@ -284,10 +285,12 @@ export function faqSchema(items: Array<{ question: string; answer: string }>) {
 export function reviewsAggregateSchema(reviews: Review[], site: SiteSettings) {
   const real = reviews.filter((r) => !r.is_placeholder);
   if (real.length === 0) return null;
+  // Reuse the organization @id so the reviews merge into the main
+  // LocalBusiness entity rather than creating a duplicate one.
   return {
     "@context": "https://schema.org",
     "@type": "FurnitureStore",
-    "@id": siteUrl("/#organization-reviews"),
+    "@id": siteUrl("/#organization"),
     name: site.site_name,
     review: real.map((r) => ({
       "@type": "Review",

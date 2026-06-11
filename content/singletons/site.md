@@ -12,14 +12,14 @@ postcode: WR12 7DJ
 phone: 01905 964994
 email: broadway@canwellinteriors.com
 opening_hours_summary: Open seven days
-opening_hours_weekday: 9am to 5pm
-opening_hours_saturday: 9am to 5pm
+opening_hours_weekday: 10am to 4pm
+opening_hours_saturday: 10am to 4pm
 opening_hours_sunday: 10am to 4pm
 year_established: "2009"
 sister_site_saverys_broadway_url: ""
 sister_site_saverys_ludlow_url: ""
 sister_site_xshowhome_url: https://xshowhome.com
-social_facebook: ""
+social_facebook: https://www.facebook.com/CanwellCotswolds/
 social_instagram: ""
 social_google_business: ""
 directions_url: https://www.google.com/maps/search/?api=1&query=Cotswold+Design+Centre+Broadway+WR12+7DJ

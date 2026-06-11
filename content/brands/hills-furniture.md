@@ -14,6 +14,8 @@ what_we_stock_body: |
 
   **On the floor regularly:** Dining tables (round, rectangular, extending), dining chairs, sideboards, bedroom furniture, occasional pieces.
 
+  **Best for:** Country kitchens and dining rooms that get used hard, and bedrooms where the furniture is expected to outlast the carpet several times over. Hills anchors our [dining furniture](/furniture/dining) and [bedroom furniture](/furniture/bedroom) ranges — an extending Hills table is the piece we point at when someone asks what "buy once" actually means.
+
 why_h2: "Why see Hills in person"
 why_body: |
   Solid hardwood furniture photographs badly. The grain, the joinery detail, the weight of the piece, the finish on the surface, none of it carries through a screen. The reason to come and see Hills is to put your hand on the wood, look at the corners, and feel how the drawer runs out.

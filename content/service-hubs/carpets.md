@@ -15,6 +15,8 @@ intro_body: |
 
   The measure is free. So is the second opinion if you've had a quote elsewhere and want to check it.
 
+  We measure and fit across the Cotswolds — see the [areas we serve](/locations), including [Cheltenham](/locations/cheltenham), [Evesham](/locations/evesham), [Chipping Campden](/locations/chipping-campden), and [Stratford-upon-Avon](/locations/stratford-upon-avon).
+
 steps_h2: "How fitted carpets work"
 steps:
   - title: "Visit, or call us first"

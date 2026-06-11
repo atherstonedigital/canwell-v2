@@ -17,9 +17,20 @@ intro_body: |
 
   **Storage.** Filing cabinets, bookcases, and the kind of cupboards that hide a printer. Sized to fit alongside the desk and chair.
 
+  The usual mistake with a home office is buying the desk first and discovering the room second. Measure the wall, decide where the light falls on the screen, and leave room to push the chair back properly — then choose the desk that fits the plan. Bring the dimensions in and we'll do the working-out with you.
+
 why_h2: "What we don't do"
 why_body: |
   We don't do fitted office systems or built-in study units. For those, our sister showroom Saverys of Broadway handles bespoke project design. For everything else, ask us.
+
+faq_h2: "Home office questions"
+faqs:
+  - question: "Do you do sit-stand desks?"
+    answer: "On request, yes. They are not always on the floor, so call ahead and we will tell you what is available and what can be ordered."
+  - question: "Can you help plan the office layout?"
+    answer: "Yes — that is what the free design consultation is for. Bring the room dimensions and a photo, and we will work out what fits, where the screen should face, and what storage the room can take."
+  - question: "Do you deliver?"
+    answer: "Yes. Delivery is free on furniture orders over £500 across the Cotswolds and surrounding areas."
 
 cta_eyebrow: "Ready"
 cta_h2: "Visit to see the *office range*."

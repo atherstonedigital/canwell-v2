@@ -16,6 +16,10 @@ export function Reviews({
   reviews_cta_url,
   reviews,
 }: ReviewsProps) {
+  // Nothing real to show yet — skip the section rather than render an
+  // empty grid. Reappears as soon as a non-placeholder review is featured.
+  if (reviews.length === 0) return null;
+
   return (
     <section className="reviews">
       <div className="container">

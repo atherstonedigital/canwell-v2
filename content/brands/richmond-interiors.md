@@ -14,6 +14,8 @@ what_we_stock_body: |
 
   **On the floor regularly:** Sofas, armchairs, dining chairs, accent furniture, occasional pieces, accessories.
 
+  **Best for:** Sitting rooms and dining rooms that want classic shapes without going full-period. Richmond sits as happily in a Cotswold cottage as in a barn conversion, which is part of why it has held its place on the floor for years. See the wider [sofa range](/furniture/sofas), [dining furniture](/furniture/dining), and [living room pieces](/furniture/living-room) it sits alongside.
+
 why_h2: "Why visit rather than buy online"
 why_body: |
   Richmond's strength is the construction and the fabric weight. Both of those translate badly to photographs. The frame on a Richmond sofa feels solid in a way that's hard to capture in a thumbnail. The boucle, the velvet, the linen each have a distinct weight and weave that you only get from sitting on them.

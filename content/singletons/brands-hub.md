@@ -1,5 +1,5 @@
 ---
-meta_title: "Brands We Stock"
+meta_title: "Brands We Stock in the Cotswolds | Canwell, Broadway"
 meta_description: "The brands we stock: Richmond Interiors, Hills Furniture, Riva, IFD, Light & Living, Malini. See them all at Canwell Interiors, Broadway."
 
 eyebrow: "Brands we stock"

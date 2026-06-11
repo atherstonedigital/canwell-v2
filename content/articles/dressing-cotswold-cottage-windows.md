@@ -7,9 +7,7 @@ image: "/images/lifestyle/lifestyle-woodburner-green-sofa.jpg"
 category: "Curtains"
 date_published: "2026-04-15"
 read_time: "6 min read"
-# QA Audit 2026-05-14 — Task 4: draft until full copy arrives. Flip to
-# "published" in the CMS once the article is finished.
-status: draft
+status: published
 ---
 
 Cotswold cottage windows are a particular puzzle. Most are tall and narrow, in stone reveals that don't play nicely with standard tracks. Some are leaded, which means the curtain can't sit too close to the glass. Most aren't square, because they've been settling for two or three centuries. And the light through them at four o'clock on a winter afternoon is one of the better things about living in this part of the country, which means the curtain has to work hard not to ruin it.
@@ -22,27 +20,27 @@ Most of the windows we measure across Broadway, Chipping Campden, and Willersey 
 
 ## Track or pole?
 
-Why track is often the better answer in stone reveals. When pole still wins.
+Poles look right in older houses, which is why everyone arrives wanting one. But in a stone reveal a pole often can't do the job: the brackets need fixing into stone or crumbly lime plaster, the pole has to clear the reveal by enough for the curtain to stack back off the glass, and on a narrow cottage wall there frequently isn't room. A decent track — fixed to the face of the wall or up into the lintel, hidden behind the curtain heading — solves all of that, bends where the wall does, and carries an interlined curtain without sagging. Where a pole still wins: wide, regular windows with honest wall either side, and anywhere the pole itself is part of the look. The practical rule we use: pole if the wall allows it and you'll see it; track if the window is awkward, the curtain is heavy, or the reveal is tight.
 
 ## Fullness
 
-How much fabric you actually need. Why 1.5x doesn't cut it. The 2.5x rule and when to break it.
+Fullness is the ratio of fabric width to track width, and it's the difference between curtains that look generous and curtains that look like they shrank in the wash. The 1.5x fullness of most ready-mades reads flat and mean the moment the curtain is drawn. For made-to-measure we'd start at 2x and go to 2.25–2.5x for pencil pleat and anything interlined — the extra fabric is what gives a curtain its body when closed and its fat, even stack when open. When to break the rule: very narrow cottage windows, where too much fullness leaves a permanently bunched curtain eating half the glass, and wave headings, which are engineered for a lower, fixed fullness. This is also the honest reason made-to-measure costs what it does — you're often buying twice the fabric of the ready-made equivalent, and it shows.
 
 ## Lining
 
-Standard, blackout, interlining. The interlining argument for sitting rooms.
+Three choices, in ascending order of commitment. Standard cotton lining protects the face fabric from sun and gives a modest amount of body — the default for most rooms. Blackout lining earns its keep in bedrooms, particularly east-facing ones, though it makes a curtain stiffer and heavier, so the heading and track need to be specified for it. Then interlining: a blanket-like layer sewn between face and lining, and the single biggest upgrade you can make to a curtain in an old house. Interlined curtains hang in deep, soft folds, insulate noticeably — in a draughty cottage sitting room you can feel the difference the first cold evening — and make even a mid-priced fabric look expensive. If the budget forces a choice, we'd take a simpler fabric interlined over a fancier fabric with standard lining, every time.
 
 ## Length
 
-Floor, just-touching, sill, below-sill. Why "puddling" looks lovely and is also a pain.
+Four honest options. Full-length to the floor, just touching — the right answer for most sitting rooms and bedrooms, and the safest. Sill-length, finishing just above the sill — right for kitchens, window seats, and radiators under windows, where a long curtain would either catch or block the heat. Below-sill, finishing 10–15cm under the sill — the traditional cottage compromise for deep sills, tidier than it sounds. And puddling, where the curtain breaks onto the floor by several centimetres. Puddling looks romantic in photographs and we'll make it for you happily, but be told: it collects dust and dog hair, it drags every time you draw the curtain, and it needs re-dressing after every vacuum. Lovely in a spare room, a daily chore in a sitting room.
 
 ## Heading style
 
-Pencil pleat, pinch pleat, wave, eyelet. What works in older houses.
+The heading is the pleating at the top, and it sets the curtain's character more than people expect. Pencil pleat is the traditional gathered heading — forgiving, classic, right at home in a cottage, and the easiest to hang on a track. Pinch pleat (double or triple) is tailored and architectural, holds its folds beautifully, and suits both period and modern rooms; it's what we specify most for interlined curtains. Wave needs a dedicated track and a clean run of wall, and looks superb in barn conversions and newer extensions — less so against wonky lime plaster. Eyelet only works on a pole, doesn't suit heavy or interlined curtains, and tends to look like what it is: the ready-made default. In older houses, pencil or pinch pleat is nearly always the answer.
 
 ## A note on bay windows
 
-Why they're harder than they look.
+Bays are harder than they look because the curtain has to travel around corners while clearing the glass, the seats, and sometimes a radiator. A standard pole can't turn the corner; you need either a bent track — measured and formed for that exact bay — or separate short poles per facet with a curtain on each, which changes how the bay reads. Victorian and Edwardian bays around Cheltenham and Stratford usually take a bent track gracefully. Smaller cottage bays sometimes don't have the depth for curtains at all, and honestly, a Roman blind per facet is often the better-looking and better-functioning answer. This is the one window where we'd always say: don't order anything until someone has stood in front of it with a tape.
 
 ## What to do if you can't make a decision
 

@@ -14,6 +14,8 @@ what_we_stock_body: |
 
   **On the floor regularly:** Cushions in standard sizes, decorative cushion covers, throws, and fabric for made-to-measure cushions and curtains.
 
+  **Best for:** Pattern and print. Where [Riva](/brands/riva) covers the plains and weaves, Malini brings the printed cushions and the bolder colour, and the two ranges are bought to work together on the [soft furnishings floor](/soft-furnishings).
+
 why_h2: "Why feel Malini fabric in person"
 why_body: |
   Cushions and throws are bought to be touched, sat on, and lived with. The fabric weight, the pile, the way a print catches the light — none of it photographs well. A linen cushion that looks crisp on screen can feel coarse in the hand; a velvet that looks shallow on a website thumbnail can have a much deeper pile in person.

@@ -768,5 +768,5 @@ collections:
       - { name: category, widget: string, hint: "e.g. Curtains, Carpets, Furniture" }
       - { name: date_published, widget: datetime }
       - { name: read_time, widget: string, hint: "e.g. '5 min read'" }
-      - { name: is_placeholder, widget: boolean, default: false, hint: "Tick if this is a draft outline. Shows a 'Draft' pill on the article and the hub." }
+      - { name: status, widget: select, options: ["draft", "published"], default: "draft", hint: "Drafts are hidden from the public site, the sitemap, and search engines. Flip to published to launch." }
       - { name: body, widget: markdown }

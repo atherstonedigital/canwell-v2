@@ -28,6 +28,15 @@ why_h2: "Putting it together"
 why_body: |
   The trick with a living room isn't choosing one big piece, it's getting the pieces to feel like they belong in the same room. That's where design help earns its keep. Bring photos of what you've already got, the dimensions of the room, and the budget you'd like to work to. We'll walk you through what would complete the room.
 
+  Start with the [sofa](/furniture/sofas) if the room doesn't have one it's keeping — everything else takes its scale from it. Then the armchair, then the tables, and last the [lamps, cushions, and throws](/soft-furnishings) that tie the lot together. Done in that order, even a modest budget reads as a finished room.
+
+faq_h2: "Living room questions"
+faqs:
+  - question: "How big should the coffee table be?"
+    answer: "Around two-thirds the length of the sofa is the rule of thumb, at roughly the same height as the seat cushions. Bring your sofa's dimensions in and we will narrow it down fast."
+  - question: "Does the armchair have to match the sofa?"
+    answer: "No — and it is usually better when it doesn't. A chair in a complementary fabric reads as considered; an exact match reads as a suite. We will show you pairings on the floor."
+
 cta_eyebrow: "Ready"
 cta_h2: "Visit to see the *living room range*."
 ctas:

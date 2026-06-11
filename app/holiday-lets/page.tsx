@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return pageMetadata({
     title: content.meta_title,
     description: content.meta_description,
-    canonical: "https://canwellinteriors.com/holiday-lets",
+    canonical: "/holiday-lets",
   });
 }
 

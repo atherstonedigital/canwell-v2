@@ -2,7 +2,7 @@
 parent: design-help
 subslug: in-store-consultation
 
-meta_title: "Free In-Store Design Consultation"
+meta_title: "Free In-Store Design Consultation in Broadway | Canwell"
 meta_description: "A free 30 to 60 minute consultation at the Canwell showroom in Broadway. Bring photos, dimensions, and what you're trying to do. We'll help you choose."
 
 eyebrow: "Design help · In-store"
