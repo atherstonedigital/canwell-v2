@@ -14,6 +14,8 @@ what_we_stock_body: |
 
   **On the floor regularly:** Table lamps, floor lamps, pendant lamps, lampshades, ceramic vases, decorative bowls, mirrors, candleholders, and small accent pieces.
 
+  **Best for:** The last ten percent of a room — the lamp, the mirror, the vase that makes the scheme feel finished. Light & Living anchors the [lighting and accessories floor](/soft-furnishings), and a lamp from the range is the cheapest way we know to warm up a finished room.
+
 why_h2: "Why see lighting in person"
 why_body: |
   Lighting is the single hardest thing in a room to buy from a website. The scale is almost never what you expect, the colour temperature reads differently in your own light, and the warmth a lamp throws into a room is something you only feel when the lamp is on in front of you.

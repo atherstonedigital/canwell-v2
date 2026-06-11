@@ -14,6 +14,8 @@ what_we_stock_body: |
 
   **On the floor regularly:** Cushions in standard sizes, throws, decorative cushion covers, fabric lengths for made-to-measure curtains and blinds.
 
+  **Best for:** Finishing a room rather than starting one. Riva is the range we reach for when a scheme needs three cushions and a throw to pull it together, and its fabric lengths feed the [made-to-measure curtain](/curtains/made-to-measure) and [blind](/blinds) services. The rest of the [soft furnishings floor](/soft-furnishings) sits around it.
+
 why_h2: "Why feel Riva fabric in person"
 why_body: |
   Soft furnishings are the part of a room that gets touched the most and photographs the worst. The weight of a linen cushion, the pile depth of a velvet, the brushed feel of a wool throw — none of it carries through a screen. The half hour spent in the showroom feeling the difference between two boucle weaves saves the disappointment of opening a parcel that looks nothing like the website photograph.

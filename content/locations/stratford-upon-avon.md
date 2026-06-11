@@ -29,6 +29,15 @@ delivery_h2: "What we deliver across Stratford-upon-Avon"
 delivery_body: |
   Furniture, carpets, curtains, and blinds delivered and fitted across the Stratford postcodes. Free delivery on furniture orders over £500, and free home measures for carpets, curtains, and blinds within the same area.
 
+faq_h2: "Questions Stratford customers ask"
+faqs:
+  - question: "How long does it take to get to Canwell from Stratford-upon-Avon?"
+    answer: "About 25 minutes by car, south-west on the A46 to Bidford-on-Avon, then through Honeybourne and Chipping Campden into Broadway. Free parking when you arrive."
+  - question: "Do you deliver to Stratford-upon-Avon?"
+    answer: "Yes. Furniture, carpets, curtains, and blinds are delivered and fitted across the Stratford postcodes, with free delivery on furniture orders over £500."
+  - question: "Do you do home design visits in the Stratford area?"
+    answer: "Yes. Design help is free in the showroom, and home visits across the Stratford area can be booked for bigger projects — most useful when a whole room or house needs putting together."
+
 cta_eyebrow: "Twenty-five minutes through the Cotswolds"
 cta_h2: "Plan a *visit* from Stratford."
 ctas:

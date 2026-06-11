@@ -13,6 +13,8 @@ intro_body: |
 
   The right answer is rarely the one you arrived with. Come in and we'll talk it through.
 
+  Home measures are free within a 30-mile radius of Broadway — that covers [Cheltenham](/locations/cheltenham), [Evesham](/locations/evesham), [Worcester](/locations/worcester), [Stratford-upon-Avon](/locations/stratford-upon-avon), and everywhere in between. See all the [areas we serve](/locations).
+
 cards_h2: "The types, in plain English"
 cards:
   - title: "Roman blinds"
@@ -44,6 +46,23 @@ steps:
     body: "Per blind, including measurement and fitting. No hidden extras."
   - title: "We fit, within three to four weeks"
     body: "Clean, tidy, and we test the operation before we leave."
+
+why_h2: "Which blind for which room"
+why_body: |
+  Kitchens and bathrooms want moisture-resistant rollers or aluminium Venetians — easy to wipe, unbothered by steam. Bedrooms want blackout rollers, or Romans with a blackout lining; a Roman adds the softness a bedroom usually wants anyway. Sitting rooms take Romans or wooden Venetians, depending on whether the room leans soft or tailored. Studies and home offices suit wooden or aluminium Venetians, because slats manage screen glare better than anything else. Conservatories and tilt-and-turn windows are what perfect-fit was invented for. And very tall glass — sliding doors, patio doors — is vertical blind territory, whatever you think of vertical blinds.
+
+  None of this is a rule. It's where we'd start the conversation.
+
+faq_h2: "Blinds questions, answered"
+faqs:
+  - question: "How long do made-to-measure blinds take?"
+    answer: "Three to four weeks from measure to fitting for most blind types. We measure, make, and fit, and we test the operation before we leave."
+  - question: "Is the measuring really free?"
+    answer: "Yes, anywhere within a 30-mile radius of Broadway — which covers Cheltenham, Evesham, Worcester, and Stratford-upon-Avon. The quote covers the blind, the measure, and the fitting, with no hidden extras."
+  - question: "Which blinds work in bathrooms and kitchens?"
+    answer: "Moisture-resistant rollers and aluminium Venetians handle steam and splashes best. We would steer away from fabric Romans in a bathroom unless it is a big, well-ventilated one."
+  - question: "Can you fit blinds without drilling?"
+    answer: "Yes — perfect-fit blinds mount to the window frame itself with no drilling, which makes them right for uPVC windows, conservatories, and rented properties."
 
 cta_eyebrow: "Ready"
 cta_h2: "Visit to see the *blind range*."

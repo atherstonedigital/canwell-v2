@@ -14,6 +14,8 @@ what_we_stock_body: |
 
   **On the floor regularly:** Dining tables, dining chairs, sideboards, dressers, occasional tables, bedside tables, and chests of drawers in oak and other British hardwoods.
 
+  **Best for:** Older rooms with low ceilings and awkward proportions, where the bigger brands overwhelm the space. IFD sits at the heart of our [dining](/furniture/dining) and [bedroom](/furniture/bedroom) furniture, and it's usually the first range we walk cottage owners past.
+
 why_h2: "Why see IFD in person"
 why_body: |
   Hardwood furniture lives or dies on the wood, the joinery, and the way the piece sits in a room. None of that comes through a website thumbnail. The grain on a particular oak top, the way a drawer runs out, the heft of a sideboard when you lean against it — these are the things you only judge when the piece is in front of you.

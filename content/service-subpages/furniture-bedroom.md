@@ -21,13 +21,24 @@ intro_body: |
 
   **Dressing tables and stools.** A small but rotating range, often in painted finishes.
 
+  A note on older houses: cottage bedrooms reward furniture one size down from what the catalogue suggests. A low-ceilinged room takes a lower bed frame and a pair of slim bedsides far better than a tall sleigh bed, and the stairs matter as much as the room — we've carried enough wardrobes up cottage staircases to know which pieces make the turn and which don't. Measure the staircase before you fall for anything tall.
+
 why_h2: "A word on mattresses"
 why_body: |
   We don't stock mattresses. The mattress decision is genuinely individual and best made at a specialist mattress retailer where you can lie down for fifteen minutes on each option. Happy to recommend a few good ones locally if asked.
 
 brands_h2: "Brands on the floor"
 brands_body: |
-  Hills Furniture, IFD, and a few smaller hardwood makers. Specifics vary by what's on the floor. Visit to see the current range.
+  [Hills Furniture](/brands/hills-furniture), [IFD](/brands/ifd), and a few smaller hardwood makers. Specifics vary by what's on the floor. Visit to see the current range.
+
+faq_h2: "Bedroom furniture questions"
+faqs:
+  - question: "Do you sell mattresses?"
+    answer: "No — and honestly, you are better served by a specialist mattress retailer where you can lie on each option properly. We are happy to recommend a few good local ones."
+  - question: "Will a new bed or wardrobe fit up cottage stairs?"
+    answer: "Often, but not always — it depends on the turn of the staircase and whether the piece dismantles. Bring a photo and the staircase measurements, or book a home visit and we will check before you order."
+  - question: "Do you deliver bedroom furniture?"
+    answer: "Yes. Delivery is free on furniture orders over £500 across the Cotswolds and surrounding areas."
 
 cta_eyebrow: "Ready"
 cta_h2: "Visit to see the *bedroom range*."

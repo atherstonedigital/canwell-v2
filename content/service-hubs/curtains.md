@@ -8,7 +8,10 @@ lead: "Hundreds of fabrics to feel in person, a home measure for the made-to-mea
 image: "/uploads/curtains-vignette-placeholder.jpg"
 
 intro_h2: "Two ways to do curtains"
-intro_body: "Most rooms get the right answer from one of two routes. Made-to-measure is for windows that don't fit standard sizes, fabric you want to choose properly, and rooms where you want the curtain to do its job. Ready-made is for guest rooms, holiday lets, and refreshes that have to happen this weekend."
+intro_body: |
+  Most rooms get the right answer from one of two routes. Made-to-measure is for windows that don't fit standard sizes, fabric you want to choose properly, and rooms where you want the curtain to do its job. Ready-made is for guest rooms, holiday lets, and refreshes that have to happen this weekend.
+
+  We measure, make, and fit across the [areas we serve](/locations), including [Cheltenham](/locations/cheltenham), [Stratford-upon-Avon](/locations/stratford-upon-avon), and [Chipping Campden](/locations/chipping-campden).
 
 cards_h2: "The two routes"
 cards:

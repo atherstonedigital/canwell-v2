@@ -52,6 +52,10 @@ why_body: |
 
   The other reason to visit is that the soft furnishings part of the showroom is where most people find the piece they didn't know they were looking for.
 
+brands_h2: "The brands on this part of the floor"
+brands_body: |
+  [Riva](/brands/riva) and [Malini](/brands/malini) carry the cushions, throws, and fabric — plains and weaves from one, print and colour from the other. [Light & Living](/brands/light-and-living) covers the lamps, ceramics, mirrors, and the smaller decorative pieces. Between the three of them, plus our own picks, this part of the floor changes weekly.
+
 cta_eyebrow: "New in this week"
 cta_h2: "Visit and *browse*."
 ctas:

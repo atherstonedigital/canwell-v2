@@ -8,12 +8,16 @@ import { NewIn } from "@/components/sections/NewIn";
 import { Reviews } from "@/components/sections/Reviews";
 import { EmailSignup } from "@/components/sections/EmailSignup";
 import { Visit } from "@/components/sections/Visit";
+import { Cards } from "@/components/sections/Cards";
+import { Schema } from "@/components/Schema";
 import {
   getHomepage,
   getNewInBySlug,
+  getPublishedArticles,
   getReviewsBySlug,
   getSite,
 } from "@/lib/content";
+import { reviewsAggregateSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -29,10 +33,18 @@ export default function Home() {
   const site = getSite();
   const homepage = getHomepage();
   const newInItems = getNewInBySlug(homepage.new_in_items || []);
-  const featuredReviews = getReviewsBySlug(homepage.featured_reviews || []);
+  // Placeholder reviews stay editable in the CMS but never render publicly.
+  const featuredReviews = getReviewsBySlug(homepage.featured_reviews || []).filter(
+    (r) => !r.is_placeholder
+  );
+  const latestArticles = getPublishedArticles().slice(0, 3);
 
   return (
     <>
+      <Schema
+        id="ld-reviews"
+        payload={reviewsAggregateSchema(featuredReviews, site)}
+      />
       <Hero
         hero_eyebrow={homepage.hero_eyebrow}
         hero_pretitle={homepage.hero_pretitle}
@@ -94,6 +106,22 @@ export default function Home() {
         reviews_cta_url={site.social_google_business}
         reviews={featuredReviews}
       />
+
+      {latestArticles.length > 0 && (
+        <Cards
+          eyebrow="From the showroom"
+          h2="Guides and *inspiration*"
+          intro="Honest guides to furnishing Cotswold homes, written from the showroom floor."
+          cards={latestArticles.map((a) => ({
+            title: a.title,
+            body: a.excerpt,
+            link_label: "Read the guide",
+            link_url: `/inspiration/${a.slug}`,
+            image: a.image,
+          }))}
+          columns={3}
+        />
+      )}
 
       <EmailSignup
         email_eyebrow={homepage.email_eyebrow}

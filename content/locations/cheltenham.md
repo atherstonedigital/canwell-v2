@@ -31,6 +31,15 @@ delivery_body: |
 
   Free delivery on furniture orders over £500 across the Cheltenham postcodes. Home measures for carpets, curtains, and blinds are free across the same area.
 
+faq_h2: "Questions Cheltenham customers ask"
+faqs:
+  - question: "How long does it take to get to Canwell from Cheltenham?"
+    answer: "About 20 minutes by car, north on the A46 to Stanway and across to the A44 into Broadway. There's free parking directly outside the showroom at the Cotswold Design Centre."
+  - question: "Do you do home measures and design visits in Cheltenham?"
+    answer: "Yes. Home measures for carpets, curtains, and blinds are free across the Cheltenham postcodes, and home design visits can be booked for whole-room or whole-house projects."
+  - question: "Can you make curtains for Regency and Victorian windows?"
+    answer: "Yes — tall sashes, bays, and non-standard sizes are most of what we measure in Cheltenham. We measure, make, and fit, usually within four to six weeks."
+
 cta_eyebrow: "Twenty minutes up the A46"
 cta_h2: "Plan a *visit* from Cheltenham."
 ctas:

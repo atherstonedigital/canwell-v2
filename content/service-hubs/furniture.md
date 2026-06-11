@@ -13,6 +13,8 @@ intro_body: |
 
   A lot of the stock is on the floor and ready to take home. Some pieces are made-to-order from the brand with lead times of six to twelve weeks. We'll tell you which is which when you ask.
 
+  Delivery is free on orders over £500 across the [areas we serve](/locations) — from [Cheltenham](/locations/cheltenham) and [Evesham](/locations/evesham) up to [Worcester](/locations/worcester) and across to [Stratford-upon-Avon](/locations/stratford-upon-avon).
+
 cards_h2: "Browse by room"
 cards:
   - title: "Sofas, sofa beds, armchairs"

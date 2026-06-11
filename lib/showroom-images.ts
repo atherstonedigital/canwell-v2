@@ -136,6 +136,20 @@ export const showroomImages = {
     height: 1350,
   },
 
+  // CMS uploads referenced from content
+  headerHero: {
+    src: "/uploads/canwell-interiors-header-hero.jpg",
+    alt: "Inside the Canwell Interiors showroom at the Cotswold Design Centre, Broadway",
+    width: 1536,
+    height: 2730,
+  },
+  inesMoleDoubleBed: {
+    src: "/uploads/ines-mole-double-bed-canwell-canwell-interiors-limited-8163467.webp",
+    alt: "Ines mole upholstered double bed at the Canwell Interiors showroom",
+    width: 1000,
+    height: 1000,
+  },
+
   // Placeholder vignettes — to be replaced with proper photography.
   // Paths match the CMS uploads directory so editors can swap the files
   // in place via Decap without breaking the manifest reference.

@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/brands",
     "/locations",
     "/inspiration",
+    "/privacy",
   ];
 
   const hubs = getServiceHubs().map((h) => `/${(h as unknown as { slug: string }).slug}`);
