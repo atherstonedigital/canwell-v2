@@ -12,8 +12,8 @@ postcode: WR12 7DJ
 phone: 01905 964994
 email: broadway@canwellinteriors.com
 opening_hours_summary: Open seven days
-opening_hours_weekday: 9am to 5pm
-opening_hours_saturday: 9am to 5pm
+opening_hours_weekday: 10am to 4pm
+opening_hours_saturday: 10am to 4pm
 opening_hours_sunday: 10am to 4pm
 year_established: "2009"
 sister_site_saverys_broadway_url: ""
