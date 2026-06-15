@@ -100,18 +100,12 @@ export default function ContactPage() {
                   <th>Email</th>
                   <td>{site.email}</td>
                 </tr>
-                <tr>
-                  <th>Mon–Fri</th>
-                  <td>{site.opening_hours_weekday}</td>
-                </tr>
-                <tr>
-                  <th>Saturday</th>
-                  <td>{site.opening_hours_saturday}</td>
-                </tr>
-                <tr>
-                  <th>Sunday</th>
-                  <td>{site.opening_hours_sunday}</td>
-                </tr>
+                {site.opening_hours.map((d) => (
+                  <tr key={d.day}>
+                    <th>{d.day}</th>
+                    <td>{d.hours}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
             <p className="small" style={{ marginTop: "var(--s-6)", color: "var(--color-text-muted)" }}>

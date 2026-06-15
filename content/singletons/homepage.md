@@ -2,7 +2,7 @@
 meta_title: Canwell Interiors — Furnishings Showroom in Broadway, Cotswolds
 meta_description: The Cotswolds furnishings showroom at the Cotswold Design
   Centre in Broadway. Furniture, carpets, curtains, blinds, and honest design
-  help, all under one roof. Open seven days.
+  help, all under one roof. Open Thursday to Monday.
 hero_eyebrow: Cotswold Design Centre · Broadway
 hero_pretitle: The Cotswolds furnishings showroom.
 hero_title: Walk in, *choose*, take home.
@@ -11,7 +11,7 @@ hero_lead: At the Cotswold Design Centre in Broadway, with carpets, curtains,
 hero_image: /uploads/canwell-interiors-header-hero.jpg
 hero_microcopy:
   - FAMILY-RUN SINCE 2009
-  - OPEN SEVEN DAYS
+  - OPEN THURSDAY TO MONDAY
   - FREE PARKING
 hero_ctas:
   - label: Plan your visit
@@ -134,10 +134,10 @@ email_confirm_message: Thanks. We'll send the first one soon.
 visit_eyebrow: Find us
 visit_h2: Find the *showroom*.
 visit_body: We're at the Cotswold Design Centre on Kennel Lane in Broadway. Free
-  parking, open seven days, dog-friendly. Tea while you browse.
+  parking, open Thursday to Monday, dog-friendly. Tea while you browse.
 visit_stamps:
   - title: Open
-    subtitle: 7 Days
+    subtitle: Thu–Mon
   - title: Free
     subtitle: Parking
   - title: Dog

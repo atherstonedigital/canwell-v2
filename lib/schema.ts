@@ -61,6 +61,39 @@ const OFFER_CATALOG: Array<{ name: string; url: string; description: string }> =
   },
 ];
 
+// Parse an editorial time like "10am to 4pm" or "10.30am to 5pm" into a
+// 24-hour "HH:MM" string. Returns null if it doesn't look like a time.
+function parseTime(raw: string): string | null {
+  const m = raw.trim().match(/^(\d{1,2})(?:[.:](\d{2}))?\s*(am|pm)$/i);
+  if (!m) return null;
+  let hour = parseInt(m[1], 10);
+  const minute = m[2] ?? "00";
+  const meridiem = m[3].toLowerCase();
+  if (meridiem === "pm" && hour !== 12) hour += 12;
+  if (meridiem === "am" && hour === 12) hour = 0;
+  return `${String(hour).padStart(2, "0")}:${minute}`;
+}
+
+// Build schema.org OpeningHoursSpecification entries from the per-day list.
+// Closed days (and anything we can't parse) are simply omitted — their absence
+// signals "closed" to search engines.
+function openingHoursSpecification(site: SiteSettings) {
+  return (site.opening_hours ?? [])
+    .map((d) => {
+      const [open, close] = d.hours.split(/\s*(?:to|–|-|—)\s*/);
+      const opens = open ? parseTime(open) : null;
+      const closes = close ? parseTime(close) : null;
+      if (!opens || !closes) return null;
+      return {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: d.day,
+        opens,
+        closes,
+      };
+    })
+    .filter((spec): spec is NonNullable<typeof spec> => spec !== null);
+}
+
 export function organizationSchema(site: SiteSettings) {
   const sameAs = [
     site.sister_site_xshowhome_url,
@@ -101,26 +134,7 @@ export function organizationSchema(site: SiteSettings) {
       latitude: 52.0382,
       longitude: -1.858,
     },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "10:00",
-        closes: "16:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Saturday",
-        opens: "10:00",
-        closes: "16:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Sunday",
-        opens: "10:00",
-        closes: "16:00",
-      },
-    ],
+    openingHoursSpecification: openingHoursSpecification(site),
     areaServed,
     priceRange: "££",
     hasOfferCatalog: {

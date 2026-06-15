@@ -46,7 +46,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const defaultTitle =
     "Canwell Interiors — Furnishings Showroom in Broadway, Cotswolds";
   const description =
-    "The Cotswolds furnishings showroom at the Cotswold Design Centre in Broadway. Furniture, carpets, curtains, blinds, and honest design help, all under one roof. Open seven days.";
+    "The Cotswolds furnishings showroom at the Cotswold Design Centre in Broadway. Furniture, carpets, curtains, blinds, and honest design help, all under one roof. Open Thursday to Monday.";
 
   return {
     metadataBase: new URL(SITE_URL),

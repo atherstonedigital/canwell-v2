@@ -1,3 +1,8 @@
+export interface OpeningHoursDay {
+  day: string;
+  hours: string;
+}
+
 export interface SiteSettings {
   site_name: string;
   tagline: string;
@@ -11,9 +16,7 @@ export interface SiteSettings {
   postcode: string;
   phone: string;
   email: string;
-  opening_hours_weekday: string;
-  opening_hours_saturday: string;
-  opening_hours_sunday: string;
+  opening_hours: OpeningHoursDay[];
   opening_hours_summary: string;
   year_established: string;
   sister_site_saverys_broadway_url: string;
