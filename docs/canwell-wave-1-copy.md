@@ -19,8 +19,7 @@ The voice is locked. Every paragraph has been written against the Voice & Tone b
 A consolidated list of facts needed before the copy is final. Most can be answered in 15 minutes of conversation with Gary.
 
 - {{YEAR_ESTABLISHED}}: When Canwell Interiors started trading in Broadway
-- {{OPENING_HOURS_WEEKDAYS}}: e.g. "Monday to Saturday, 9am to 5pm"
-- {{OPENING_HOURS_SUNDAY}}: e.g. "Sunday, 10am to 4pm"
+- {{OPENING_HOURS}}: Thursday to Monday, 10am to 4pm. Closed Tuesday and Wednesday.
 - {{TEAM_NAMES}}: Names of other team members (beyond Gary and Gemma) for the About page
 - {{CARPET_BRANDS}}: The carpet brands Canwell stocks (Cormar, Brockway, Axminster, Ulster, etc.)
 - {{MTM_CURTAIN_LEAD_TIME}}: Typical lead time for made-to-measure curtains (e.g. "4 to 6 weeks")
@@ -43,7 +42,7 @@ A consolidated list of facts needed before the copy is final. Most can be answer
 | Field | Value | Chars |
 |---|---|---|
 | Meta title | Canwell Interiors \| Furnishings Showroom in Broadway, Cotswolds | 59 |
-| Meta description | The Cotswolds furnishings showroom on Broadway High Street. Furniture, carpets, curtains, blinds, and honest design help, all under one roof. Open seven days. | 155 |
+| Meta description | The Cotswolds furnishings showroom on Broadway High Street. Furniture, carpets, curtains, blinds, and honest design help, all under one roof. Open Thursday to Monday. | 155 |
 
 ### Hero
 
@@ -58,7 +57,7 @@ On Broadway High Street, with carpets, curtains, blinds, furniture, and the kind
 **Secondary CTA:** Get the weekly update
 
 **Microcopy strip under hero:**
-Family-run since {{YEAR_ESTABLISHED}} · Open seven days · Free parking out the front
+Family-run since {{YEAR_ESTABLISHED}} · Open Thursday to Monday · Free parking out the front
 
 ---
 
@@ -202,12 +201,12 @@ A short email every Friday. New arrivals, what's just landed, the occasional wee
 **H2:** Find the showroom
 
 **Body:**
-We're at the Cotswold Design Centre on Kennel Lane in Broadway. Free parking, open seven days, dog-friendly. Tea while you browse.
+We're at the Cotswold Design Centre on Kennel Lane in Broadway. Free parking, open Thursday to Monday, dog-friendly. Tea while you browse.
 
 **Address:** Cotswold Design Centre, Kennel Lane, Broadway WR12 7DJ
 **Phone:** 01905 964994
 **Email:** canwellcotswolds@gmail.com
-**Hours:** {{OPENING_HOURS_WEEKDAYS}} · {{OPENING_HOURS_SUNDAY}}
+**Hours:** Thursday to Monday, 10am to 4pm · Closed Tuesday and Wednesday
 
 **Primary CTA:** Get directions
 **Secondary CTA:** Call the showroom
@@ -224,14 +223,14 @@ We're at the Cotswold Design Centre on Kennel Lane in Broadway. Free parking, op
 | Field | Value | Chars |
 |---|---|---|
 | Meta title | Visit Us \| Canwell Interiors, Broadway, Cotswolds | 49 |
-| Meta description | Find Canwell Interiors at the Cotswold Design Centre, Kennel Lane, Broadway WR12 7DJ. Open seven days, free parking, dog-friendly. Plan your visit. | 152 |
+| Meta description | Find Canwell Interiors at the Cotswold Design Centre, Kennel Lane, Broadway WR12 7DJ. Open Thursday to Monday, free parking, dog-friendly. Plan your visit. | 152 |
 
 ### Header
 
 **H1:** Visit Canwell Interiors in Broadway
 
 **Sub-headline:**
-We're at the Cotswold Design Centre on Kennel Lane, just off Broadway High Street. Open seven days, with free parking and time to browse properly.
+We're at the Cotswold Design Centre on Kennel Lane, just off Broadway High Street. Open Thursday to Monday, with free parking and time to browse properly.
 
 ---
 
@@ -260,16 +259,16 @@ WR12 7DJ
 
 | Day | Hours |
 |---|---|
-| Monday | {{OPENING_HOURS_MON}} |
-| Tuesday | {{OPENING_HOURS_TUE}} |
-| Wednesday | {{OPENING_HOURS_WED}} |
-| Thursday | {{OPENING_HOURS_THU}} |
-| Friday | {{OPENING_HOURS_FRI}} |
-| Saturday | {{OPENING_HOURS_SAT}} |
-| Sunday | {{OPENING_HOURS_SUN}} |
+| Monday | 10am to 4pm |
+| Tuesday | Closed |
+| Wednesday | Closed |
+| Thursday | 10am to 4pm |
+| Friday | 10am to 4pm |
+| Saturday | 10am to 4pm |
+| Sunday | 10am to 4pm |
 
 **Microcopy:**
-Closed Christmas Day, Boxing Day, and New Year's Day. We post any other holiday changes here and on Google a week before.
+Closed Tuesday and Wednesday. Also closed Christmas Day, Boxing Day, and New Year's Day. We post any other holiday changes here and on Google a week before.
 
 ---
 
@@ -490,7 +489,7 @@ Walk in any time we're open. No appointment needed.
 | Address | Cotswold Design Centre, Kennel Lane, Broadway WR12 7DJ |
 | Phone | 01905 964994 |
 | Email | canwellcotswolds@gmail.com |
-| Opening hours | {{OPENING_HOURS_WEEKDAYS}}, {{OPENING_HOURS_SUNDAY}} |
+| Opening hours | Thursday to Monday, 10am to 4pm. Closed Tuesday and Wednesday. |
 
 ---
 
@@ -1113,7 +1112,7 @@ These elements appear on every page. Written once, used everywhere.
 
 ### Header utility bar (small text above main nav)
 
-Open seven days · 01905 964994 · Cotswold Design Centre, Broadway
+Open Thursday to Monday · 01905 964994 · Cotswold Design Centre, Broadway
 
 ### Footer
 
@@ -1169,7 +1168,7 @@ This page isn't here. It may have moved, or the link may have been wrong. Try th
 **H1:** Thanks, you're on the list
 
 **Body:**
-The first email lands this Friday. Until then, the showroom is open seven days if you want to drop in.
+The first email lands this Friday. Until then, the showroom is open Thursday to Monday if you want to drop in.
 
 **CTA:** Plan your visit
 

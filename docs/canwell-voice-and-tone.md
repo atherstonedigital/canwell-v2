@@ -85,7 +85,7 @@ Three short reference samples. These set the bar for every paragraph produced in
 > **The Cotswolds furnishings showroom.**
 > **Walk in, choose, take home.**
 >
-> On Broadway High Street, with carpets, curtains, blinds, furniture, and the kind of design help you actually want. Family-run, open seven days, free parking out the front.
+> On Broadway High Street, with carpets, curtains, blinds, furniture, and the kind of design help you actually want. Family-run, open Thursday to Monday, free parking out the front.
 
 ### Service hub (carpets)
 
@@ -162,7 +162,7 @@ The voice is the same everywhere. The tone shifts slightly. Same person, differe
 | Page type | Tone leans | Example opening |
 |---|---|---|
 | Homepage | Welcoming, confident | "The Cotswolds furnishings showroom. Walk in, choose, take home." |
-| Visit us | Clear, practical | "We're on Kennel Lane in Broadway, open seven days." |
+| Visit us | Clear, practical | "We're on Kennel Lane in Broadway, open Thursday to Monday." |
 | About | Personal, warm | "Canwell has been on Broadway High Street for [X] years. Gary and Gemma run the place." |
 | Service hubs | Practical, expert | "Choosing a carpet is one of the bigger calls you'll make in a room." |
 | Service subs (MTM) | Reassuring, process-led | "Made-to-measure works like this..." |

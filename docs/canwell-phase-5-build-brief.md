@@ -234,7 +234,7 @@ Use the Decap config.yml format. Collection definitions for Phase 5A:
 
 **Singleton: site**
 Fields: site_name, tagline, address_line_1, address_line_2, postcode, phone,
-email, opening_hours_weekday, opening_hours_saturday, opening_hours_sunday,
+email, opening_hours_summary, opening_hours (per-day list of {day, hours}),
 year_established, sister_site_saverys_url, sister_site_xshowhome_url,
 social_facebook, social_instagram, social_google_business
 
