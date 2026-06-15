@@ -109,7 +109,7 @@ These are the pages the site cannot launch without. They cover the homepage, the
 | **Tier** | 1 |
 | **H1** | The Cotswolds furnishings showroom. Walk in, choose, take home. |
 | **Meta title** | Canwell Interiors \| Furnishings Showroom in Broadway, Cotswolds |
-| **Meta description** | The Cotswolds furnishings showroom. Furniture, carpets, curtains, blinds, and interior design help, all under one roof on Broadway High Street. Open seven days. |
+| **Meta description** | The Cotswolds furnishings showroom. Furniture, carpets, curtains, blinds, and interior design help, all under one roof on Broadway High Street. Open Thursday to Monday. |
 | **Primary keyword** | furnishings showroom Cotswolds |
 | **Secondary keywords** | interiors shop Broadway, furniture shop Cotswolds, interior design help Worcestershire |
 | **Intent** | Brand + commercial discovery |
@@ -118,7 +118,7 @@ These are the pages the site cannot launch without. They cover the homepage, the
 | **Primary CTA** | Plan your visit (links to /visit) |
 | **Secondary CTA** | Browse services (links to service hubs) |
 | **Tertiary CTA** | Get the weekly update (newsletter signup) |
-| **Proof to show** | Hero photography of the showroom, three featured services, three featured product categories, recent customer reviews, premium brand logos, "open 7 days" trust signal, Cotswold location anchor |
+| **Proof to show** | Hero photography of the showroom, three featured services, three featured product categories, recent customer reviews, premium brand logos, "open Thursday to Monday" trust signal, Cotswold location anchor |
 | **Inbound links** | All external (organic, ads, GBP, direct, referral) |
 | **Outbound links** | /visit, all service hubs, /design-help, /about |
 | **Schema** | LocalBusiness, Organization, WebSite (with SearchAction) |
@@ -135,7 +135,7 @@ These are the pages the site cannot launch without. They cover the homepage, the
 | **Tier** | 1 |
 | **H1** | Visit Canwell Interiors in Broadway |
 | **Meta title** | Visit Us \| Canwell Interiors, Broadway, Cotswolds |
-| **Meta description** | Find Canwell Interiors at the Cotswold Design Centre, Kennel Lane, Broadway WR12 7DJ. Open seven days, free parking, dog-friendly. Plan your visit. |
+| **Meta description** | Find Canwell Interiors at the Cotswold Design Centre, Kennel Lane, Broadway WR12 7DJ. Open Thursday to Monday, free parking, dog-friendly. Plan your visit. |
 | **Primary keyword** | furniture shop Broadway Cotswolds |
 | **Secondary keywords** | interiors shop Broadway, visit Canwell Broadway, Cotswold Design Centre |
 | **Intent** | Local navigational |

@@ -1,10 +1,10 @@
 ---
 meta_title: "Visit the Showroom in Broadway"
-meta_description: "Find Canwell Interiors at the Cotswold Design Centre, Kennel Lane, Broadway WR12 7DJ. Open seven days, free parking, dog-friendly. Plan your visit."
+meta_description: "Find Canwell Interiors at the Cotswold Design Centre, Kennel Lane, Broadway WR12 7DJ. Open Thursday to Monday, free parking, dog-friendly. Plan your visit."
 
 eyebrow: "Plan your visit"
 h1: "Visit Canwell Interiors in *Broadway*"
-lead: "We're at the Cotswold Design Centre on Kennel Lane, just off Broadway High Street. Open seven days, with free parking and time to browse properly."
+lead: "We're at the Cotswold Design Centre on Kennel Lane, just off Broadway High Street. Open Thursday to Monday, with free parking and time to browse properly."
 image: "/images/exterior/exterior-front-door-logo.jpg"
 
 how_to_find_h2: "How to find us"
@@ -16,7 +16,7 @@ how_to_find_body: |
   We're a short walk from the centre of Broadway, just off the High Street.
 
 opening_hours_h2: "Opening hours"
-opening_hours_microcopy: "Closed Christmas Day, Boxing Day, and New Year's Day. We post any other holiday changes here and on Google a week before."
+opening_hours_microcopy: "Closed Tuesday and Wednesday. Also closed Christmas Day, Boxing Day, and New Year's Day. We post any other holiday changes here and on Google a week before."
 
 getting_here_h2: "Getting to the showroom"
 getting_here_intro: "Kennel Lane is a short walk from the centre of Broadway, just off the High Street."

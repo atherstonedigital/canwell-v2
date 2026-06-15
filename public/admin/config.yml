@@ -88,10 +88,14 @@ collections:
           - { name: postcode, label: Postcode, widget: string }
           - { name: phone, label: Phone, widget: string }
           - { name: email, label: Email, widget: string }
-          - { name: opening_hours_summary, label: Opening hours (short summary), widget: string, hint: "Used in the top utility bar, e.g. 'Open seven days'" }
-          - { name: opening_hours_weekday, label: Opening hours — weekdays, widget: string }
-          - { name: opening_hours_saturday, label: Opening hours — Saturday, widget: string }
-          - { name: opening_hours_sunday, label: Opening hours — Sunday, widget: string }
+          - { name: opening_hours_summary, label: Opening hours (short summary), widget: string, hint: "Used in the top utility bar and homepage, e.g. 'Open Thursday to Monday'" }
+          - name: opening_hours
+            label: Opening hours — by day
+            widget: list
+            hint: "One row per day. Type the times (e.g. '10am to 4pm') or 'Closed'. Drives the hours tables and search engine data."
+            fields:
+              - { name: day, label: Day, widget: string }
+              - { name: hours, label: Hours, widget: string, hint: "e.g. '10am to 4pm' or 'Closed'" }
           - { name: year_established, label: Year established, widget: string, hint: "Used in 'Family-run since {{YEAR_ESTABLISHED}}'" }
           - { name: sister_site_saverys_broadway_url, label: Saverys of Broadway URL, widget: string, required: false }
           - { name: sister_site_saverys_ludlow_url, label: Saverys of Ludlow URL, widget: string, required: false }

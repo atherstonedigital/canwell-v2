@@ -11,10 +11,15 @@ address_line_2: Kennel Lane, Broadway
 postcode: WR12 7DJ
 phone: 01905 964994
 email: broadway@canwellinteriors.com
-opening_hours_summary: Open seven days
-opening_hours_weekday: 10am to 4pm
-opening_hours_saturday: 10am to 4pm
-opening_hours_sunday: 10am to 4pm
+opening_hours_summary: Open Thursday to Monday
+opening_hours:
+  - { day: Monday, hours: 10am to 4pm }
+  - { day: Tuesday, hours: Closed }
+  - { day: Wednesday, hours: Closed }
+  - { day: Thursday, hours: 10am to 4pm }
+  - { day: Friday, hours: 10am to 4pm }
+  - { day: Saturday, hours: 10am to 4pm }
+  - { day: Sunday, hours: 10am to 4pm }
 year_established: "2009"
 sister_site_saverys_broadway_url: ""
 sister_site_saverys_ludlow_url: ""

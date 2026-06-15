@@ -25,15 +25,15 @@ The brief's Phase 5A deliverable (lines 292–308) demands: a working staging si
 
 **Source documents present in the repo** (verified via `ls`): the eight files match the brief's table EXCEPT one — `canwell-strategy-brief.md` is referenced as source #1 (brief lines 25, 144) but is **not in the repository**. The strategy framing instead sits inline in the brief's own opening sections plus the voice/tone doc. This is a documented gap, not a blocker for 5A code.
 
-**Wave 1 homepage copy is complete** with five `{{PLACEHOLDER}}` types remaining: `{{YEAR_ESTABLISHED}}` (microcopy strip), `{{REVIEW_QUOTE_1..3}}` + reviewer name/location, `{{OPENING_HOURS_WEEKDAYS}}` and `{{OPENING_HOURS_SUNDAY}}` (visit block). Per working principle 8, render these visibly so Gary sees them in Decap.
+**Wave 1 homepage copy is complete** with five `{{PLACEHOLDER}}` types remaining: `{{YEAR_ESTABLISHED}}` (microcopy strip), `{{REVIEW_QUOTE_1..3}}` + reviewer name/location, and the opening hours (visit block, now a per-day `opening_hours` list). Per working principle 8, render these visibly so Gary sees them in Decap.
 
 **Mockup vs. Decap homepage singleton schema cross-check:**
 
 | Mockup section | Schema field present? | Notes |
 |---|---|---|
-| Utility bar (`Open seven days · 01905 964994 · Cotswold Design Centre`) | NO field — driven from `site` singleton (phone, address) | Build agent must compose from site singleton |
+| Utility bar (`Open Thursday to Monday · 01905 964994 · Cotswold Design Centre`) | NO field — driven from `site` singleton (phone, address) | Build agent must compose from site singleton |
 | Site header / nav (sticky) | NO field in homepage schema — site nav is a global concern | Hard-code nav links in Header component (matches brief's "/components/layout") |
-| Hero | hero_eyebrow, hero_pretitle, hero_title, hero_lead, hero_image | Schema covers it. Schema is missing a `hero_microcopy` list (mockup shows "FAMILY-RUN SINCE 1985 · OPEN SEVEN DAYS · FREE PARKING") — **add `hero_microcopy` (list of strings) to homepage singleton** |
+| Hero | hero_eyebrow, hero_pretitle, hero_title, hero_lead, hero_image | Schema covers it. Schema is missing a `hero_microcopy` list (mockup shows "FAMILY-RUN SINCE 1985 · OPEN THURSDAY TO MONDAY · FREE PARKING") — **add `hero_microcopy` (list of strings) to homepage singleton** |
 | Hero CTAs (primary "Plan your visit", tertiary "Get the weekly update") | NO field — fixed copy per Wave 1 | Hard-code in Hero component, voice-rule compliant |
 | Intro band | intro_eyebrow, intro_h2, intro_body | OK |
 | Services (6 cards) | services_h2, services_intro, service_cards (6 inline) | Schema OK. Mockup omits `services_intro` lead text — keep field but optional |
@@ -152,7 +152,7 @@ Create under `components/sections/`. Each is a Server Component receiving its sl
 For every singleton/collection, create the markdown files that the build will read on day one:
 
 1. `content/singletons/site.md` — frontmatter with: site_name "Canwell Interiors", tagline "The Cotswolds furnishings showroom", address parts, phone "01905 964994", email "canwellcotswolds@gmail.com", year_established "{{YEAR_ESTABLISHED}}" (visible placeholder), opening hours placeholders, sister site URLs ("https://saverysofbroadway.co.uk" or `#` if unknown — flag), social URLs.
-2. `content/singletons/homepage.md` — every field from Wave 1 verbatim. Hero title is `Walk in, *choose*, take home.` (italic via asterisks). Microcopy list: `["FAMILY-RUN SINCE {{YEAR_ESTABLISHED}}", "OPEN SEVEN DAYS", "FREE PARKING"]`.
+2. `content/singletons/homepage.md` — every field from Wave 1 verbatim. Hero title is `Walk in, *choose*, take home.` (italic via asterisks). Microcopy list: `["FAMILY-RUN SINCE {{YEAR_ESTABLISHED}}", "OPEN THURSDAY TO MONDAY", "FREE PARKING"]`.
 3. `content/reviews/sarah-w.md`, `james-anna-h.md`, `david-m.md` — using the three placeholder review quotes that the mockup already shows (these read as real but are flagged in wave-1 as placeholders; render with a small visible "draft review" tag if the field `is_placeholder: true` is set — OR seed without the tag and ask Gary to swap).
 4. `content/new-in/boucle-armchair.md`, `linen-cushion-edit.md`, `brass-table-lamp.md` — names + brand + meta line per the mockup.
 
@@ -248,9 +248,8 @@ collections:
           - {name: postcode, widget: string}
           - {name: phone, widget: string}
           - {name: email, widget: string}
-          - {name: opening_hours_weekday, widget: string}
-          - {name: opening_hours_saturday, widget: string}
-          - {name: opening_hours_sunday, widget: string}
+          - {name: opening_hours_summary, widget: string}
+          - {name: opening_hours, widget: list, fields: [{name: day, widget: string}, {name: hours, widget: string}]}
           - {name: year_established, widget: string}
           - {name: sister_site_saverys_url, widget: string, required: false}
           - {name: sister_site_xshowhome_url, widget: string, required: false}

@@ -28,10 +28,18 @@ export function Visit({
     .filter(Boolean)
     .join(", ");
 
-  // QA Audit 2026-05-12 — Task 8: site.md now stores hours without day prefix;
-  // re-add the day label here for the concatenated homepage summary.
-  const hoursLine = site.opening_hours_weekday && site.opening_hours_saturday && site.opening_hours_sunday
-    ? `Mon–Fri ${site.opening_hours_weekday} · Sat ${site.opening_hours_saturday} · Sun ${site.opening_hours_sunday}`
+  // Hours now come from a per-day list (so closed days are explicit). For the
+  // compact homepage line, pair the editorial summary ("Open Thursday to
+  // Monday") with the shared time when every open day keeps the same hours.
+  const openDays = (site.opening_hours ?? []).filter(
+    (d) => d.hours.trim().toLowerCase() !== "closed"
+  );
+  const sharedTime =
+    openDays.length > 0 && openDays.every((d) => d.hours === openDays[0].hours)
+      ? openDays[0].hours
+      : null;
+  const hoursLine = sharedTime
+    ? `${site.opening_hours_summary}, ${sharedTime}`
     : site.opening_hours_summary;
 
   return (
