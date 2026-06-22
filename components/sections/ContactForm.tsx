@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { trackEvent } from "@/lib/analytics";
+import { trackLead } from "@/lib/track";
 
 interface ContactFormProps {
   microcopy: string;
@@ -37,17 +38,21 @@ export function ContactForm({ microcopy, confirmMessage }: ContactFormProps) {
     const data = new FormData(form);
     const body = new URLSearchParams();
     data.forEach((value, key) => body.append(key, value.toString()));
+    let ok = false;
     try {
-      await fetch("/__forms.html", {
+      const res = await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: body.toString(),
       });
+      ok = res.ok;
     } catch {
       // Even if the fetch errors (e.g. local dev), we still show the confirm
       // so the user isn't stuck. Submissions in production go to Netlify.
     }
     trackEvent("form_submit", { form_name: "contact" });
+    // GA4 generate_lead + Meta Lead, only on a confirmed successful submission.
+    if (ok) trackLead({ content_name: "contact" });
     setSubmitted(true);
   };
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { trackLead } from "@/lib/analytics";
+import { trackLead } from "@/lib/track";
 
 const FORM_NAME = "holiday-let-enquiry";
 
@@ -25,18 +25,21 @@ export function HolidayLetEnquiryForm({
     const data = new FormData(form);
     const body = new URLSearchParams();
     data.forEach((value, key) => body.append(key, value.toString()));
+    let ok = false;
     try {
-      await fetch("/__forms.html", {
+      const res = await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: body.toString(),
       });
+      ok = res.ok;
     } catch {
       // Even if the fetch errors (e.g. local dev), still confirm so the owner
       // isn't stuck. Submissions in production go to Netlify.
     }
-    // Meta Lead + GA4 mirror. content_name only — no raw PII in the payload.
-    trackLead(FORM_NAME);
+    // Meta Lead + GA4 generate_lead, only on a confirmed successful submission.
+    // content_name only — no raw PII in the payload.
+    if (ok) trackLead({ content_name: FORM_NAME });
     setSubmitted(true);
   };
 

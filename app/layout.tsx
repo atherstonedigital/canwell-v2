@@ -6,8 +6,8 @@ import { localBusinessSchema, websiteSchema } from "@/lib/schema";
 import { UtilityBar } from "@/components/layout/UtilityBar";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Analytics } from "@/components/Analytics";
-import { MetaPixel } from "@/components/MetaPixel";
+import GA4 from "@/components/analytics/GA4";
+import MetaPixel from "@/components/analytics/MetaPixel";
 import { LinkTracker } from "@/components/LinkTracker";
 import "./globals.css";
 
@@ -126,7 +126,7 @@ export default function RootLayout({
             strategy="afterInteractive"
           />
         ) : null}
-        <Analytics />
+        <GA4 />
         <MetaPixel />
         <LinkTracker />
         <Script
