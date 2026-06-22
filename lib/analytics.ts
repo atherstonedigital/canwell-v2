@@ -14,12 +14,5 @@ export function trackEvent(name: string, params?: GtagParams): void {
   window.gtag("event", name, params);
 }
 
-// Fire a Meta `Lead` for a converted enquiry and mirror it to GA4 as
-// `generate_lead`. Only the non-PII content_name is sent to either pixel —
-// names, emails and phone numbers never enter the analytics payload.
-export function trackLead(contentName: string): void {
-  if (typeof window !== "undefined" && typeof window.fbq === "function") {
-    window.fbq("track", "Lead", { content_name: contentName });
-  }
-  trackEvent("generate_lead", { content_name: contentName });
-}
+// Conversion-event helpers (Lead / Contact / FindLocation, mirrored to GA4) live
+// in lib/track.ts so every conversion fires to both GA4 and Meta from one call.

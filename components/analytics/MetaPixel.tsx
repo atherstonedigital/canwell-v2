@@ -1,8 +1,18 @@
+"use client";
+
 import Script from "next/script";
 
-const PIXEL_ID = "4412355655744461";
+const PROD_HOSTNAME = "canwellinteriors.com";
+const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
-export function MetaPixel() {
+// Gated Meta Pixel loader, same three-condition gate as GA4. Loads the standard
+// Pixel base code and fires the automatic PageView. Custom conversions are fired
+// from lib/track.ts at the real interaction points, not here.
+export default function MetaPixel() {
+  if (typeof window === "undefined") return null;
+  if (window.location.hostname !== PROD_HOSTNAME) return null;
+  if (!PIXEL_ID) return null;
+
   return (
     <>
       <Script id="meta-pixel" strategy="afterInteractive">
@@ -13,7 +23,7 @@ export function MetaPixel() {
           if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
           n.queue=[];t=b.createElement(e);t.async=!0;
           t.src=v;s=b.getElementsByTagName(e)[0];
-          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          s.parentNode.insertBefore(t,s)}(window,document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
           fbq('init', '${PIXEL_ID}');
           fbq('track', 'PageView');

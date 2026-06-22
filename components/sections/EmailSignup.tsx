@@ -5,6 +5,7 @@ import { useState, type FormEvent } from "react";
 import { SectionMarker } from "@/components/signature/SectionMarker";
 import { Inline } from "@/components/signature/RichText";
 import { trackEvent } from "@/lib/analytics";
+import { trackLead } from "@/lib/track";
 
 interface EmailSignupProps {
   email_eyebrow: string;
@@ -52,6 +53,8 @@ export function EmailSignup({
       });
       if (res.ok) {
         trackEvent("form_submit", { form_name: "newsletter" });
+        // GA4 generate_lead + Meta Lead, only on a confirmed 200.
+        trackLead({ content_name: "newsletter" });
         setState("success");
         setMessage(email_confirm_message || "Thanks — we'll be in touch.");
         form.reset();
