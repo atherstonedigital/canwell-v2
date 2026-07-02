@@ -4,6 +4,7 @@
 
 [build.environment]
   NEXT_PUBLIC_GA_ID = "G-VSDK6W40MJ"
+  NEXT_PUBLIC_META_PIXEL_ID = "4412355655744461"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
